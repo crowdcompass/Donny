@@ -13,6 +13,7 @@
 #import "DNYFaceInteraction.h"
 #import "DNYScene.h"
 #import "DNYCreatureNode.h"
+#import "DNYMotionInteraction.h"
 
 @interface DNYCreatureViewController ()
 
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) SKView *skView;
 
 @property (nonatomic, strong) DNYFaceInteraction *faceInteraction;
+@property (nonatomic, strong) DNYMotionInteraction *motionInteraction;
 
 @end
 
@@ -48,6 +50,7 @@
     self.skView = view;
     
     self.faceInteraction = [[DNYFaceInteraction alloc] initWithCreature:self.creatureModel];
+    self.motionInteraction = [[DNYMotionInteraction alloc] initWithCreature:self.creatureModel];
 }
 
 - (void)viewWillLayoutSubviews {
