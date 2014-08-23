@@ -16,6 +16,8 @@
 
 @implementation DNYScene
 
+#pragma mark - SKScene
+
 - (instancetype)initWithSize:(CGSize)size {
     self = [super initWithSize:size];
     
@@ -26,6 +28,10 @@
     }
     
     return self;
+}
+
+- (void)didEvaluateActions {
+    int debug = 1;
 }
 
 @end

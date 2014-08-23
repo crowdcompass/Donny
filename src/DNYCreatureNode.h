@@ -21,5 +21,6 @@
 @property (strong, nonatomic) SKSpriteNode *mouth;
 
 - (void)blink;
+- (void)sleep;
 
 @end

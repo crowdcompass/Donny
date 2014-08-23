@@ -12,6 +12,7 @@
 //model
 #import "DNYFaceInteraction.h"
 #import "DNYScene.h"
+#import "DNYCreatureNode.h"
 
 @interface DNYCreatureViewController ()
 
@@ -70,6 +71,7 @@
     self.scene = [[DNYScene alloc] initWithSize:self.skView.bounds.size];
     
     [self.skView presentScene:self.scene];
+    [self.scene.creatureNode sleep];
 }
 
 @end

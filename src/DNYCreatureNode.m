@@ -54,4 +54,31 @@
     
 }
 
+//1 1.5, 2 1.75
+- (void)sleep {
+    SKTexture *sleep1Texture = [SKTexture textureWithImageNamed:@"mouth-sleep-01.png"];
+    SKTexture *sleep2Texture = [SKTexture textureWithImageNamed:@"mouth-sleep-02.png"];
+    
+    SKAction *goToSleep1 = [SKAction setTexture:sleep1Texture resize:YES];
+//    goToSleep1.duration = 1.5;
+    
+    SKAction *goToSleep2 = [SKAction setTexture:sleep2Texture resize:YES];
+//    goToSleep2.duration = 1.75;
+    
+    SKAction *groupAction = [SKAction sequence:@[ goToSleep1, goToSleep2 ]];
+    groupAction.duration = 3.;
+//    SKAction *groupAction = [SKAction sequence:@[ goToSleep2, goToSleep1 ]];
+    SKAction *repeatingAction = [SKAction repeatActionForever:groupAction];
+    
+    [self.mouth runAction:repeatingAction];
+    
+    SKAction *testAction = [SKAction moveBy:CGVectorMake(30.f, 30.f) duration:1.5];
+    [self.leftEye runAction:testAction];
+    
+    /*
+    SKAction *animateAction = [SKAction animateWithTextures:@[ sleep1Texture, sleep2Texture ] timePerFrame:1.5 resize:YES restore:YES];
+    [self.mouth runAction:[SKAction repeatActionForever:animateAction]];
+     */
+}
+
 @end
