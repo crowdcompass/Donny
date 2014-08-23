@@ -42,6 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 
     [self.creatureModel makeAlive];
     
