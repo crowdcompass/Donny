@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DNYCreatureViewController.h"
 
 @interface DNYCreatureModel : NSObject
+
+@property (nonatomic, strong) DNYCreatureViewController *controller;
 
 - (void)makeAlive;
 
