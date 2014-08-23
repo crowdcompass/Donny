@@ -15,6 +15,7 @@
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
+		068F79DE19A93DEA001DF69A /* DNYFoodInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 068F79DD19A93DEA001DF69A /* DNYFoodInteraction.m */; };
 		5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */; };
 		5ADE038E19A9698900F8F426 /* LSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE038119A9698900F8F426 /* LSEvent.m */; };
 		5ADE038F19A9698900F8F426 /* LSStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE038319A9698900F8F426 /* LSStateMachine.m */; };
@@ -97,6 +98,8 @@
 		0654E1EF19A82BE200A5964F /* DonnyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonnyTests.m; sourceTree = "<group>"; };
 		0654E1FE19A85E0700A5964F /* DNYInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYInteraction.h; sourceTree = "<group>"; };
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
+		068F79DC19A93DEA001DF69A /* DNYFoodInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYFoodInteraction.h; sourceTree = "<group>"; };
+		068F79DD19A93DEA001DF69A /* DNYFoodInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYFoodInteraction.m; sourceTree = "<group>"; };
 		5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5ADE038019A9698900F8F426 /* LSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSEvent.h; sourceTree = "<group>"; };
 		5ADE038119A9698900F8F426 /* LSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSEvent.m; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				0654E1FF19A85E0700A5964F /* DNYInteraction.m */,
 				05569A2919A85E6D006BD00D /* DNYFaceInteraction.h */,
 				05569A2A19A85E6D006BD00D /* DNYFaceInteraction.m */,
+				068F79DC19A93DEA001DF69A /* DNYFoodInteraction.h */,
+				068F79DD19A93DEA001DF69A /* DNYFoodInteraction.m */,
 			);
 			name = Interactions;
 			sourceTree = "<group>";
@@ -466,6 +471,11 @@
 				TargetAttributes = {
 					0654E1CF19A82BE200A5964F = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					0654E1E819A82BE200A5964F = {
 						CreatedOnToolsVersion = 6.0;
@@ -545,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				068F79DE19A93DEA001DF69A /* DNYFoodInteraction.m in Sources */,
 				05569A2B19A85E6D006BD00D /* DNYFaceInteraction.m in Sources */,
 				FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */,
 				FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */,
