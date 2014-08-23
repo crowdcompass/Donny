@@ -14,15 +14,27 @@
 
 @interface DNYCreatureModel (DNYFaceInteractionBehavior)
 
--(void) dny_setLeftEyeWink;
+-(void) dny_FaceInteractionSetLeftEyeWink;
+-(void) dny_FaceInteractionSetRightEyeWink;
+-(void) dny_FaceInteractionSetSmile;
 
 @end
 
 @implementation DNYCreatureModel (DNYFaceInteractionBehavior)
 
--(void) dny_setLeftEyeWink
+-(void)dny_FaceInteractionSetLeftEyeWink
 {
     NSLog(@"Left eye closed");
+}
+
+-(void)dny_FaceInteractionSetRightEyeWink
+{
+    NSLog(@"Right eye closed");
+}
+
+-(void) dny_FaceInteractionSetSmile
+{
+    NSLog(@"Smile");
 }
 
 @end
@@ -147,7 +159,13 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
     for (CIFaceFeature *ff in features) {
         if ( ff.leftEyeClosed ) {
-            [self.creature dny_setLeftEyeWink];
+            [self.creature dny_FaceInteractionSetLeftEyeWink];
+        }
+        if ( ff.rightEyeClosed ) {
+            [self.creature dny_FaceInteractionSetRightEyeWink];
+        }
+        if ( ff.hasSmile ) {
+            [self.creature dny_FaceInteractionSetSmile];
         }
     }
 }
