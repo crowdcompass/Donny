@@ -17,6 +17,7 @@
 -(void) dny_FaceInteractionSetLeftEyeWink;
 -(void) dny_FaceInteractionSetRightEyeWink;
 -(void) dny_FaceInteractionSetSmile;
+-(void) dny_FaceInteractionTrackFacePosition:(CGPoint)coord;
 
 @end
 
@@ -35,6 +36,11 @@
 -(void) dny_FaceInteractionSetSmile
 {
     NSLog(@"Smile");
+}
+
+-(void) dny_FaceInteractionTrackFacePosition:(CGPoint)coord
+{
+    NSLog(@"Face position is %@", NSStringFromCGPoint(coord));
 }
 
 @end
@@ -158,14 +164,17 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                                                    options:imageOptions];
 
     for (CIFaceFeature *ff in features) {
-        if ( ff.leftEyeClosed ) {
+        if ( ff.hasLeftEyePosition && ff.leftEyeClosed ) {
             [self.creature dny_FaceInteractionSetLeftEyeWink];
         }
-        if ( ff.rightEyeClosed ) {
+        if ( ff.hasRightEyePosition && ff.rightEyeClosed ) {
             [self.creature dny_FaceInteractionSetRightEyeWink];
         }
         if ( ff.hasSmile ) {
             [self.creature dny_FaceInteractionSetSmile];
+        }
+        if ( ff.hasMouthPosition ) {
+            [self.creature dny_FaceInteractionTrackFacePosition:ff.mouthPosition];
         }
     }
 }
