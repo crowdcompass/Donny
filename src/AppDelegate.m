@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "DNYPersistence.h"
+#import "DNYCreatureViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _persistence = [[DNYPersistence alloc] init];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    //Set our creature vc as root
+    DNYCreatureViewController *rootVC = [[DNYCreatureViewController alloc] init];
+    self.window.rootViewController = rootVC;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
