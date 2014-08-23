@@ -11,6 +11,6 @@
 
 @interface DNYInteraction : NSObject
 
-@property (nonatomic, strong) DNYCreatureModel* creature;
+@property DNYCreatureModel* creature;
 
 @end
