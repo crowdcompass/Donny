@@ -15,6 +15,7 @@
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
+		5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */; };
 		FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA520D5019A908F300197278 /* DNYCreatureNode.m */; };
 		FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5A19A834F600CD2FEC /* DNYPersistence.m */; };
 		FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */; };
@@ -79,6 +80,7 @@
 		0654E1EF19A82BE200A5964F /* DonnyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonnyTests.m; sourceTree = "<group>"; };
 		0654E1FE19A85E0700A5964F /* DNYInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYInteraction.h; sourceTree = "<group>"; };
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
+		5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FA520D4F19A908F300197278 /* DNYCreatureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureNode.h; path = src/DNYCreatureNode.h; sourceTree = SOURCE_ROOT; };
 		FA520D5019A908F300197278 /* DNYCreatureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureNode.m; path = src/DNYCreatureNode.m; sourceTree = SOURCE_ROOT; };
 		FA683B5919A834F600CD2FEC /* DNYPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYPersistence.h; path = src/DNYPersistence.h; sourceTree = SOURCE_ROOT; };
@@ -130,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */,
 				FA683BA219A8600100CD2FEC /* MediaToolbox.framework in Frameworks */,
 				FA683BA319A8600100CD2FEC /* SpriteKit.framework in Frameworks */,
 				FA683BA419A8600100CD2FEC /* UIKit.framework in Frameworks */,
@@ -159,6 +162,7 @@
 		0654E1C719A82BE200A5964F = {
 			isa = PBXGroup;
 			children = (
+				5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */,
 				0654E1D219A82BE200A5964F /* Donny */,
 				0654E1D319A82BE200A5964F /* Supporting Files */,
 				FAD9A37019A8337600B7C401 /* Resources */,
