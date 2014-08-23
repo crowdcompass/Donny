@@ -21,6 +21,7 @@
     self = [super init];
     if (self) {
         _creatureModel = [[DNYCreatureModel alloc] init];
+        _creatureModel.controller = self;
     }
 
     return self;
