@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
-		0654E1FC19A8594400A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FB19A8594400A5964F /* DNYInteraction.m */; };
 		FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5A19A834F600CD2FEC /* DNYPersistence.m */; };
 		FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */; };
 		FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B6019A8569600CD2FEC /* DNYCreatureModel.m */; };
+		FA683B6519A85A3500CD2FEC /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */; };
 		FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9A36E19A8336E00B7C401 /* AppDelegate.m */; };
 		FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAD9A37119A8339D00B7C401 /* Donny.xcdatamodeld */; };
 		FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD9A37319A8339D00B7C401 /* Images.xcassets */; };
@@ -35,14 +35,14 @@
 		0654E1E919A82BE200A5964F /* DonnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonnyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0654E1EE19A82BE200A5964F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0654E1EF19A82BE200A5964F /* DonnyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonnyTests.m; sourceTree = "<group>"; };
-		0654E1FA19A8594400A5964F /* DNYInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYInteraction.h; sourceTree = "<group>"; };
-		0654E1FB19A8594400A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
 		FA683B5919A834F600CD2FEC /* DNYPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYPersistence.h; path = src/DNYPersistence.h; sourceTree = SOURCE_ROOT; };
 		FA683B5A19A834F600CD2FEC /* DNYPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYPersistence.m; path = src/DNYPersistence.m; sourceTree = SOURCE_ROOT; };
 		FA683B5C19A8561F00CD2FEC /* DNYCreatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureViewController.h; path = src/DNYCreatureViewController.h; sourceTree = SOURCE_ROOT; };
 		FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureViewController.m; path = src/DNYCreatureViewController.m; sourceTree = SOURCE_ROOT; };
 		FA683B5F19A8569600CD2FEC /* DNYCreatureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureModel.h; path = src/DNYCreatureModel.h; sourceTree = SOURCE_ROOT; };
 		FA683B6019A8569600CD2FEC /* DNYCreatureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureModel.m; path = src/DNYCreatureModel.m; sourceTree = SOURCE_ROOT; };
+		FA683B6319A85A3500CD2FEC /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RGB.h"; path = "src/UIColor+RGB.h"; sourceTree = SOURCE_ROOT; };
+		FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+RGB.m"; path = "src/UIColor+RGB.m"; sourceTree = SOURCE_ROOT; };
 		FAD9A36D19A8336E00B7C401 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		FAD9A36E19A8336E00B7C401 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		FAD9A37219A8339D00B7C401 /* Donny.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Donny.xcdatamodel; sourceTree = "<group>"; };
@@ -88,7 +88,6 @@
 		0654E1D219A82BE200A5964F /* Donny */ = {
 			isa = PBXGroup;
 			children = (
-				0654E1F919A858C700A5964F /* Interactions */,
 				0654E1D319A82BE200A5964F /* Supporting Files */,
 				FAD9A37019A8337600B7C401 /* Resources */,
 				FAD9A36D19A8336E00B7C401 /* AppDelegate.h */,
@@ -99,6 +98,7 @@
 				FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */,
 				FA683B5F19A8569600CD2FEC /* DNYCreatureModel.h */,
 				FA683B6019A8569600CD2FEC /* DNYCreatureModel.m */,
+				FA683B6219A85A0300CD2FEC /* categories */,
 			);
 			path = Donny;
 			sourceTree = "<group>";
@@ -129,13 +129,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0654E1F919A858C700A5964F /* Interactions */ = {
+		FA683B6219A85A0300CD2FEC /* categories */ = {
 			isa = PBXGroup;
 			children = (
-				0654E1FA19A8594400A5964F /* DNYInteraction.h */,
-				0654E1FB19A8594400A5964F /* DNYInteraction.m */,
+				FA683B6319A85A3500CD2FEC /* UIColor+RGB.h */,
+				FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */,
 			);
-			name = Interactions;
+			name = categories;
 			sourceTree = "<group>";
 		};
 		FAD9A37019A8337600B7C401 /* Resources */ = {
@@ -249,9 +249,9 @@
 				FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */,
 				0654E1D619A82BE200A5964F /* main.m in Sources */,
 				FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */,
+				FA683B6519A85A3500CD2FEC /* UIColor+RGB.m in Sources */,
 				FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */,
 				FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */,
-				0654E1FC19A8594400A5964F /* DNYInteraction.m in Sources */,
 				FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
