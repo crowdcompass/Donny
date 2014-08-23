@@ -38,6 +38,10 @@
 		FA683B9919A85F3400CD2FEC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B9119A85F3400CD2FEC /* CoreImage.framework */; };
 		FA683B9A19A85F3400CD2FEC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B9219A85F3400CD2FEC /* CoreLocation.framework */; };
 		FA683B9C19A85F3C00CD2FEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B9B19A85F3C00CD2FEC /* QuartzCore.framework */; };
+		FA683B9E19A85FD200CD2FEC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B9D19A85FD200CD2FEC /* CoreMotion.framework */; };
+		FA683BA219A8600100CD2FEC /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B9F19A8600100CD2FEC /* MediaToolbox.framework */; };
+		FA683BA319A8600100CD2FEC /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683BA019A8600100CD2FEC /* SpriteKit.framework */; };
+		FA683BA419A8600100CD2FEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683BA119A8600100CD2FEC /* UIKit.framework */; };
 		FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9A36E19A8336E00B7C401 /* AppDelegate.m */; };
 		FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAD9A37119A8339D00B7C401 /* Donny.xcdatamodeld */; };
 		FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD9A37319A8339D00B7C401 /* Images.xcassets */; };
@@ -94,6 +98,10 @@
 		FA683B9119A85F3400CD2FEC /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		FA683B9219A85F3400CD2FEC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FA683B9B19A85F3C00CD2FEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FA683B9D19A85FD200CD2FEC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		FA683B9F19A8600100CD2FEC /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
+		FA683BA019A8600100CD2FEC /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		FA683BA119A8600100CD2FEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAD9A36D19A8336E00B7C401 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		FAD9A36E19A8336E00B7C401 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		FAD9A37219A8339D00B7C401 /* Donny.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Donny.xcdatamodel; sourceTree = "<group>"; };
@@ -105,6 +113,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA683BA219A8600100CD2FEC /* MediaToolbox.framework in Frameworks */,
+				FA683BA319A8600100CD2FEC /* SpriteKit.framework in Frameworks */,
+				FA683BA419A8600100CD2FEC /* UIKit.framework in Frameworks */,
+				FA683B9E19A85FD200CD2FEC /* CoreMotion.framework in Frameworks */,
 				FA683B9C19A85F3C00CD2FEC /* QuartzCore.framework in Frameworks */,
 				FA683B9319A85F3400CD2FEC /* Accelerate.framework in Frameworks */,
 				FA683B9419A85F3400CD2FEC /* AssetsLibrary.framework in Frameworks */,
@@ -167,6 +179,10 @@
 		0654E1D319A82BE200A5964F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA683B9F19A8600100CD2FEC /* MediaToolbox.framework */,
+				FA683BA019A8600100CD2FEC /* SpriteKit.framework */,
+				FA683BA119A8600100CD2FEC /* UIKit.framework */,
+				FA683B9D19A85FD200CD2FEC /* CoreMotion.framework */,
 				FA683B9B19A85F3C00CD2FEC /* QuartzCore.framework */,
 				FA683B8B19A85F3400CD2FEC /* Accelerate.framework */,
 				FA683B8C19A85F3400CD2FEC /* AssetsLibrary.framework */,
