@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		05569A2B19A85E6D006BD00D /* DNYFaceInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05569A2A19A85E6D006BD00D /* DNYFaceInteraction.m */; };
-		05569A3819A87A7A006BD00D /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3419A87A7A006BD00D /* Icon-60.png */; };
-		05569A3919A87A7A006BD00D /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3519A87A7A006BD00D /* Icon-60@2x.png */; };
-		05569A3A19A87A7A006BD00D /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3619A87A7A006BD00D /* Icon-76.png */; };
-		05569A3B19A87A7A006BD00D /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3719A87A7A006BD00D /* Icon-76@2x.png */; };
+		05569A4019A882E4006BD00D /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3C19A882E4006BD00D /* Icon-60.png */; };
+		05569A4119A882E4006BD00D /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3D19A882E4006BD00D /* Icon-60@2x.png */; };
+		05569A4219A882E4006BD00D /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3E19A882E4006BD00D /* Icon-76.png */; };
+		05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3F19A882E4006BD00D /* Icon-76@2x.png */; };
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
@@ -66,10 +66,10 @@
 /* Begin PBXFileReference section */
 		05569A2919A85E6D006BD00D /* DNYFaceInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYFaceInteraction.h; sourceTree = "<group>"; };
 		05569A2A19A85E6D006BD00D /* DNYFaceInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYFaceInteraction.m; sourceTree = "<group>"; };
-		05569A3419A87A7A006BD00D /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60.png"; path = "../../Downloads/app-icon/Icon-60.png"; sourceTree = "<group>"; };
-		05569A3519A87A7A006BD00D /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "../../Downloads/app-icon/Icon-60@2x.png"; sourceTree = "<group>"; };
-		05569A3619A87A7A006BD00D /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "../../Downloads/app-icon/Icon-76.png"; sourceTree = "<group>"; };
-		05569A3719A87A7A006BD00D /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76@2x.png"; path = "../../Downloads/app-icon/Icon-76@2x.png"; sourceTree = "<group>"; };
+		05569A3C19A882E4006BD00D /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		05569A3D19A882E4006BD00D /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		05569A3E19A882E4006BD00D /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		05569A3F19A882E4006BD00D /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		0654E1D019A82BE200A5964F /* Donny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0654E1D419A82BE200A5964F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0654E1D519A82BE200A5964F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -321,13 +321,13 @@
 		FAD9A37019A8337600B7C401 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				05569A3C19A882E4006BD00D /* Icon-60.png */,
+				05569A3D19A882E4006BD00D /* Icon-60@2x.png */,
+				05569A3E19A882E4006BD00D /* Icon-76.png */,
+				05569A3F19A882E4006BD00D /* Icon-76@2x.png */,
 				FA683B8A19A85EBD00CD2FEC /* graphics */,
 				FAD9A37119A8339D00B7C401 /* Donny.xcdatamodeld */,
 				FAD9A37319A8339D00B7C401 /* Images.xcassets */,
-				05569A3419A87A7A006BD00D /* Icon-60.png */,
-				05569A3519A87A7A006BD00D /* Icon-60@2x.png */,
-				05569A3619A87A7A006BD00D /* Icon-76.png */,
-				05569A3719A87A7A006BD00D /* Icon-76@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 				FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */,
 				FA683B7C19A85EB600CD2FEC /* eyebrow-sad@2x.png in Resources */,
 				FA683B8419A85EB600CD2FEC /* mouth-good-reaction@2x.png in Resources */,
-				05569A3919A87A7A006BD00D /* Icon-60@2x.png in Resources */,
+				05569A4119A882E4006BD00D /* Icon-60@2x.png in Resources */,
 				FA683B7E19A85EB600CD2FEC /* eye-small@2x.png in Resources */,
 				FA683B8919A85EB600CD2FEC /* nose@2x.png in Resources */,
 				FA683B7A19A85EB600CD2FEC /* eyebrow-negative@2x.png in Resources */,
@@ -428,10 +428,10 @@
 				FA683B7D19A85EB600CD2FEC /* eye-sleep@2x.png in Resources */,
 				FA683B8319A85EB600CD2FEC /* mouth-frown@2x.png in Resources */,
 				FA683B8219A85EB600CD2FEC /* mouth-bad-reaction@2x.png in Resources */,
-				05569A3A19A87A7A006BD00D /* Icon-76.png in Resources */,
+				05569A4219A882E4006BD00D /* Icon-76.png in Resources */,
 				FA683B8719A85EB600CD2FEC /* mouth-smile@2x.png in Resources */,
-				05569A3B19A87A7A006BD00D /* Icon-76@2x.png in Resources */,
-				05569A3819A87A7A006BD00D /* Icon-60.png in Resources */,
+				05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */,
+				05569A4019A882E4006BD00D /* Icon-60.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
