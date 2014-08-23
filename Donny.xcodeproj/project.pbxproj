@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
-		0654E1D919A82BE200A5964F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D819A82BE200A5964F /* AppDelegate.m */; };
-		0654E1DC19A82BE200A5964F /* Donny.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1DA19A82BE200A5964F /* Donny.xcdatamodeld */; };
-		0654E1DF19A82BE200A5964F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1DE19A82BE200A5964F /* ViewController.m */; };
-		0654E1E219A82BE200A5964F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0654E1E019A82BE200A5964F /* Main.storyboard */; };
-		0654E1E419A82BE200A5964F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0654E1E319A82BE200A5964F /* Images.xcassets */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
+		FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9A36E19A8336E00B7C401 /* AppDelegate.m */; };
+		FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAD9A37119A8339D00B7C401 /* Donny.xcdatamodeld */; };
+		FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD9A37319A8339D00B7C401 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +28,13 @@
 		0654E1D019A82BE200A5964F /* Donny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0654E1D419A82BE200A5964F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0654E1D519A82BE200A5964F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0654E1D719A82BE200A5964F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0654E1D819A82BE200A5964F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0654E1DB19A82BE200A5964F /* Donny.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Donny.xcdatamodel; sourceTree = "<group>"; };
-		0654E1DD19A82BE200A5964F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0654E1DE19A82BE200A5964F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0654E1E119A82BE200A5964F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0654E1E319A82BE200A5964F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0654E1E919A82BE200A5964F /* DonnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonnyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0654E1EE19A82BE200A5964F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0654E1EF19A82BE200A5964F /* DonnyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonnyTests.m; sourceTree = "<group>"; };
+		FAD9A36D19A8336E00B7C401 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		FAD9A36E19A8336E00B7C401 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		FAD9A37219A8339D00B7C401 /* Donny.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Donny.xcdatamodel; sourceTree = "<group>"; };
+		FAD9A37319A8339D00B7C401 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = res/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +76,9 @@
 		0654E1D219A82BE200A5964F /* Donny */ = {
 			isa = PBXGroup;
 			children = (
-				0654E1D719A82BE200A5964F /* AppDelegate.h */,
-				0654E1D819A82BE200A5964F /* AppDelegate.m */,
-				0654E1DD19A82BE200A5964F /* ViewController.h */,
-				0654E1DE19A82BE200A5964F /* ViewController.m */,
-				0654E1E019A82BE200A5964F /* Main.storyboard */,
-				0654E1E319A82BE200A5964F /* Images.xcassets */,
-				0654E1DA19A82BE200A5964F /* Donny.xcdatamodeld */,
+				FAD9A37019A8337600B7C401 /* Resources */,
+				FAD9A36D19A8336E00B7C401 /* AppDelegate.h */,
+				FAD9A36E19A8336E00B7C401 /* AppDelegate.m */,
 				0654E1D319A82BE200A5964F /* Supporting Files */,
 			);
 			path = Donny;
@@ -117,6 +108,16 @@
 				0654E1EE19A82BE200A5964F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAD9A37019A8337600B7C401 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAD9A37119A8339D00B7C401 /* Donny.xcdatamodeld */,
+				FAD9A37319A8339D00B7C401 /* Images.xcassets */,
+			);
+			name = Resources;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0654E1E219A82BE200A5964F /* Main.storyboard in Resources */,
-				0654E1E419A82BE200A5964F /* Images.xcassets in Resources */,
+				FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,10 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0654E1D919A82BE200A5964F /* AppDelegate.m in Sources */,
+				FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */,
 				0654E1D619A82BE200A5964F /* main.m in Sources */,
-				0654E1DF19A82BE200A5964F /* ViewController.m in Sources */,
-				0654E1DC19A82BE200A5964F /* Donny.xcdatamodeld in Sources */,
+				FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,17 +241,6 @@
 			targetProxy = 0654E1EA19A82BE200A5964F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0654E1E019A82BE200A5964F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0654E1E119A82BE200A5964F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0654E1F119A82BE200A5964F /* Debug */ = {
@@ -340,6 +328,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Donny/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -351,6 +340,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Donny/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -408,6 +398,7 @@
 				0654E1F519A82BE200A5964F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0654E1F619A82BE200A5964F /* Build configuration list for PBXNativeTarget "DonnyTests" */ = {
 			isa = XCConfigurationList;
@@ -416,17 +407,19 @@
 				0654E1F819A82BE200A5964F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0654E1DA19A82BE200A5964F /* Donny.xcdatamodeld */ = {
+		FAD9A37119A8339D00B7C401 /* Donny.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0654E1DB19A82BE200A5964F /* Donny.xcdatamodel */,
+				FAD9A37219A8339D00B7C401 /* Donny.xcdatamodel */,
 			);
-			currentVersion = 0654E1DB19A82BE200A5964F /* Donny.xcdatamodel */;
-			path = Donny.xcdatamodeld;
+			currentVersion = FAD9A37219A8339D00B7C401 /* Donny.xcdatamodel */;
+			name = Donny.xcdatamodeld;
+			path = res/Donny.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
