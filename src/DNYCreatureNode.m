@@ -20,22 +20,22 @@
         _leftEyeBrow.hidden = YES;
         [self addChild:_leftEyeBrow];
         _leftEye = [SKSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
-        _leftEye.position = CGPointMake(-105.f, 135.f);
+        _leftEye.position = CGPointMake(-90.f, 109.f);
         [self addChild:_leftEye];
         
         _rightEyeBrow = [SKSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
         _rightEyeBrow.hidden = YES;
         [self addChild:_rightEyeBrow];
-        _rightEye.position = CGPointMake(105.f, 135.f);
+        _rightEye.position = CGPointMake(90.f, 109.f);
         _rightEye = [SKSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         [self addChild:_rightEye];
         
         _nose = [SKSpriteNode spriteNodeWithImageNamed:@"nose.png"];
-        _nose.position = CGPointMake(-0.f, 35.f);
+        _nose.position = CGPointMake(-0.f, 69.f);
         [self addChild:_nose];
         
         _mouth = [SKSpriteNode spriteNodeWithImageNamed:@"mouth-sleep.png"];
-        _mouth.position = CGPointMake(10.f, -125.f);
+        _mouth.position = CGPointMake(20.f, -66.f);
         [self addChild:_mouth];
     }
     
