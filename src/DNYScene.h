@@ -8,6 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+@class DNYCreatureNode;
+
 @interface DNYScene : SKScene
+
+@property (strong, nonatomic) DNYCreatureNode *creatureNode;
 
 @end

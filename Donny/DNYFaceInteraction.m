@@ -56,6 +56,8 @@
 @property (nonatomic, strong) UIImage *borderImage;
 @property (nonatomic, strong) CIDetector *faceDetector;
 
+-(CGPoint) pointForCreatureFromPoint:(CGPoint)point;
+
 @end
 
 @implementation DNYFaceInteraction
@@ -175,7 +177,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             [self.creature dny_FaceInteractionSetSmile];
         }
         if ( ff.hasMouthPosition ) {
-            [self.creature dny_FaceInteractionTrackFacePosition:ff.mouthPosition];
+            [self.creature dny_FaceInteractionTrackFacePosition:[self pointForCreatureFromPoint:ff.mouthPosition]];
         }
     }
 }
@@ -224,6 +226,15 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             break;
     }
     return [NSNumber numberWithInt:exifOrientation];
+}
+
+-(CGPoint) pointForCreatureFromPoint:(CGPoint)point
+{
+    CGAffineTransform coordinatesTransform = CGAffineTransformMakeRotation(M_PI/2);
+    coordinatesTransform = CGAffineTransformTranslate(coordinatesTransform, 1.f, -[[UIScreen mainScreen] bounds].size.width);
+    
+    CGPoint transformedPoint = CGPointApplyAffineTransform(point, coordinatesTransform);
+    return transformedPoint;
 }
 
 @end

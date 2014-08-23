@@ -17,6 +17,7 @@
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
 		5AAE08BB19A9087700A7A38C /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAE08BA19A9087700A7A38C /* CoreAudio.framework */; };
 		5AAE08BD19A908E500A7A38C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAE08BC19A908E500A7A38C /* AudioToolbox.framework */; };
+		FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA520D5019A908F300197278 /* DNYCreatureNode.m */; };
 		FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5A19A834F600CD2FEC /* DNYPersistence.m */; };
 		FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */; };
 		FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B6019A8569600CD2FEC /* DNYCreatureModel.m */; };
@@ -82,6 +83,9 @@
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
 		5AAE08BA19A9087700A7A38C /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		5AAE08BC19A908E500A7A38C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FA520D4F19A908F300197278 /* DNYCreatureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureNode.h; path = src/DNYCreatureNode.h; sourceTree = SOURCE_ROOT; };
+		FA520D5019A908F300197278 /* DNYCreatureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureNode.m; path = src/DNYCreatureNode.m; sourceTree = SOURCE_ROOT; };
+>>>>>>> f89816cec3430227cf4633ba880124b78af7c0df
 		FA683B5919A834F600CD2FEC /* DNYPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYPersistence.h; path = src/DNYPersistence.h; sourceTree = SOURCE_ROOT; };
 		FA683B5A19A834F600CD2FEC /* DNYPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYPersistence.m; path = src/DNYPersistence.m; sourceTree = SOURCE_ROOT; };
 		FA683B5C19A8561F00CD2FEC /* DNYCreatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureViewController.h; path = src/DNYCreatureViewController.h; sourceTree = SOURCE_ROOT; };
@@ -322,6 +326,8 @@
 			children = (
 				FA683BA619A860D600CD2FEC /* DNYScene.h */,
 				FA683BA719A860D600CD2FEC /* DNYScene.m */,
+				FA520D4F19A908F300197278 /* DNYCreatureNode.h */,
+				FA520D5019A908F300197278 /* DNYCreatureNode.m */,
 			);
 			name = sprite;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05569A2B19A85E6D006BD00D /* DNYFaceInteraction.m in Sources */,
+				FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */,
 				FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */,
 				0654E1D619A82BE200A5964F /* main.m in Sources */,
 				FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */,

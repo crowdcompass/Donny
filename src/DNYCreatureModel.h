@@ -11,7 +11,7 @@
 
 @interface DNYCreatureModel : NSObject
 
-@property (nonatomic, strong) DNYCreatureViewController *controller;
+@property (weak, nonatomic) DNYCreatureViewController *controller;
 
 - (void)makeAlive;
 - (void)vibrate;

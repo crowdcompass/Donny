@@ -8,6 +8,24 @@
 
 #import "DNYScene.h"
 
+#import "DNYCreatureNode.h"
+
+@interface DNYScene()
+
+@end
+
 @implementation DNYScene
+
+- (instancetype)initWithSize:(CGSize)size {
+    self = [super initWithSize:size];
+    
+    if (self) {
+        self.scaleMode = SKSceneScaleModeAspectFill;
+        _creatureNode = [[DNYCreatureNode alloc] init];
+        [self addChild:_creatureNode];
+    }
+    
+    return self;
+}
 
 @end
