@@ -14,5 +14,7 @@
 @property (nonatomic, strong) DNYCreatureViewController *controller;
 
 - (void)makeAlive;
+- (void)vibrate;
+- (void)vibrateChuckle;
 
 @end

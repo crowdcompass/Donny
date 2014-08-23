@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.creatureModel makeAlive];
     self.faceInteraction = [[DNYFaceInteraction alloc] initWithCreature:self.creatureModel];
 }
 
