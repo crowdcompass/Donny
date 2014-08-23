@@ -7,15 +7,28 @@
 //
 
 #import "DNYCreatureViewController.h"
+#import "DNYFaceInteraction.h"
 
 @interface DNYCreatureViewController ()
+
+@property (nonatomic, strong) DNYFaceInteraction *faceInteraction;
 
 @end
 
 @implementation DNYCreatureViewController
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _creatureModel = [[DNYCreatureModel alloc] init];
+    }
+
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.faceInteraction = [[DNYFaceInteraction alloc] initWithCreature:self.creatureModel];
 }
 
 @end
