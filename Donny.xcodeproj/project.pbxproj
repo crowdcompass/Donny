@@ -17,26 +17,37 @@
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
 		5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */; };
+		FA077A3319A94EDF00C9CEC3 /* eyebrow-negative@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1619A94EDF00C9CEC3 /* eyebrow-negative@2x.png */; };
+		FA077A3419A94EDF00C9CEC3 /* eyebrow-positive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1719A94EDF00C9CEC3 /* eyebrow-positive@2x.png */; };
+		FA077A3519A94EDF00C9CEC3 /* eyebrow-sad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1819A94EDF00C9CEC3 /* eyebrow-sad@2x.png */; };
+		FA077A3619A94EDF00C9CEC3 /* rainbow-green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1919A94EDF00C9CEC3 /* rainbow-green@2x.png */; };
+		FA077A3719A94EDF00C9CEC3 /* rainbow-orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1A19A94EDF00C9CEC3 /* rainbow-orange@2x.png */; };
+		FA077A3819A94EDF00C9CEC3 /* rainbow-purple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1B19A94EDF00C9CEC3 /* rainbow-purple@2x.png */; };
+		FA077A3919A94EDF00C9CEC3 /* rainbow-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1C19A94EDF00C9CEC3 /* rainbow-red@2x.png */; };
+		FA077A3A19A94EDF00C9CEC3 /* rainbow-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1D19A94EDF00C9CEC3 /* rainbow-yellow@2x.png */; };
+		FA077A3B19A94EDF00C9CEC3 /* tear-big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1E19A94EDF00C9CEC3 /* tear-big@2x.png */; };
+		FA077A3C19A94EDF00C9CEC3 /* tear-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1F19A94EDF00C9CEC3 /* tear-small@2x.png */; };
+		FA077A3D19A94EDF00C9CEC3 /* eye-sleep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2119A94EDF00C9CEC3 /* eye-sleep@2x.png */; };
+		FA077A3E19A94EDF00C9CEC3 /* eye-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2219A94EDF00C9CEC3 /* eye-small@2x.png */; };
+		FA077A3F19A94EDF00C9CEC3 /* eye-standard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2319A94EDF00C9CEC3 /* eye-standard@2x.png */; };
+		FA077A4019A94EDF00C9CEC3 /* eye-wink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2419A94EDF00C9CEC3 /* eye-wink@2x.png */; };
+		FA077A4119A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2619A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png */; };
+		FA077A4219A94EDF00C9CEC3 /* mouth-frown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2719A94EDF00C9CEC3 /* mouth-frown@2x.png */; };
+		FA077A4319A94EDF00C9CEC3 /* mouth-good-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2819A94EDF00C9CEC3 /* mouth-good-reaction@2x.png */; };
+		FA077A4419A94EDF00C9CEC3 /* mouth-happy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2919A94EDF00C9CEC3 /* mouth-happy@2x.png */; };
+		FA077A4519A94EDF00C9CEC3 /* mouth-sick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2A19A94EDF00C9CEC3 /* mouth-sick@2x.png */; };
+		FA077A4619A94EDF00C9CEC3 /* mouth-sicker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2B19A94EDF00C9CEC3 /* mouth-sicker@2x.png */; };
+		FA077A4719A94EDF00C9CEC3 /* mouth-sleep-01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2C19A94EDF00C9CEC3 /* mouth-sleep-01@2x.png */; };
+		FA077A4819A94EDF00C9CEC3 /* mouth-sleep-02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2D19A94EDF00C9CEC3 /* mouth-sleep-02@2x.png */; };
+		FA077A4919A94EDF00C9CEC3 /* mouth-smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2E19A94EDF00C9CEC3 /* mouth-smile@2x.png */; };
+		FA077A4A19A94EDF00C9CEC3 /* mouth-straight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2F19A94EDF00C9CEC3 /* mouth-straight@2x.png */; };
+		FA077A4B19A94EDF00C9CEC3 /* mouth-vomit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A3019A94EDF00C9CEC3 /* mouth-vomit@2x.png */; };
+		FA077A4C19A94EDF00C9CEC3 /* nose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A3219A94EDF00C9CEC3 /* nose@2x.png */; };
 		FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA520D5019A908F300197278 /* DNYCreatureNode.m */; };
 		FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5A19A834F600CD2FEC /* DNYPersistence.m */; };
 		FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */; };
 		FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B6019A8569600CD2FEC /* DNYCreatureModel.m */; };
 		FA683B6519A85A3500CD2FEC /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */; };
-		FA683B7A19A85EB600CD2FEC /* eyebrow-negative@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6719A85EB600CD2FEC /* eyebrow-negative@2x.png */; };
-		FA683B7B19A85EB600CD2FEC /* eyebrow-positive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6819A85EB600CD2FEC /* eyebrow-positive@2x.png */; };
-		FA683B7C19A85EB600CD2FEC /* eyebrow-sad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6919A85EB600CD2FEC /* eyebrow-sad@2x.png */; };
-		FA683B7D19A85EB600CD2FEC /* eye-sleep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6B19A85EB600CD2FEC /* eye-sleep@2x.png */; };
-		FA683B7E19A85EB600CD2FEC /* eye-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6C19A85EB600CD2FEC /* eye-small@2x.png */; };
-		FA683B7F19A85EB600CD2FEC /* eye-standard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6D19A85EB600CD2FEC /* eye-standard@2x.png */; };
-		FA683B8019A85EB600CD2FEC /* eye-wink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6E19A85EB600CD2FEC /* eye-wink@2x.png */; };
-		FA683B8219A85EB600CD2FEC /* mouth-bad-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7119A85EB600CD2FEC /* mouth-bad-reaction@2x.png */; };
-		FA683B8319A85EB600CD2FEC /* mouth-frown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7219A85EB600CD2FEC /* mouth-frown@2x.png */; };
-		FA683B8419A85EB600CD2FEC /* mouth-good-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7319A85EB600CD2FEC /* mouth-good-reaction@2x.png */; };
-		FA683B8519A85EB600CD2FEC /* mouth-sleep-01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7419A85EB600CD2FEC /* mouth-sleep-01@2x.png */; };
-		FA683B8619A85EB600CD2FEC /* mouth-sleep-02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7519A85EB600CD2FEC /* mouth-sleep-02@2x.png */; };
-		FA683B8719A85EB600CD2FEC /* mouth-smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7619A85EB600CD2FEC /* mouth-smile@2x.png */; };
-		FA683B8819A85EB600CD2FEC /* mouth-straight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7719A85EB600CD2FEC /* mouth-straight@2x.png */; };
-		FA683B8919A85EB600CD2FEC /* nose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7919A85EB600CD2FEC /* nose@2x.png */; };
 		FA683B9319A85F3400CD2FEC /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B8B19A85F3400CD2FEC /* Accelerate.framework */; };
 		FA683B9419A85F3400CD2FEC /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B8C19A85F3400CD2FEC /* AssetsLibrary.framework */; };
 		FA683B9519A85F3400CD2FEC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B8D19A85F3400CD2FEC /* AVFoundation.framework */; };
@@ -84,6 +95,32 @@
 		0654E1FE19A85E0700A5964F /* DNYInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYInteraction.h; sourceTree = "<group>"; };
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
 		5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FA077A1619A94EDF00C9CEC3 /* eyebrow-negative@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-negative@2x.png"; sourceTree = "<group>"; };
+		FA077A1719A94EDF00C9CEC3 /* eyebrow-positive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-positive@2x.png"; sourceTree = "<group>"; };
+		FA077A1819A94EDF00C9CEC3 /* eyebrow-sad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-sad@2x.png"; sourceTree = "<group>"; };
+		FA077A1919A94EDF00C9CEC3 /* rainbow-green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-green@2x.png"; sourceTree = "<group>"; };
+		FA077A1A19A94EDF00C9CEC3 /* rainbow-orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-orange@2x.png"; sourceTree = "<group>"; };
+		FA077A1B19A94EDF00C9CEC3 /* rainbow-purple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-purple@2x.png"; sourceTree = "<group>"; };
+		FA077A1C19A94EDF00C9CEC3 /* rainbow-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-red@2x.png"; sourceTree = "<group>"; };
+		FA077A1D19A94EDF00C9CEC3 /* rainbow-yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-yellow@2x.png"; sourceTree = "<group>"; };
+		FA077A1E19A94EDF00C9CEC3 /* tear-big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tear-big@2x.png"; sourceTree = "<group>"; };
+		FA077A1F19A94EDF00C9CEC3 /* tear-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tear-small@2x.png"; sourceTree = "<group>"; };
+		FA077A2119A94EDF00C9CEC3 /* eye-sleep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-sleep@2x.png"; sourceTree = "<group>"; };
+		FA077A2219A94EDF00C9CEC3 /* eye-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-small@2x.png"; sourceTree = "<group>"; };
+		FA077A2319A94EDF00C9CEC3 /* eye-standard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-standard@2x.png"; sourceTree = "<group>"; };
+		FA077A2419A94EDF00C9CEC3 /* eye-wink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-wink@2x.png"; sourceTree = "<group>"; };
+		FA077A2619A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-bad-reaction@2x.png"; sourceTree = "<group>"; };
+		FA077A2719A94EDF00C9CEC3 /* mouth-frown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-frown@2x.png"; sourceTree = "<group>"; };
+		FA077A2819A94EDF00C9CEC3 /* mouth-good-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-good-reaction@2x.png"; sourceTree = "<group>"; };
+		FA077A2919A94EDF00C9CEC3 /* mouth-happy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-happy@2x.png"; sourceTree = "<group>"; };
+		FA077A2A19A94EDF00C9CEC3 /* mouth-sick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sick@2x.png"; sourceTree = "<group>"; };
+		FA077A2B19A94EDF00C9CEC3 /* mouth-sicker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sicker@2x.png"; sourceTree = "<group>"; };
+		FA077A2C19A94EDF00C9CEC3 /* mouth-sleep-01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-01@2x.png"; sourceTree = "<group>"; };
+		FA077A2D19A94EDF00C9CEC3 /* mouth-sleep-02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-02@2x.png"; sourceTree = "<group>"; };
+		FA077A2E19A94EDF00C9CEC3 /* mouth-smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-smile@2x.png"; sourceTree = "<group>"; };
+		FA077A2F19A94EDF00C9CEC3 /* mouth-straight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-straight@2x.png"; sourceTree = "<group>"; };
+		FA077A3019A94EDF00C9CEC3 /* mouth-vomit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-vomit@2x.png"; sourceTree = "<group>"; };
+		FA077A3219A94EDF00C9CEC3 /* nose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nose@2x.png"; sourceTree = "<group>"; };
 		FA520D4F19A908F300197278 /* DNYCreatureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureNode.h; path = src/DNYCreatureNode.h; sourceTree = SOURCE_ROOT; };
 		FA520D5019A908F300197278 /* DNYCreatureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureNode.m; path = src/DNYCreatureNode.m; sourceTree = SOURCE_ROOT; };
 		FA683B5919A834F600CD2FEC /* DNYPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYPersistence.h; path = src/DNYPersistence.h; sourceTree = SOURCE_ROOT; };
@@ -94,21 +131,6 @@
 		FA683B6019A8569600CD2FEC /* DNYCreatureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureModel.m; path = src/DNYCreatureModel.m; sourceTree = SOURCE_ROOT; };
 		FA683B6319A85A3500CD2FEC /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RGB.h"; path = "src/UIColor+RGB.h"; sourceTree = SOURCE_ROOT; };
 		FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+RGB.m"; path = "src/UIColor+RGB.m"; sourceTree = SOURCE_ROOT; };
-		FA683B6719A85EB600CD2FEC /* eyebrow-negative@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-negative@2x.png"; sourceTree = "<group>"; };
-		FA683B6819A85EB600CD2FEC /* eyebrow-positive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-positive@2x.png"; sourceTree = "<group>"; };
-		FA683B6919A85EB600CD2FEC /* eyebrow-sad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-sad@2x.png"; sourceTree = "<group>"; };
-		FA683B6B19A85EB600CD2FEC /* eye-sleep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-sleep@2x.png"; sourceTree = "<group>"; };
-		FA683B6C19A85EB600CD2FEC /* eye-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-small@2x.png"; sourceTree = "<group>"; };
-		FA683B6D19A85EB600CD2FEC /* eye-standard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-standard@2x.png"; sourceTree = "<group>"; };
-		FA683B6E19A85EB600CD2FEC /* eye-wink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-wink@2x.png"; sourceTree = "<group>"; };
-		FA683B7119A85EB600CD2FEC /* mouth-bad-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-bad-reaction@2x.png"; sourceTree = "<group>"; };
-		FA683B7219A85EB600CD2FEC /* mouth-frown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-frown@2x.png"; sourceTree = "<group>"; };
-		FA683B7319A85EB600CD2FEC /* mouth-good-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-good-reaction@2x.png"; sourceTree = "<group>"; };
-		FA683B7419A85EB600CD2FEC /* mouth-sleep-01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-01@2x.png"; sourceTree = "<group>"; };
-		FA683B7519A85EB600CD2FEC /* mouth-sleep-02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-02@2x.png"; sourceTree = "<group>"; };
-		FA683B7619A85EB600CD2FEC /* mouth-smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-smile@2x.png"; sourceTree = "<group>"; };
-		FA683B7719A85EB600CD2FEC /* mouth-straight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-straight@2x.png"; sourceTree = "<group>"; };
-		FA683B7919A85EB600CD2FEC /* nose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nose@2x.png"; sourceTree = "<group>"; };
 		FA683B8B19A85F3400CD2FEC /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		FA683B8C19A85F3400CD2FEC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		FA683B8D19A85F3400CD2FEC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -254,6 +276,72 @@
 			name = Interactions;
 			sourceTree = "<group>";
 		};
+		FA077A1419A94EDF00C9CEC3 /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				FA077A1519A94EDF00C9CEC3 /* extras */,
+				FA077A2019A94EDF00C9CEC3 /* eyes */,
+				FA077A2519A94EDF00C9CEC3 /* mouth */,
+				FA077A3119A94EDF00C9CEC3 /* nose */,
+			);
+			name = graphics;
+			path = res/graphics;
+			sourceTree = "<group>";
+		};
+		FA077A1519A94EDF00C9CEC3 /* extras */ = {
+			isa = PBXGroup;
+			children = (
+				FA077A1619A94EDF00C9CEC3 /* eyebrow-negative@2x.png */,
+				FA077A1719A94EDF00C9CEC3 /* eyebrow-positive@2x.png */,
+				FA077A1819A94EDF00C9CEC3 /* eyebrow-sad@2x.png */,
+				FA077A1919A94EDF00C9CEC3 /* rainbow-green@2x.png */,
+				FA077A1A19A94EDF00C9CEC3 /* rainbow-orange@2x.png */,
+				FA077A1B19A94EDF00C9CEC3 /* rainbow-purple@2x.png */,
+				FA077A1C19A94EDF00C9CEC3 /* rainbow-red@2x.png */,
+				FA077A1D19A94EDF00C9CEC3 /* rainbow-yellow@2x.png */,
+				FA077A1E19A94EDF00C9CEC3 /* tear-big@2x.png */,
+				FA077A1F19A94EDF00C9CEC3 /* tear-small@2x.png */,
+			);
+			path = extras;
+			sourceTree = "<group>";
+		};
+		FA077A2019A94EDF00C9CEC3 /* eyes */ = {
+			isa = PBXGroup;
+			children = (
+				FA077A2119A94EDF00C9CEC3 /* eye-sleep@2x.png */,
+				FA077A2219A94EDF00C9CEC3 /* eye-small@2x.png */,
+				FA077A2319A94EDF00C9CEC3 /* eye-standard@2x.png */,
+				FA077A2419A94EDF00C9CEC3 /* eye-wink@2x.png */,
+			);
+			path = eyes;
+			sourceTree = "<group>";
+		};
+		FA077A2519A94EDF00C9CEC3 /* mouth */ = {
+			isa = PBXGroup;
+			children = (
+				FA077A2619A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png */,
+				FA077A2719A94EDF00C9CEC3 /* mouth-frown@2x.png */,
+				FA077A2819A94EDF00C9CEC3 /* mouth-good-reaction@2x.png */,
+				FA077A2919A94EDF00C9CEC3 /* mouth-happy@2x.png */,
+				FA077A2A19A94EDF00C9CEC3 /* mouth-sick@2x.png */,
+				FA077A2B19A94EDF00C9CEC3 /* mouth-sicker@2x.png */,
+				FA077A2C19A94EDF00C9CEC3 /* mouth-sleep-01@2x.png */,
+				FA077A2D19A94EDF00C9CEC3 /* mouth-sleep-02@2x.png */,
+				FA077A2E19A94EDF00C9CEC3 /* mouth-smile@2x.png */,
+				FA077A2F19A94EDF00C9CEC3 /* mouth-straight@2x.png */,
+				FA077A3019A94EDF00C9CEC3 /* mouth-vomit@2x.png */,
+			);
+			path = mouth;
+			sourceTree = "<group>";
+		};
+		FA077A3119A94EDF00C9CEC3 /* nose */ = {
+			isa = PBXGroup;
+			children = (
+				FA077A3219A94EDF00C9CEC3 /* nose@2x.png */,
+			);
+			path = nose;
+			sourceTree = "<group>";
+		};
 		FA683B6219A85A0300CD2FEC /* categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,64 +349,6 @@
 				FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */,
 			);
 			name = categories;
-			sourceTree = "<group>";
-		};
-		FA683B6619A85EB600CD2FEC /* extras */ = {
-			isa = PBXGroup;
-			children = (
-				FA683B6719A85EB600CD2FEC /* eyebrow-negative@2x.png */,
-				FA683B6819A85EB600CD2FEC /* eyebrow-positive@2x.png */,
-				FA683B6919A85EB600CD2FEC /* eyebrow-sad@2x.png */,
-			);
-			name = extras;
-			path = res/extras;
-			sourceTree = "<group>";
-		};
-		FA683B6A19A85EB600CD2FEC /* eyes */ = {
-			isa = PBXGroup;
-			children = (
-				FA683B6B19A85EB600CD2FEC /* eye-sleep@2x.png */,
-				FA683B6C19A85EB600CD2FEC /* eye-small@2x.png */,
-				FA683B6D19A85EB600CD2FEC /* eye-standard@2x.png */,
-				FA683B6E19A85EB600CD2FEC /* eye-wink@2x.png */,
-			);
-			name = eyes;
-			path = res/eyes;
-			sourceTree = "<group>";
-		};
-		FA683B7019A85EB600CD2FEC /* mouth */ = {
-			isa = PBXGroup;
-			children = (
-				FA683B7119A85EB600CD2FEC /* mouth-bad-reaction@2x.png */,
-				FA683B7219A85EB600CD2FEC /* mouth-frown@2x.png */,
-				FA683B7319A85EB600CD2FEC /* mouth-good-reaction@2x.png */,
-				FA683B7419A85EB600CD2FEC /* mouth-sleep-01@2x.png */,
-				FA683B7519A85EB600CD2FEC /* mouth-sleep-02@2x.png */,
-				FA683B7619A85EB600CD2FEC /* mouth-smile@2x.png */,
-				FA683B7719A85EB600CD2FEC /* mouth-straight@2x.png */,
-			);
-			name = mouth;
-			path = res/mouth;
-			sourceTree = "<group>";
-		};
-		FA683B7819A85EB600CD2FEC /* nose */ = {
-			isa = PBXGroup;
-			children = (
-				FA683B7919A85EB600CD2FEC /* nose@2x.png */,
-			);
-			name = nose;
-			path = res/nose;
-			sourceTree = "<group>";
-		};
-		FA683B8A19A85EBD00CD2FEC /* graphics */ = {
-			isa = PBXGroup;
-			children = (
-				FA683B6619A85EB600CD2FEC /* extras */,
-				FA683B6A19A85EB600CD2FEC /* eyes */,
-				FA683B7019A85EB600CD2FEC /* mouth */,
-				FA683B7819A85EB600CD2FEC /* nose */,
-			);
-			name = graphics;
 			sourceTree = "<group>";
 		};
 		FA683BA519A8608200CD2FEC /* sprite */ = {
@@ -335,11 +365,11 @@
 		FAD9A37019A8337600B7C401 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA077A1419A94EDF00C9CEC3 /* graphics */,
 				05569A3C19A882E4006BD00D /* Icon-60.png */,
 				05569A3D19A882E4006BD00D /* Icon-60@2x.png */,
 				05569A3E19A882E4006BD00D /* Icon-76.png */,
 				05569A3F19A882E4006BD00D /* Icon-76@2x.png */,
-				FA683B8A19A85EBD00CD2FEC /* graphics */,
 				FAD9A37119A8339D00B7C401 /* Donny.xcdatamodeld */,
 				FAD9A37319A8339D00B7C401 /* Images.xcassets */,
 			);
@@ -426,26 +456,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA683B7F19A85EB600CD2FEC /* eye-standard@2x.png in Resources */,
-				FA683B8819A85EB600CD2FEC /* mouth-straight@2x.png in Resources */,
+				FA077A3419A94EDF00C9CEC3 /* eyebrow-positive@2x.png in Resources */,
+				FA077A3C19A94EDF00C9CEC3 /* tear-small@2x.png in Resources */,
+				FA077A3A19A94EDF00C9CEC3 /* rainbow-yellow@2x.png in Resources */,
+				FA077A4919A94EDF00C9CEC3 /* mouth-smile@2x.png in Resources */,
+				FA077A3519A94EDF00C9CEC3 /* eyebrow-sad@2x.png in Resources */,
+				FA077A3819A94EDF00C9CEC3 /* rainbow-purple@2x.png in Resources */,
 				FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */,
-				FA683B7C19A85EB600CD2FEC /* eyebrow-sad@2x.png in Resources */,
-				FA683B8419A85EB600CD2FEC /* mouth-good-reaction@2x.png in Resources */,
+				FA077A4419A94EDF00C9CEC3 /* mouth-happy@2x.png in Resources */,
+				FA077A4719A94EDF00C9CEC3 /* mouth-sleep-01@2x.png in Resources */,
+				FA077A3D19A94EDF00C9CEC3 /* eye-sleep@2x.png in Resources */,
 				05569A4119A882E4006BD00D /* Icon-60@2x.png in Resources */,
-				FA683B7E19A85EB600CD2FEC /* eye-small@2x.png in Resources */,
-				FA683B8919A85EB600CD2FEC /* nose@2x.png in Resources */,
-				FA683B7A19A85EB600CD2FEC /* eyebrow-negative@2x.png in Resources */,
-				FA683B8519A85EB600CD2FEC /* mouth-sleep-01@2x.png in Resources */,
-				FA683B8019A85EB600CD2FEC /* eye-wink@2x.png in Resources */,
-				FA683B7B19A85EB600CD2FEC /* eyebrow-positive@2x.png in Resources */,
-				FA683B8619A85EB600CD2FEC /* mouth-sleep-02@2x.png in Resources */,
-				FA683B7D19A85EB600CD2FEC /* eye-sleep@2x.png in Resources */,
-				FA683B8319A85EB600CD2FEC /* mouth-frown@2x.png in Resources */,
-				FA683B8219A85EB600CD2FEC /* mouth-bad-reaction@2x.png in Resources */,
+				FA077A3E19A94EDF00C9CEC3 /* eye-small@2x.png in Resources */,
+				FA077A4519A94EDF00C9CEC3 /* mouth-sick@2x.png in Resources */,
+				FA077A4119A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png in Resources */,
+				FA077A3F19A94EDF00C9CEC3 /* eye-standard@2x.png in Resources */,
+				FA077A4C19A94EDF00C9CEC3 /* nose@2x.png in Resources */,
 				05569A4219A882E4006BD00D /* Icon-76.png in Resources */,
-				FA683B8719A85EB600CD2FEC /* mouth-smile@2x.png in Resources */,
+				FA077A3319A94EDF00C9CEC3 /* eyebrow-negative@2x.png in Resources */,
+				FA077A4819A94EDF00C9CEC3 /* mouth-sleep-02@2x.png in Resources */,
 				05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */,
+				FA077A4319A94EDF00C9CEC3 /* mouth-good-reaction@2x.png in Resources */,
+				FA077A3B19A94EDF00C9CEC3 /* tear-big@2x.png in Resources */,
+				FA077A4A19A94EDF00C9CEC3 /* mouth-straight@2x.png in Resources */,
+				FA077A3719A94EDF00C9CEC3 /* rainbow-orange@2x.png in Resources */,
+				FA077A3919A94EDF00C9CEC3 /* rainbow-red@2x.png in Resources */,
+				FA077A4B19A94EDF00C9CEC3 /* mouth-vomit@2x.png in Resources */,
+				FA077A3619A94EDF00C9CEC3 /* rainbow-green@2x.png in Resources */,
+				FA077A4219A94EDF00C9CEC3 /* mouth-frown@2x.png in Resources */,
+				FA077A4019A94EDF00C9CEC3 /* eye-wink@2x.png in Resources */,
 				05569A4019A882E4006BD00D /* Icon-60.png in Resources */,
+				FA077A4619A94EDF00C9CEC3 /* mouth-sicker@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,8 +30,4 @@
     return self;
 }
 
-- (void)didEvaluateActions {
-    int debug = 1;
-}
-
 @end

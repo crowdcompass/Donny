@@ -75,6 +75,9 @@
     
     [self.skView presentScene:self.scene];
     [self.scene.creatureNode sleep];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.scene.creatureNode wakeup];
+    });
 }
 
 @end
