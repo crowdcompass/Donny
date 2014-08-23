@@ -20,9 +20,8 @@
     self = [super initWithSize:size];
     
     if (self) {
+        self.scaleMode = SKSceneScaleModeAspectFill;
         _creatureNode = [[DNYCreatureNode alloc] init];
-        _creatureNode.position = CGPointMake(0.f, 0.f);
-        
         [self addChild:_creatureNode];
     }
     
