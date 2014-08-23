@@ -10,4 +10,6 @@
 
 @interface DNYCreatureModel : NSObject
 
+- (void)makeAlive;
+
 @end

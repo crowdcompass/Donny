@@ -7,7 +7,28 @@
 //
 
 #import "DNYCreatureModel.h"
+#import <QuartzCore/QuartzCore.h>
+
+#define kDefaultCreatureLoopRate 30 // 60hz/2, number of frames to pass before next eval
+
+@interface DNYCreatureModel ()
+
+- (void)evaluate;
+
+@end
 
 @implementation DNYCreatureModel
+
+
+- (void)makeAlive {
+    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(evaluate)];
+    displayLink.frameInterval = kDefaultCreatureLoopRate;
+    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+}
+
+- (void)evaluate {
+    
+}
+
 
 @end
