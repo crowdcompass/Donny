@@ -14,6 +14,30 @@
 		FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */; };
 		FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B6019A8569600CD2FEC /* DNYCreatureModel.m */; };
 		FA683B6519A85A3500CD2FEC /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */; };
+		FA683B7A19A85EB600CD2FEC /* eyebrow-negative@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6719A85EB600CD2FEC /* eyebrow-negative@2x.png */; };
+		FA683B7B19A85EB600CD2FEC /* eyebrow-positive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6819A85EB600CD2FEC /* eyebrow-positive@2x.png */; };
+		FA683B7C19A85EB600CD2FEC /* eyebrow-sad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6919A85EB600CD2FEC /* eyebrow-sad@2x.png */; };
+		FA683B7D19A85EB600CD2FEC /* eye-sleep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6B19A85EB600CD2FEC /* eye-sleep@2x.png */; };
+		FA683B7E19A85EB600CD2FEC /* eye-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6C19A85EB600CD2FEC /* eye-small@2x.png */; };
+		FA683B7F19A85EB600CD2FEC /* eye-standard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6D19A85EB600CD2FEC /* eye-standard@2x.png */; };
+		FA683B8019A85EB600CD2FEC /* eye-wink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B6E19A85EB600CD2FEC /* eye-wink@2x.png */; };
+		FA683B8219A85EB600CD2FEC /* mouth-bad-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7119A85EB600CD2FEC /* mouth-bad-reaction@2x.png */; };
+		FA683B8319A85EB600CD2FEC /* mouth-frown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7219A85EB600CD2FEC /* mouth-frown@2x.png */; };
+		FA683B8419A85EB600CD2FEC /* mouth-good-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7319A85EB600CD2FEC /* mouth-good-reaction@2x.png */; };
+		FA683B8519A85EB600CD2FEC /* mouth-sleep-01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7419A85EB600CD2FEC /* mouth-sleep-01@2x.png */; };
+		FA683B8619A85EB600CD2FEC /* mouth-sleep-02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7519A85EB600CD2FEC /* mouth-sleep-02@2x.png */; };
+		FA683B8719A85EB600CD2FEC /* mouth-smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7619A85EB600CD2FEC /* mouth-smile@2x.png */; };
+		FA683B8819A85EB600CD2FEC /* mouth-straight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7719A85EB600CD2FEC /* mouth-straight@2x.png */; };
+		FA683B8919A85EB600CD2FEC /* nose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA683B7919A85EB600CD2FEC /* nose@2x.png */; };
+		FA683B9319A85F3400CD2FEC /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B8B19A85F3400CD2FEC /* Accelerate.framework */; };
+		FA683B9419A85F3400CD2FEC /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B8C19A85F3400CD2FEC /* AssetsLibrary.framework */; };
+		FA683B9519A85F3400CD2FEC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B8D19A85F3400CD2FEC /* AVFoundation.framework */; };
+		FA683B9619A85F3400CD2FEC /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B8E19A85F3400CD2FEC /* AVKit.framework */; };
+		FA683B9719A85F3400CD2FEC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B8F19A85F3400CD2FEC /* CoreData.framework */; };
+		FA683B9819A85F3400CD2FEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B9019A85F3400CD2FEC /* CoreGraphics.framework */; };
+		FA683B9919A85F3400CD2FEC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B9119A85F3400CD2FEC /* CoreImage.framework */; };
+		FA683B9A19A85F3400CD2FEC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B9219A85F3400CD2FEC /* CoreLocation.framework */; };
+		FA683B9C19A85F3C00CD2FEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA683B9B19A85F3C00CD2FEC /* QuartzCore.framework */; };
 		FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9A36E19A8336E00B7C401 /* AppDelegate.m */; };
 		FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAD9A37119A8339D00B7C401 /* Donny.xcdatamodeld */; };
 		FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD9A37319A8339D00B7C401 /* Images.xcassets */; };
@@ -46,6 +70,30 @@
 		FA683B6019A8569600CD2FEC /* DNYCreatureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureModel.m; path = src/DNYCreatureModel.m; sourceTree = SOURCE_ROOT; };
 		FA683B6319A85A3500CD2FEC /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RGB.h"; path = "src/UIColor+RGB.h"; sourceTree = SOURCE_ROOT; };
 		FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+RGB.m"; path = "src/UIColor+RGB.m"; sourceTree = SOURCE_ROOT; };
+		FA683B6719A85EB600CD2FEC /* eyebrow-negative@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-negative@2x.png"; sourceTree = "<group>"; };
+		FA683B6819A85EB600CD2FEC /* eyebrow-positive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-positive@2x.png"; sourceTree = "<group>"; };
+		FA683B6919A85EB600CD2FEC /* eyebrow-sad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-sad@2x.png"; sourceTree = "<group>"; };
+		FA683B6B19A85EB600CD2FEC /* eye-sleep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-sleep@2x.png"; sourceTree = "<group>"; };
+		FA683B6C19A85EB600CD2FEC /* eye-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-small@2x.png"; sourceTree = "<group>"; };
+		FA683B6D19A85EB600CD2FEC /* eye-standard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-standard@2x.png"; sourceTree = "<group>"; };
+		FA683B6E19A85EB600CD2FEC /* eye-wink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-wink@2x.png"; sourceTree = "<group>"; };
+		FA683B7119A85EB600CD2FEC /* mouth-bad-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-bad-reaction@2x.png"; sourceTree = "<group>"; };
+		FA683B7219A85EB600CD2FEC /* mouth-frown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-frown@2x.png"; sourceTree = "<group>"; };
+		FA683B7319A85EB600CD2FEC /* mouth-good-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-good-reaction@2x.png"; sourceTree = "<group>"; };
+		FA683B7419A85EB600CD2FEC /* mouth-sleep-01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-01@2x.png"; sourceTree = "<group>"; };
+		FA683B7519A85EB600CD2FEC /* mouth-sleep-02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-02@2x.png"; sourceTree = "<group>"; };
+		FA683B7619A85EB600CD2FEC /* mouth-smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-smile@2x.png"; sourceTree = "<group>"; };
+		FA683B7719A85EB600CD2FEC /* mouth-straight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-straight@2x.png"; sourceTree = "<group>"; };
+		FA683B7919A85EB600CD2FEC /* nose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nose@2x.png"; sourceTree = "<group>"; };
+		FA683B8B19A85F3400CD2FEC /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		FA683B8C19A85F3400CD2FEC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		FA683B8D19A85F3400CD2FEC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FA683B8E19A85F3400CD2FEC /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		FA683B8F19A85F3400CD2FEC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA683B9019A85F3400CD2FEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA683B9119A85F3400CD2FEC /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		FA683B9219A85F3400CD2FEC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FA683B9B19A85F3C00CD2FEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FAD9A36D19A8336E00B7C401 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		FAD9A36E19A8336E00B7C401 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		FAD9A37219A8339D00B7C401 /* Donny.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Donny.xcdatamodel; sourceTree = "<group>"; };
@@ -57,6 +105,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA683B9C19A85F3C00CD2FEC /* QuartzCore.framework in Frameworks */,
+				FA683B9319A85F3400CD2FEC /* Accelerate.framework in Frameworks */,
+				FA683B9419A85F3400CD2FEC /* AssetsLibrary.framework in Frameworks */,
+				FA683B9519A85F3400CD2FEC /* AVFoundation.framework in Frameworks */,
+				FA683B9619A85F3400CD2FEC /* AVKit.framework in Frameworks */,
+				FA683B9719A85F3400CD2FEC /* CoreData.framework in Frameworks */,
+				FA683B9819A85F3400CD2FEC /* CoreGraphics.framework in Frameworks */,
+				FA683B9919A85F3400CD2FEC /* CoreImage.framework in Frameworks */,
+				FA683B9A19A85F3400CD2FEC /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +167,15 @@
 		0654E1D319A82BE200A5964F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA683B9B19A85F3C00CD2FEC /* QuartzCore.framework */,
+				FA683B8B19A85F3400CD2FEC /* Accelerate.framework */,
+				FA683B8C19A85F3400CD2FEC /* AssetsLibrary.framework */,
+				FA683B8D19A85F3400CD2FEC /* AVFoundation.framework */,
+				FA683B8E19A85F3400CD2FEC /* AVKit.framework */,
+				FA683B8F19A85F3400CD2FEC /* CoreData.framework */,
+				FA683B9019A85F3400CD2FEC /* CoreGraphics.framework */,
+				FA683B9119A85F3400CD2FEC /* CoreImage.framework */,
+				FA683B9219A85F3400CD2FEC /* CoreLocation.framework */,
 				0654E1D419A82BE200A5964F /* Info.plist */,
 				0654E1D519A82BE200A5964F /* main.m */,
 			);
@@ -151,9 +217,68 @@
 			name = categories;
 			sourceTree = "<group>";
 		};
+		FA683B6619A85EB600CD2FEC /* extras */ = {
+			isa = PBXGroup;
+			children = (
+				FA683B6719A85EB600CD2FEC /* eyebrow-negative@2x.png */,
+				FA683B6819A85EB600CD2FEC /* eyebrow-positive@2x.png */,
+				FA683B6919A85EB600CD2FEC /* eyebrow-sad@2x.png */,
+			);
+			name = extras;
+			path = res/extras;
+			sourceTree = "<group>";
+		};
+		FA683B6A19A85EB600CD2FEC /* eyes */ = {
+			isa = PBXGroup;
+			children = (
+				FA683B6B19A85EB600CD2FEC /* eye-sleep@2x.png */,
+				FA683B6C19A85EB600CD2FEC /* eye-small@2x.png */,
+				FA683B6D19A85EB600CD2FEC /* eye-standard@2x.png */,
+				FA683B6E19A85EB600CD2FEC /* eye-wink@2x.png */,
+			);
+			name = eyes;
+			path = res/eyes;
+			sourceTree = "<group>";
+		};
+		FA683B7019A85EB600CD2FEC /* mouth */ = {
+			isa = PBXGroup;
+			children = (
+				FA683B7119A85EB600CD2FEC /* mouth-bad-reaction@2x.png */,
+				FA683B7219A85EB600CD2FEC /* mouth-frown@2x.png */,
+				FA683B7319A85EB600CD2FEC /* mouth-good-reaction@2x.png */,
+				FA683B7419A85EB600CD2FEC /* mouth-sleep-01@2x.png */,
+				FA683B7519A85EB600CD2FEC /* mouth-sleep-02@2x.png */,
+				FA683B7619A85EB600CD2FEC /* mouth-smile@2x.png */,
+				FA683B7719A85EB600CD2FEC /* mouth-straight@2x.png */,
+			);
+			name = mouth;
+			path = res/mouth;
+			sourceTree = "<group>";
+		};
+		FA683B7819A85EB600CD2FEC /* nose */ = {
+			isa = PBXGroup;
+			children = (
+				FA683B7919A85EB600CD2FEC /* nose@2x.png */,
+			);
+			name = nose;
+			path = res/nose;
+			sourceTree = "<group>";
+		};
+		FA683B8A19A85EBD00CD2FEC /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				FA683B6619A85EB600CD2FEC /* extras */,
+				FA683B6A19A85EB600CD2FEC /* eyes */,
+				FA683B7019A85EB600CD2FEC /* mouth */,
+				FA683B7819A85EB600CD2FEC /* nose */,
+			);
+			name = graphics;
+			sourceTree = "<group>";
+		};
 		FAD9A37019A8337600B7C401 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA683B8A19A85EBD00CD2FEC /* graphics */,
 				FAD9A37119A8339D00B7C401 /* Donny.xcdatamodeld */,
 				FAD9A37319A8339D00B7C401 /* Images.xcassets */,
 			);
@@ -241,7 +366,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA683B7F19A85EB600CD2FEC /* eye-standard@2x.png in Resources */,
+				FA683B8819A85EB600CD2FEC /* mouth-straight@2x.png in Resources */,
 				FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */,
+				FA683B7C19A85EB600CD2FEC /* eyebrow-sad@2x.png in Resources */,
+				FA683B8419A85EB600CD2FEC /* mouth-good-reaction@2x.png in Resources */,
+				FA683B7E19A85EB600CD2FEC /* eye-small@2x.png in Resources */,
+				FA683B8919A85EB600CD2FEC /* nose@2x.png in Resources */,
+				FA683B7A19A85EB600CD2FEC /* eyebrow-negative@2x.png in Resources */,
+				FA683B8519A85EB600CD2FEC /* mouth-sleep-01@2x.png in Resources */,
+				FA683B8019A85EB600CD2FEC /* eye-wink@2x.png in Resources */,
+				FA683B7B19A85EB600CD2FEC /* eyebrow-positive@2x.png in Resources */,
+				FA683B8619A85EB600CD2FEC /* mouth-sleep-02@2x.png in Resources */,
+				FA683B7D19A85EB600CD2FEC /* eye-sleep@2x.png in Resources */,
+				FA683B8319A85EB600CD2FEC /* mouth-frown@2x.png in Resources */,
+				FA683B8219A85EB600CD2FEC /* mouth-bad-reaction@2x.png in Resources */,
+				FA683B8719A85EB600CD2FEC /* mouth-smile@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
