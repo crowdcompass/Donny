@@ -12,6 +12,7 @@
 		05569A4119A882E4006BD00D /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3D19A882E4006BD00D /* Icon-60@2x.png */; };
 		05569A4219A882E4006BD00D /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3E19A882E4006BD00D /* Icon-76.png */; };
 		05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3F19A882E4006BD00D /* Icon-76@2x.png */; };
+		05569A4919A93F92006BD00D /* DNYMotionInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05569A4819A93F92006BD00D /* DNYMotionInteraction.m */; };
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
@@ -72,6 +73,8 @@
 		05569A3D19A882E4006BD00D /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		05569A3E19A882E4006BD00D /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
 		05569A3F19A882E4006BD00D /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		05569A4719A93F92006BD00D /* DNYMotionInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYMotionInteraction.h; sourceTree = "<group>"; };
+		05569A4819A93F92006BD00D /* DNYMotionInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYMotionInteraction.m; sourceTree = "<group>"; };
 		0654E1D019A82BE200A5964F /* Donny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0654E1D419A82BE200A5964F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0654E1D519A82BE200A5964F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 		0654E1FD19A85DFA00A5964F /* Interactions */ = {
 			isa = PBXGroup;
 			children = (
+				05569A4719A93F92006BD00D /* DNYMotionInteraction.h */,
+				05569A4819A93F92006BD00D /* DNYMotionInteraction.m */,
 				0654E1FE19A85E0700A5964F /* DNYInteraction.h */,
 				0654E1FF19A85E0700A5964F /* DNYInteraction.m */,
 				05569A2919A85E6D006BD00D /* DNYFaceInteraction.h */,
@@ -464,6 +469,7 @@
 				0654E1D619A82BE200A5964F /* main.m in Sources */,
 				FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */,
 				FA683B6519A85A3500CD2FEC /* UIColor+RGB.m in Sources */,
+				05569A4919A93F92006BD00D /* DNYMotionInteraction.m in Sources */,
 				FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */,
 				FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */,
 				FA683BA819A860D600CD2FEC /* DNYScene.m in Sources */,
