@@ -8,6 +8,25 @@
 
 #import "DNYScene.h"
 
+#import "DNYCreatureNode.h"
+
+@interface DNYScene()
+
+@end
+
 @implementation DNYScene
+
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        _creatureNode = [[DNYCreatureNode alloc] init];
+        _creatureNode.position = CGPointMake(0.f, 0.f);
+        
+        [self addChild:_creatureNode];
+    }
+    
+    return self;
+}
 
 @end
