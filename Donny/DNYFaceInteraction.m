@@ -136,8 +136,8 @@
         [[self.videoDataOutput connectionWithMediaType:AVMediaTypeVideo] setEnabled:YES];
 
         self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
-        self.previewLayer.frame = self.creature.controller.view.frame;
-        [self.creature.controller.view.layer addSublayer:self.previewLayer];
+//        self.previewLayer.frame = self.creature.controller.view.frame;
+//        [self.creature.controller.view.layer addSublayer:self.previewLayer];
         [session startRunning];
         
     }
