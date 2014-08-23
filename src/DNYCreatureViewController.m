@@ -40,7 +40,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.skView = (SKView *)self.view;
+    SKView *view = [[SKView alloc] initWithFrame:CGRectMake(0.f, 0.f, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
+    [self.view addSubview:view];
+    self.skView = view;
     self.skView.backgroundColor = [SKColor whiteColor];
     
     self.faceInteraction = [[DNYFaceInteraction alloc] initWithCreature:self.creatureModel];

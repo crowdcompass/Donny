@@ -16,8 +16,8 @@
 
 @implementation DNYScene
 
-- (instancetype)init {
-    self = [super init];
+- (instancetype)initWithSize:(CGSize)size {
+    self = [super initWithSize:size];
     
     if (self) {
         _creatureNode = [[DNYCreatureNode alloc] init];
