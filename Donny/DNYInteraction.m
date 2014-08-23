@@ -10,4 +10,13 @@
 
 @implementation DNYInteraction
 
+- (instancetype)initWithCreature:(DNYCreatureModel *)creature {
+    self = [super init];
+    if (self) {
+        _creature = creature;
+    }
+
+    return  self;
+}
+
 @end

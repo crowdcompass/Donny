@@ -27,8 +27,8 @@
 
 @implementation DNYFaceInteraction
 
-- (instancetype)init {
-    self = [super init];
+- (instancetype)initWithCreature:(DNYCreatureModel *)creature {
+    self = [super initWithCreature:creature];
     if (self) {
         [self setupAVCapture];
         NSDictionary *detectorOptions = [[NSDictionary alloc] initWithObjectsAndKeys:CIDetectorAccuracyLow, CIDetectorAccuracy, nil];

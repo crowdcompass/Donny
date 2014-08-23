@@ -13,4 +13,6 @@
 
 @property DNYCreatureModel* creature;
 
+- (instancetype)initWithCreature:(DNYCreatureModel *)creature;
+
 @end
