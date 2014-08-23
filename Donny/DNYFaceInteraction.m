@@ -12,6 +12,20 @@
 #import <AssertMacros.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
+@interface DNYCreatureModel (DNYFaceInteractionBehavior)
+
+-(void) dny_setLeftEyeWink;
+
+@end
+
+@implementation DNYCreatureModel (DNYFaceInteractionBehavior)
+
+-(void) dny_setLeftEyeWink
+{
+    NSLog(@"Left eye closed");
+}
+
+@end
 
 @interface DNYFaceInteraction() 
 
@@ -34,7 +48,7 @@
         NSDictionary *detectorOptions = [[NSDictionary alloc] initWithObjectsAndKeys:CIDetectorAccuracyLow, CIDetectorAccuracy, nil];
         _faceDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:detectorOptions];
     }
-    return  self;
+    return self;
 }
 
 - (void)setupAVCapture
@@ -132,7 +146,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                                                    options:imageOptions];
 
     for (CIFaceFeature *ff in features) {
-        NSLog(@"Left eye closed: %i", ff.leftEyeClosed);
+        if ( ff.leftEyeClosed ) {
+            [self.creature dny_setLeftEyeWink];
+        }
     }
 }
 
