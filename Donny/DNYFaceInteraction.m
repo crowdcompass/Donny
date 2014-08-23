@@ -152,7 +152,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
     NSDictionary *imageOptions = nil;
 
-    imageOptions = @{CIDetectorImageOrientation:[self exifOrientation:curDeviceOrientation], CIDetectorEyeBlink: @(YES)};
+    imageOptions = @{CIDetectorImageOrientation:[self exifOrientation:curDeviceOrientation], CIDetectorEyeBlink: @(YES), CIDetectorSmile: @(YES)};
 
     NSArray *features = [self.faceDetector featuresInImage:ciImage
                                                    options:imageOptions];
