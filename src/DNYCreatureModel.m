@@ -25,6 +25,13 @@
 
 NSString *const kSoundBeepoo                    = @"31867_HardPCM_Chip030";
 
+NSString *const kSoundBoo = @"boo";
+NSString *const kSoundGettingSick = @"getting_sick";
+NSString *const kSoundPleaseStop = @"please_stop";
+NSString *const kSoundTasty = @"tasty";
+NSString *const kSoundThatSmell = @"that_smell";
+NSString *const kSoundYay = @"yay";
+
 NSString *const kUserDefaultKeyHappiness        = @"happiness";
 
 
@@ -38,7 +45,6 @@ NSString *const kUserDefaultKeyHappiness        = @"happiness";
 - (void)makeNeglected;
 - (void)settleMoodSince:(NSTimeInterval)duration;
 
-- (void)playSoundWithName:(NSString *)filename;
 - (void)makeTalkWithText:(NSString *)text;
 
 - (void)updateLastInteractionTime;
@@ -209,7 +215,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     if (shoudlReact) {
         if (sick) { [self.creatureNode reactPositivelySick]; }
         else { [self.creatureNode reactPositively]; }
-        [self playSoundWithName:@"fx-good"];
+        [self playAifSoundWithName:@"yay"];
     }
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -233,7 +239,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
         if (sick) { [self.creatureNode reactNegativelySick]; }
         else { [self.creatureNode reactNegatively]; }
         
-        [self playSoundWithName:@"fx-bad"];
+        [self playAifSoundWithName:@"boo"];
     }
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -311,6 +317,14 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 //    player.volume = 1.0;
 //    [player prepareToPlay];
 //    [player play];
+}
+
+- (void)playAifSoundWithName:(NSString *)filename {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"aif"];
+    NSURL *fileUrl = [NSURL URLWithString:filePath];
+    SystemSoundID soundId;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileUrl, &soundId);
+    AudioServicesPlaySystemSound(soundId);
 }
 
 - (void)makeTalkWithText:(NSString *)text {

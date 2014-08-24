@@ -57,6 +57,9 @@ extern NSString *const kUserDefaultKeyHappiness;
 
 - (void)vibrate;
 - (void)vibrateChuckle;
+- (void)playSoundWithName:(NSString *)filename;
+- (void)playAifSoundWithName:(NSString *)filename;
+- (void)happinessDidChange:(NSInteger)newHappy;
 
 - (BOOL)isSleeping;
 - (BOOL)isAwake;

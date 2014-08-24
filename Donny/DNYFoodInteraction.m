@@ -32,6 +32,7 @@
         NSLog(@"YUM CHICKEN");
         [self increaseHappinessWithReaction:YES withSickness:NO];
         self.lastFedAt = [NSDate date];
+        [self playAifSoundWithName:@"tasty"];
     } else {
         NSLog(@"NO THANKS I'M FULL");
     }
