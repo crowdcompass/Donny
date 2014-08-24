@@ -104,7 +104,9 @@ static const float kDropShadowYOffset = 8.f;
 }
 
 - (void)displayFaceForHappiness:(NSInteger)happiness {
-    [self setCreatureColorForHappiness:happiness];
+    //set background color
+    self.scene.backgroundColor = [self creatureColorForHappiness:happiness];
+
     switch (happiness) {
         case -3:
             [self normalMinus3];
@@ -206,7 +208,8 @@ static const float kDropShadowYOffset = 8.f;
     [self eyesStandard];
     [self mouthSmile];
 
-    [self runAction:[self flashAction]];
+    [self runAction:[self flashActionFromColor:[SKColor colorWithRed:152/255.f green:255/255.f blue:164/255.f alpha:1]
+                                       toColor:[SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1]]];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self blink:2];
@@ -216,6 +219,8 @@ static const float kDropShadowYOffset = 8.f;
 - (void)reactPositively {
     [self removeAllActions];
 
+    [self runAction:[self flashActionFromColor:[SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1]
+                                       toColor:[SKColor colorWithRed:152/225.f green:255/255.f blue:164/255.f alpha:1]]];
     [self eyebrowsPositive];
     [self eyesWink];
     [self mouthGood];
@@ -224,6 +229,8 @@ static const float kDropShadowYOffset = 8.f;
 - (void)reactNegatively {
     [self removeAllActions];
 
+    [self runAction:[self flashActionFromColor:[SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1]
+                                       toColor:[SKColor colorWithRed:255/255.f green:152/255.f blue:164/255.f alpha:1]]];
     [self eyebrowsNegative];
     [self eyesSmall];
     [self mouthBad];
@@ -456,41 +463,40 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
 }
 
 //Action Helpers
-- (SKAction *)flashAction {
+- (SKAction *)flashActionFromColor:(SKColor *)fromColor toColor:(SKColor *)toColor {
     //Background flash
-    SKColor *goodColor = [SKColor colorWithRed:152/255.f green:255/255.f blue:164/255.f alpha:1];
-    SKColor *normalColor = [SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1];
     SKAction *flashAction = [SKAction sequence:@[[SKAction repeatAction:[SKAction sequence:@[[SKAction runBlock:^{
-        self.scene.backgroundColor = goodColor;
+        self.scene.backgroundColor = fromColor;
     }], [SKAction waitForDuration:0.1], [SKAction runBlock:^{
-        self.scene.backgroundColor = normalColor;
+        self.scene.backgroundColor = toColor;
     }], [SKAction waitForDuration:0.1]]] count:2]]];
 
     return flashAction;
 }
 
-- (void)setCreatureColorForHappiness:(NSInteger)happiness {
+- (SKColor *)creatureColorForHappiness:(NSInteger)happiness {
+    SKColor *color;
     switch (happiness) {
         case -3:
-            self.scene.backgroundColor = [SKColor colorWithRed:255/255.f green:152/255.f blue:152/255.f alpha:1];
+            color = [SKColor colorWithRed:255/255.f green:152/255.f blue:152/255.f alpha:1];
             break;
         case -2:
-            self.scene.backgroundColor = [SKColor colorWithRed:237/255.f green:168/255.f blue:186/255.f alpha:1];
+            color = [SKColor colorWithRed:237/255.f green:168/255.f blue:186/255.f alpha:1];
             break;
         case -1:
-            self.scene.backgroundColor = [SKColor colorWithRed:220/255.f green:185/255.f blue:220/255.f alpha:1];
+            color = [SKColor colorWithRed:220/255.f green:185/255.f blue:220/255.f alpha:1];
             break;
         case 0:
-            self.scene.backgroundColor = [SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1];
+            color = [SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1];
             break;
         case 1:
-            self.scene.backgroundColor = [SKColor colorWithRed:163/255.f green:202/255.f blue:252/255.f alpha:1];
+            color = [SKColor colorWithRed:163/255.f green:202/255.f blue:252/255.f alpha:1];
             break;
         case 2:
-            self.scene.backgroundColor = [SKColor colorWithRed:123/255.f green:202/255.f blue:250/255.f alpha:1];
+            color = [SKColor colorWithRed:123/255.f green:202/255.f blue:250/255.f alpha:1];
             break;
         case 3:
-            self.scene.backgroundColor = [SKColor colorWithRed:123/255.f green:202/255.f blue:248/255.f alpha:1];
+            color = [SKColor colorWithRed:123/255.f green:202/255.f blue:248/255.f alpha:1];
             break;
         case 4:
             //Crazy rainbow vomit
@@ -499,6 +505,7 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
             //??
             break;
     }
+    return color;
 }
 
 @end

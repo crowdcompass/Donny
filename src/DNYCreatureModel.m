@@ -187,23 +187,28 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     if (!self.isAwake) return;
 
     NSLog(@":) happier");
-    NSNumber *newHappiness = self.happiness <= 3 ? @(self.happiness + 1) : @(3);
+    NSNumber *newHappiness = self.happiness < 3 ? @(self.happiness + 1) : @(3);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.creatureNode reactPositively];
-    [self happinessDidChange:newHappiness.integerValue];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self happinessDidChange:newHappiness.integerValue];
+    });
 }
 
 - (void)decreaseHappiness {
     if (!self.isAwake) return;
     NSLog(@":( unhappier");
-    NSNumber *newHappiness = self.happiness >= -3 ? @(self.happiness - 1) : @(-3);
+    NSNumber *newHappiness = self.happiness > -3 ? @(self.happiness - 1) : @(-3);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.creatureNode reactNegatively];
-    [self happinessDidChange:newHappiness.integerValue];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self happinessDidChange:newHappiness.integerValue];
+    });
 }
 
 - (void)happinessDidChange:(NSInteger)newHappy {
