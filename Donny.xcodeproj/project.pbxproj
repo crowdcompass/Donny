@@ -12,7 +12,6 @@
 		05569A4119A882E4006BD00D /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3D19A882E4006BD00D /* Icon-60@2x.png */; };
 		05569A4219A882E4006BD00D /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3E19A882E4006BD00D /* Icon-76.png */; };
 		05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3F19A882E4006BD00D /* Icon-76@2x.png */; };
-		05569A4919A93F92006BD00D /* DNYMotionInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05569A4819A93F92006BD00D /* DNYMotionInteraction.m */; };
 		0567920B19A969DB00F478EF /* DNYSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567920A19A969DB00F478EF /* DNYSpriteNode.m */; };
 		064B65C219A992D800AE2180 /* NSIndexPath+CGPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 064B65C119A992D800AE2180 /* NSIndexPath+CGPoint.m */; };
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
@@ -24,6 +23,10 @@
 		5ADE03DA19A9BBB300F8F426 /* DNYTickleGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE03D919A9BBB300F8F426 /* DNYTickleGestureRecognizer.m */; };
 		5ADE03DC19A9C23200F8F426 /* ecs_fx_12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03DB19A9C23200F8F426 /* ecs_fx_12.wav */; };
 		5ADE03DE19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03DD19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav */; };
+		5AE708A019A9CDB200FB6307 /* DNYPetInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7089F19A9CDB200FB6307 /* DNYPetInteraction.m */; };
+		5AE708A719A9CDCB00FB6307 /* DNYProximitySensorInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE708A219A9CDCB00FB6307 /* DNYProximitySensorInteraction.m */; };
+		5AE708A819A9CDCB00FB6307 /* DNYVomitNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE708A419A9CDCB00FB6307 /* DNYVomitNode.m */; };
+		5AE708A919A9CDCB00FB6307 /* DNYMotionInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE708A619A9CDCB00FB6307 /* DNYMotionInteraction.m */; };
 		FA00A40719A9757C00E81740 /* LSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FA19A9757C00E81740 /* LSEvent.m */; };
 		FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FC19A9757C00E81740 /* LSStateMachine.m */; };
 		FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */; };
@@ -98,8 +101,6 @@
 		05569A3D19A882E4006BD00D /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		05569A3E19A882E4006BD00D /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
 		05569A3F19A882E4006BD00D /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
-		05569A4719A93F92006BD00D /* DNYMotionInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYMotionInteraction.h; sourceTree = "<group>"; };
-		05569A4819A93F92006BD00D /* DNYMotionInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYMotionInteraction.m; sourceTree = "<group>"; };
 		0567920919A969DB00F478EF /* DNYSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYSpriteNode.h; path = src/DNYSpriteNode.h; sourceTree = SOURCE_ROOT; };
 		0567920A19A969DB00F478EF /* DNYSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYSpriteNode.m; path = src/DNYSpriteNode.m; sourceTree = SOURCE_ROOT; };
 		064B65C019A992D800AE2180 /* NSIndexPath+CGPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+CGPoint.h"; sourceTree = "<group>"; };
@@ -120,6 +121,14 @@
 		5ADE03D919A9BBB300F8F426 /* DNYTickleGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYTickleGestureRecognizer.m; path = src/DNYTickleGestureRecognizer.m; sourceTree = SOURCE_ROOT; };
 		5ADE03DB19A9C23200F8F426 /* ecs_fx_12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ecs_fx_12.wav; sourceTree = "<group>"; };
 		5ADE03DD19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 31867_HardPCM_Chip030.wav; sourceTree = "<group>"; };
+		5AE7089E19A9CDB200FB6307 /* DNYPetInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYPetInteraction.h; sourceTree = "<group>"; };
+		5AE7089F19A9CDB200FB6307 /* DNYPetInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYPetInteraction.m; sourceTree = "<group>"; };
+		5AE708A119A9CDCB00FB6307 /* DNYProximitySensorInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYProximitySensorInteraction.h; path = src/DNYProximitySensorInteraction.h; sourceTree = SOURCE_ROOT; };
+		5AE708A219A9CDCB00FB6307 /* DNYProximitySensorInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYProximitySensorInteraction.m; path = src/DNYProximitySensorInteraction.m; sourceTree = SOURCE_ROOT; };
+		5AE708A319A9CDCB00FB6307 /* DNYVomitNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYVomitNode.h; path = src/DNYVomitNode.h; sourceTree = SOURCE_ROOT; };
+		5AE708A419A9CDCB00FB6307 /* DNYVomitNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYVomitNode.m; path = src/DNYVomitNode.m; sourceTree = SOURCE_ROOT; };
+		5AE708A519A9CDCB00FB6307 /* DNYMotionInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYMotionInteraction.h; path = src/DNYMotionInteraction.h; sourceTree = SOURCE_ROOT; };
+		5AE708A619A9CDCB00FB6307 /* DNYMotionInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYMotionInteraction.m; path = src/DNYMotionInteraction.m; sourceTree = SOURCE_ROOT; };
 		FA00A3F919A9757C00E81740 /* LSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSEvent.h; path = StateMachine/LSEvent.h; sourceTree = "<group>"; };
 		FA00A3FA19A9757C00E81740 /* LSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSEvent.m; path = StateMachine/LSEvent.m; sourceTree = "<group>"; };
 		FA00A3FB19A9757C00E81740 /* LSStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachine.h; path = StateMachine/LSStateMachine.h; sourceTree = "<group>"; };
@@ -310,10 +319,16 @@
 		0654E1FD19A85DFA00A5964F /* Interactions */ = {
 			isa = PBXGroup;
 			children = (
+				5AE708A119A9CDCB00FB6307 /* DNYProximitySensorInteraction.h */,
+				5AE708A219A9CDCB00FB6307 /* DNYProximitySensorInteraction.m */,
+				5AE708A319A9CDCB00FB6307 /* DNYVomitNode.h */,
+				5AE708A419A9CDCB00FB6307 /* DNYVomitNode.m */,
+				5AE708A519A9CDCB00FB6307 /* DNYMotionInteraction.h */,
+				5AE708A619A9CDCB00FB6307 /* DNYMotionInteraction.m */,
+				5AE7089E19A9CDB200FB6307 /* DNYPetInteraction.h */,
+				5AE7089F19A9CDB200FB6307 /* DNYPetInteraction.m */,
 				FA077A5019A974CA00C9CEC3 /* DNYFoodInteraction.h */,
 				FA077A5119A974CA00C9CEC3 /* DNYFoodInteraction.m */,
-				05569A4719A93F92006BD00D /* DNYMotionInteraction.h */,
-				05569A4819A93F92006BD00D /* DNYMotionInteraction.m */,
 				0654E1FE19A85E0700A5964F /* DNYInteraction.h */,
 				0654E1FF19A85E0700A5964F /* DNYInteraction.m */,
 				05569A2919A85E6D006BD00D /* DNYFaceInteraction.h */,
@@ -606,9 +621,11 @@
 				FA00A40B19A9757C00E81740 /* NSString+Capitalize.m in Sources */,
 				0654E1D619A82BE200A5964F /* main.m in Sources */,
 				FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */,
+				5AE708A019A9CDB200FB6307 /* DNYPetInteraction.m in Sources */,
 				FA683B6519A85A3500CD2FEC /* UIColor+RGB.m in Sources */,
-				05569A4919A93F92006BD00D /* DNYMotionInteraction.m in Sources */,
+				5AE708A719A9CDCB00FB6307 /* DNYProximitySensorInteraction.m in Sources */,
 				0567920B19A969DB00F478EF /* DNYSpriteNode.m in Sources */,
+				5AE708A919A9CDCB00FB6307 /* DNYMotionInteraction.m in Sources */,
 				FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */,
 				FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */,
 				FA683BA819A860D600CD2FEC /* DNYScene.m in Sources */,
@@ -619,6 +636,7 @@
 				FA00A40A19A9757C00E81740 /* LSTransition.m in Sources */,
 				FA077A4F19A9607F00C9CEC3 /* NSIndexPath+CGVector.m in Sources */,
 				FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */,
+				5AE708A819A9CDCB00FB6307 /* DNYVomitNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
