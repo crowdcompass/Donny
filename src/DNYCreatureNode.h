@@ -38,6 +38,7 @@
 - (void)rightEyeWink;
 - (void)leftEyeWink:(NSUInteger)count withDuration:(NSTimeInterval) duration;
 - (void)rightEyeWink:(NSUInteger)count withDuration:(NSTimeInterval) duration;
+- (void)bounceEyebrows;
 - (void)reactPositively;
 - (void)reactNegatively;
 - (void)displayFaceForHappiness:(NSInteger)happiness;

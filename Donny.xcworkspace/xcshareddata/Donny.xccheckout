@@ -12,8 +12,6 @@
 	<dict>
 		<key>108AE693D204D03B58DB75F92F0D2427D2DBDE8C</key>
 		<string>bitbucket.org:beancuke/donny.git</string>
-		<key>86B9536FA761B4177A474218F24679761939929B</key>
-		<string>https://github.com/luisobo/StateMachine.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Donny.xcworkspace</string>
@@ -21,8 +19,6 @@
 	<dict>
 		<key>108AE693D204D03B58DB75F92F0D2427D2DBDE8C</key>
 		<string>..</string>
-		<key>86B9536FA761B4177A474218F24679761939929B</key>
-		<string>../../StateMachine</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>bitbucket.org:beancuke/donny.git</string>
@@ -39,14 +35,6 @@
 			<string>108AE693D204D03B58DB75F92F0D2427D2DBDE8C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Donny</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>86B9536FA761B4177A474218F24679761939929B</string>
-			<key>IDESourceControlWCCName</key>
-			<string>StateMachine</string>
 		</dict>
 	</array>
 </dict>

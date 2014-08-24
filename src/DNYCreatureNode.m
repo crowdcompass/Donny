@@ -162,6 +162,21 @@ static const float kDropShadowYOffset = 8.f;
     [self.rightEye runAction:actionGroup];
 }
 
+- (void)bounceEyebrows
+{
+    SKTexture *currentEyebrowTexture = [self.leftEyeBrow.texture copy];
+    SKTexture *raisedEyebrowTexture = [SKTexture textureWithImageNamed:@"eyebrow-positive"];
+    SKAction *bounceAction = [SKAction setTexture:raisedEyebrowTexture resize:YES];
+    SKAction *raiseAction = [SKAction moveByX:0.0 y:20.0 duration:.1];
+    SKAction *lowerAction = [SKAction moveByX:0.0 y:-20.0 duration:.1];
+    SKAction *undoBounceAction = [SKAction setTexture:currentEyebrowTexture resize:YES];
+    SKAction *bounce = [SKAction sequence:@[ bounceAction, raiseAction, lowerAction, undoBounceAction]];
+
+    [self.leftEyeBrow runAction:bounce];
+    [self.rightEyeBrow runAction:bounce];
+    
+}
+
 - (void)displayFaceForHappiness:(NSInteger)happiness {
     //set background color
     self.scene.backgroundColor = [self creatureColorForHappiness:happiness];

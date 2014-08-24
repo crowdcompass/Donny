@@ -264,6 +264,16 @@ STATE_MACHINE(^(LSStateMachine * sm) {
         NSLog(@"Time interval %f", lastSeen);
         [self makeNeglected];
     }
+    
+    if (rint(fmod([[NSDate date] timeIntervalSince1970], 11)) == 0 || rint(fmod([[NSDate date] timeIntervalSince1970], 7)) == 0) {
+        if (arc4random_uniform(2) == 0) {
+            NSLog(@"blink");
+            [self.creatureNode blink:1];
+        } else if (arc4random_uniform(2) == 0) {
+            NSLog(@"bounce");
+            [self.creatureNode bounceEyebrows];
+        }
+    }
 }
 
 
