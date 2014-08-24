@@ -43,7 +43,7 @@
 -(void) dny_FaceInteractionTrackFacePosition:(CGPoint)coord
 {
     NSIndexPath *path = [NSIndexPath fromPoint:coord];
-    NSLog(@"Looking at %@", path);
+//    NSLog(@"Looking at %@", path);
     [self.creatureNode lookAt:path];
 }
 

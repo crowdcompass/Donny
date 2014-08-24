@@ -432,7 +432,7 @@ static const float kDropShadowYOffset = 8.f;
              @"Over the line, Donny!");
     
     CGVector baseVector = [self.lookingAt vectorTo:path];
-    CGVector moveEyesBy = scaleVectorBy(baseVector, 6.f);
+    CGVector moveEyesBy = scaleVectorBy(baseVector, 9.f);
     CGVector moveBy = scaleVectorBy(baseVector, 3.f);
     
     SKAction *moveEyeAction = [SKAction moveBy:moveEyesBy duration:.33];
