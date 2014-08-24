@@ -18,6 +18,8 @@
 #define kDefaultCreatureTimerSeconds 0.5
 #define kNeglectInterval 20 // seconds that define being neglected
 
+NSString *const kUserDefaultKeyHappiness        = @"happiness";
+
 @interface DNYCreatureModel ()
 
 @property (nonatomic, strong) NSDate *lastInteraction;
@@ -51,7 +53,6 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [sm addState:@"terminated"];
     [sm addState:@"vibrating"];
     
-    
     [sm when:@"sleep" transitionFrom:@"sleeping" to:@"sleeping"];
     [sm when:@"sleep" transitionFrom:@"awake" to:@"sleeping"];
     [sm when:@"wake" transitionFrom:@"sleeping" to:@"awake"];
@@ -63,7 +64,6 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [sm when:@"vibrate" transitionFrom:@"awake" to:@"vibrating"];
     [sm when:@"vibrateChuckle" transitionFrom:@"awake" to:@"vibrating"];
     [sm when:@"makeStopVibrating" transitionFrom:@"vibrating" to:@"awake"];
-    
     
     [sm after:@"sleep" do:^(DNYCreatureModel *creature) {
         [creature makeAsleep];
@@ -79,7 +79,6 @@ STATE_MACHINE(^(LSStateMachine * sm) {
         [creature makeVibrateChuckle];
         [creature makeStopVibrating];
     }];
-    
 })
 
 - (id)init {
@@ -172,6 +171,22 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 
 - (void)updateLastInteractionTime {
     self.lastInteraction = [NSDate date];
+}
+
+- (void)increaseHappiness {
+    NSNumber *newHappiness = @(self.happiness + 1);
+    [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)decreaseHappiness {
+    NSNumber *newHappiness = @(self.happiness - 1);
+    [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSInteger)happiness {
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultKeyHappiness] integerValue];
 }
 
 //////////////////////////////////////////////////////////////////////

@@ -10,6 +10,8 @@
 #import "StateMachine.h"
 #import "DNYCreatureNode.h"
 
+extern NSString *const kUserDefaultKeyHappiness;
+
 @class DNYCreatureViewController;
 
 @interface DNYCreatureModel : NSObject
@@ -18,6 +20,8 @@
 @property (nonatomic, retain) NSString *state; // Property managed by StateMachine
 @property (nonatomic, retain) NSDate *terminatedAt;
 @property (nonatomic, strong) NSArray *interactions;
+
+@property (assign, nonatomic, readonly) NSInteger happiness;
 
 @property (nonatomic, weak) DNYCreatureNode *creatureNode;
 
@@ -35,6 +39,9 @@
 - (BOOL)suspend;
 - (BOOL)unsuspend;
 - (BOOL)terminate;
+
+- (void)increaseHappiness;
+- (void)decreaseHappiness;
 
 - (BOOL)isSleeping;
 - (BOOL)isAwake;
