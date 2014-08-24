@@ -52,6 +52,7 @@
     
     if (self) {
         _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
         [_locationManager requestAlwaysAuthorization];
         
         _delegates = [NSMutableDictionary dictionary];
@@ -85,8 +86,6 @@
             self.delegates[uuid] = [NSMutableSet setWithObject:container];
         }
     }
-    
-    int debug = 1;
 }
 
 #pragma mark - CLLocationDelegate
@@ -104,7 +103,7 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error {
-    int debug = 1;
+    NSLog(@"!---------BAD THINGS IN DNYLocationManager--------!");
 }
 
 @end
