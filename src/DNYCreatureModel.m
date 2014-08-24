@@ -192,6 +192,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.creatureNode reactPositively];
+    [self playSoundWithName:@"fx-good"];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self happinessDidChange:newHappiness.integerValue];
@@ -206,6 +207,8 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.creatureNode reactNegatively];
+    [self playSoundWithName:@"fx-bad"];
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self happinessDidChange:newHappiness.integerValue];
     });
