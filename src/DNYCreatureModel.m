@@ -18,9 +18,12 @@
 #define kDefaultCreatureTimerSeconds 0.5
 #define kNeglectInterval 20 // seconds that define being neglected
 
+#define kSoundBeepoo @"beepoo"
+
 @interface DNYCreatureModel ()
 
 @property (nonatomic, strong) NSDate *lastInteraction;
+@property (nonatomic, strong) AVSpeechSynthesizer *synth;
 
 - (void)makeAwake;
 - (void)makeAsleep;
@@ -28,6 +31,9 @@
 - (void)makeVibrateChuckle;
 - (void)makeStopVibrating;
 - (void)makeNeglected;
+
+- (void)playSoundWithName:(NSString *)filename;
+- (void)makeTalkWithText:(NSString *)text;
 
 - (void)updateLastInteractionTime;
 - (void)evaluate;
@@ -87,6 +93,9 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     if (self) {
         [self initializeStateMachine];
         [self setupInteractions];
+        self.synth = [AVSpeechSynthesizer new];
+        NSLog(@"%@", [AVSpeechSynthesisVoice speechVoices]);
+        self.synth.delegate = self;
     }
     return self;
 }
@@ -116,6 +125,14 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.creatureNode wakeup];
     });
+    
+    NSError *error = nil;
+    if(![[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error]){
+        NSLog(@"%@", error);
+    }
+    
+//    [self playSoundWithName:kSoundBeepoo];
+    [self makeTalkWithText:@"Donny is awake. Let's play"];
     [self updateLastInteractionTime];
 }
 
@@ -188,5 +205,29 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     }
 }
 
+
+//////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Helpers
+
+- (void)playSoundWithName:(NSString *)filename {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"aif"];
+    NSURL *fileUrl = [NSURL URLWithString:filePath];
+    SystemSoundID soundId;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileUrl, &soundId);
+    AudioServicesPlaySystemSound(soundId);
+}
+
+- (void)makeTalkWithText:(NSString *)text {
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:text];
+    utterance.rate = 0.3;
+    utterance.pitchMultiplier = 0.5;
+    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
+    [self.synth speakUtterance:utterance];
+//    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"fr-CA"];
+//    [self.synth speakUtterance:utterance];
+//    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
+//    [self.synth speakUtterance:utterance];
+}
 
 @end

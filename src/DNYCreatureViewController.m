@@ -76,8 +76,8 @@
 #pragma mark - DNYCreatureViewController
 
 - (void)setupSpriteKit {
-    self.skView.showsFPS = YES;
-    self.skView.showsNodeCount = YES;
+    self.skView.showsFPS = NO;
+    self.skView.showsNodeCount = NO;
     
     self.scene = [[DNYScene alloc] initWithSize:self.skView.bounds.size];
     

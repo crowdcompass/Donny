@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 #import "StateMachine.h"
 #import "DNYCreatureNode.h"
 
 @class DNYCreatureViewController;
 
-@interface DNYCreatureModel : NSObject
+@interface DNYCreatureModel : NSObject <AVSpeechSynthesizerDelegate>
 
 @property (weak, nonatomic) DNYCreatureViewController *controller;
 @property (nonatomic, retain) NSString *state; // Property managed by StateMachine

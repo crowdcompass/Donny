@@ -18,6 +18,7 @@
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
 		5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */; };
+		5ADE03D119A99A3A00F8F426 /* beepoo.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03D019A99A3A00F8F426 /* beepoo.aif */; };
 		FA00A40719A9757C00E81740 /* LSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FA19A9757C00E81740 /* LSEvent.m */; };
 		FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FC19A9757C00E81740 /* LSStateMachine.m */; };
 		FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */; };
@@ -105,6 +106,7 @@
 		0654E1FE19A85E0700A5964F /* DNYInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYInteraction.h; sourceTree = "<group>"; };
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
 		5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5ADE03D019A99A3A00F8F426 /* beepoo.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = beepoo.aif; sourceTree = "<group>"; };
 		FA00A3F919A9757C00E81740 /* LSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSEvent.h; path = StateMachine/LSEvent.h; sourceTree = "<group>"; };
 		FA00A3FA19A9757C00E81740 /* LSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSEvent.m; path = StateMachine/LSEvent.m; sourceTree = "<group>"; };
 		FA00A3FB19A9757C00E81740 /* LSStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachine.h; path = StateMachine/LSStateMachine.h; sourceTree = "<group>"; };
@@ -307,6 +309,15 @@
 			name = Interactions;
 			sourceTree = "<group>";
 		};
+		5ADE03CF19A99A3A00F8F426 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				5ADE03D019A99A3A00F8F426 /* beepoo.aif */,
+			);
+			name = sounds;
+			path = res/sounds;
+			sourceTree = "<group>";
+		};
 		FA00A3F819A9756B00E81740 /* state machine */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +432,7 @@
 		FAD9A37019A8337600B7C401 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5ADE03CF19A99A3A00F8F426 /* sounds */,
 				FA077A1419A94EDF00C9CEC3 /* graphics */,
 				05569A3C19A882E4006BD00D /* Icon-60.png */,
 				05569A3D19A882E4006BD00D /* Icon-60@2x.png */,
@@ -514,6 +526,7 @@
 			files = (
 				FA077A3419A94EDF00C9CEC3 /* eyebrow-positive@2x.png in Resources */,
 				FA077A3C19A94EDF00C9CEC3 /* tear-small@2x.png in Resources */,
+				5ADE03D119A99A3A00F8F426 /* beepoo.aif in Resources */,
 				FA077A3A19A94EDF00C9CEC3 /* rainbow-yellow@2x.png in Resources */,
 				FA077A4919A94EDF00C9CEC3 /* mouth-smile@2x.png in Resources */,
 				FA077A3519A94EDF00C9CEC3 /* eyebrow-sad@2x.png in Resources */,
