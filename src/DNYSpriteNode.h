@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) SKSpriteNode *dropShadow;
 
-- (void)updateDropShadow;
+- (void)runAction:(SKAction *)action ignoreDropShadow:(BOOL)ignore;
 
 @end
