@@ -10,15 +10,22 @@
 
 @implementation DNYLocationManager
 
++ (instancetype)instance {
+    static DNYLocationManager *instance = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[DNYLocationManager alloc] init];
+    });
+    
+    return instance;
+}
+
 - (instancetype)init {
     self = [super init];
     
     if (self) {
-        static typeof(self) instance = nil;
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            instance = [[DNYLocationManager alloc] init];
-        });
+        _locationManager = [[CLLocationManager alloc] init];
     }
     
     return self;
