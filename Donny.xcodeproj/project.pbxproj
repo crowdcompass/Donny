@@ -77,6 +77,7 @@
 		FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD9A37319A8339D00B7C401 /* Images.xcassets */; };
 		FAF6F50519A9B98800AA3F2B /* DNYPetInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F50419A9B98800AA3F2B /* DNYPetInteraction.m */; };
 		FAF6F50819A9B9A100AA3F2B /* NSIndexPath+CGPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F50719A9B9A100AA3F2B /* NSIndexPath+CGPoint.m */; };
+		FAF6F50B19A9C3D400AA3F2B /* DNYVomitNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F50A19A9C3D400AA3F2B /* DNYVomitNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,8 @@
 		FAF6F50419A9B98800AA3F2B /* DNYPetInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYPetInteraction.m; sourceTree = "<group>"; };
 		FAF6F50619A9B9A100AA3F2B /* NSIndexPath+CGPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+CGPoint.h"; sourceTree = "<group>"; };
 		FAF6F50719A9B9A100AA3F2B /* NSIndexPath+CGPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+CGPoint.m"; sourceTree = "<group>"; };
+		FAF6F50919A9C3D400AA3F2B /* DNYVomitNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYVomitNode.h; path = src/DNYVomitNode.h; sourceTree = SOURCE_ROOT; };
+		FAF6F50A19A9C3D400AA3F2B /* DNYVomitNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYVomitNode.m; path = src/DNYVomitNode.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +443,8 @@
 				0567920A19A969DB00F478EF /* DNYSpriteNode.m */,
 				FA520D4F19A908F300197278 /* DNYCreatureNode.h */,
 				FA520D5019A908F300197278 /* DNYCreatureNode.m */,
+				FAF6F50919A9C3D400AA3F2B /* DNYVomitNode.h */,
+				FAF6F50A19A9C3D400AA3F2B /* DNYVomitNode.m */,
 			);
 			name = sprite;
 			sourceTree = "<group>";
@@ -589,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */,
+				FAF6F50B19A9C3D400AA3F2B /* DNYVomitNode.m in Sources */,
 				FA00A40719A9757C00E81740 /* LSEvent.m in Sources */,
 				FA00A40E19A9B3DE00E81740 /* DNYProximitySensorInteraction.m in Sources */,
 				05569A2B19A85E6D006BD00D /* DNYFaceInteraction.m in Sources */,

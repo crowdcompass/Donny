@@ -249,7 +249,12 @@ static const float kDropShadowYOffset = 8.f;
 }
 
 - (void)mouthFrown {
-    [NSException raise:@"Not Implemented" format:@"Not implemented"];
+    SKTexture *frownTexture = [SKTexture textureWithImageNamed:@"mouth-frown.png"];
+    SKAction *textureAction = [SKAction setTexture:frownTexture resize:YES];
+    SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0.];
+    
+    SKAction *groupAction = [SKAction group:@[ textureAction, moveAction ]];
+    [self.mouth runAction:groupAction];
 }
 
 - (void)mouthGood {
@@ -262,11 +267,23 @@ static const float kDropShadowYOffset = 8.f;
 }
 
 - (void)mouthSick {
-    [NSException raise:@"Not Implemented" format:@"Not implemented"];
+    SKTexture *sickTexture = [SKTexture textureWithImageNamed:@"mouth-sick.png"];
+    SKAction *sickAction = [SKAction setTexture:sickTexture];
+    
+    SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0];
+    
+    SKAction *group = [SKAction group:@[ sickAction, moveAction ]];
+    [self.mouth runAction:group];
 }
 
 - (void)mouthSicker {
-    [NSException raise:@"Not Implemented" format:@"Not implemented"];
+    SKTexture *sickTexture = [SKTexture textureWithImageNamed:@"mouth-sicker.png"];
+    SKAction *sickAction = [SKAction setTexture:sickTexture];
+    
+    SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0];
+    
+    SKAction *group = [SKAction group:@[ sickAction, moveAction ]];
+    [self.mouth runAction:group];
 }
 
 - (void)mouthSleeping {
@@ -302,7 +319,12 @@ static const float kDropShadowYOffset = 8.f;
 }
 
 - (void)mouthStraight {
-    [NSException raise:@"Not Implemented" format:@"Not implemented"];
+    SKTexture *mouthTexture = [SKTexture textureWithImageNamed:@"mouth-straight.png"];
+    SKAction *textureAction = [SKAction setTexture:mouthTexture resize:YES];
+    SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 243.f) duration:0.f];
+    
+    SKAction *group = [SKAction group:@[ textureAction, moveAction ]];
+    [self.mouth runAction:group];
 }
 
 - (void)mouthVomit {
@@ -379,7 +401,5 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
             break;
     }
 }
-
-
 
 @end
