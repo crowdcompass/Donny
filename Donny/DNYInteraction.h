@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "DNYCreatureModel.h"
 
+@protocol DNYEvaluatedInteraction;
+
 @interface DNYInteraction : NSObject
 
 @property DNYCreatureModel* creature;
 
 - (instancetype)initWithCreature:(DNYCreatureModel *)creature;
+
+@end
+
+@protocol DNYEvaluatedInteraction <NSObject>
+
+- (void)evaluate;
 
 @end

@@ -39,12 +39,12 @@ extern NSString *const kUserDefaultKeyHappiness;
 
 - (BOOL)sleep;
 - (BOOL)wake;
-- (BOOL)vibrate;
-- (BOOL)vibrateChuckle;
 - (BOOL)suspend;
 - (BOOL)unsuspend;
 - (BOOL)terminate;
 
+- (void)vibrate;
+- (void)vibrateChuckle;
 - (void)increaseHappiness;
 - (void)decreaseHappiness;
 - (void)happinessDidChange:(NSInteger)newHappy;

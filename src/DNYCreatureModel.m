@@ -14,6 +14,8 @@
 #import "DNYFaceInteraction.h"
 #import "DNYFoodInteraction.h"
 #import "DNYTickleInteraction.h"
+#import "DNYPetInteraction.h"
+#import "DNYProximitySensorInteraction.h"
 
 #define kDefaultCreatureLoopRate 30 // 60hz/2, number of frames to pass before next eval
 #define kDefaultCreatureTimerSeconds 0.5
@@ -32,9 +34,6 @@ NSString *const kUserDefaultKeyHappiness        = @"happiness";
 
 - (void)makeAwake;
 - (void)makeAsleep;
-- (void)makeVibrate;
-- (void)makeVibrateChuckle;
-- (void)makeStopVibrating;
 - (void)makeNeglected;
 
 - (void)playSoundWithName:(NSString *)filename;
@@ -60,7 +59,6 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [sm addState:@"awake"];
     [sm addState:@"suspended"];
     [sm addState:@"terminated"];
-    [sm addState:@"vibrating"];
     
     [sm when:@"sleep" transitionFrom:@"sleeping" to:@"sleeping"];
     [sm when:@"sleep" transitionFrom:@"awake" to:@"sleeping"];
@@ -70,23 +68,11 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [sm when:@"terminate" transitionFrom:@"awake" to:@"terminated"];
     [sm when:@"terminate" transitionFrom:@"sleeping" to:@"terminated"];
     
-    [sm when:@"vibrate" transitionFrom:@"awake" to:@"vibrating"];
-    [sm when:@"vibrateChuckle" transitionFrom:@"awake" to:@"vibrating"];
-    [sm when:@"makeStopVibrating" transitionFrom:@"vibrating" to:@"awake"];
-    
     [sm after:@"sleep" do:^(DNYCreatureModel *creature) {
         [creature makeAsleep];
     }];
     [sm after:@"wake" do:^(DNYCreatureModel *creature) {
         [creature makeAwake];
-    }];
-    [sm after:@"vibrate" do:^(DNYCreatureModel *creature) {
-        [creature makeVibrate];
-        [creature makeStopVibrating];
-    }];
-    [sm after:@"vibrateChuckle" do:^(DNYCreatureModel *creature) {
-        [creature makeVibrateChuckle];
-        [creature makeStopVibrating];
     }];
 })
 
@@ -101,14 +87,17 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     return self;
 }
 
-- (void)setupInteractions
-{
-    self.interactions = [NSArray arrayWithObjects:
-      [[DNYFaceInteraction alloc] initWithCreature:self],
-      [[DNYMotionInteraction alloc] initWithCreature:self],
-      [[DNYFoodInteraction alloc] initWithCreature:self],
-      [[DNYTickleInteraction alloc] initWithCreature:self],
-      nil];
+
+- (void)setupInteractions {
+    self.interactions = @[
+                          [[DNYFaceInteraction alloc] initWithCreature:self],
+                          [[DNYMotionInteraction alloc] initWithCreature:self],
+                          [[DNYFoodInteraction alloc] initWithCreature:self],
+                          [[DNYPetInteraction alloc] initWithCreature:self],
+                          [[DNYProximitySensorInteraction alloc] initWithCreature:self],
+                          [[DNYTickleInteraction alloc] initWithCreature:self],
+                          ];
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -146,15 +135,15 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [self updateLastInteractionTime];
 }
 
-- (void)makeVibrate {
+- (void)vibrate {
      AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
-    [self updateLastInteractionTime];
+    [self stopVibrating];
 }
 
 /**
  This uses a private API method, so would need to be compiled out of a sumbitted app
  */
-- (void)makeVibrateChuckle {
+- (void)vibrateChuckle {
     NSMutableDictionary* patternsDict = [@{} mutableCopy];
     NSMutableArray* patternsArray = [@[] mutableCopy];
     
@@ -176,13 +165,13 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     
     AudioServicesPlaySystemSoundWithVibration(kSystemSoundID_Vibrate,nil,patternsDict);
 #pragma clang diagnostic pop
-    [self makeTalkWithText:@"Hee hee heee"];
     [self updateLastInteractionTime];
+    [self stopVibrating];
+
 }
 
-- (void)makeStopVibrating {
+- (void)stopVibrating {
     AudioServicesStopSystemSound();
-    [self updateLastInteractionTime];
 }
 
 - (void)makeNeglected {
@@ -236,6 +225,12 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 - (void)evaluate {
 //    NSLog(@">>> Evaluating Donny's State <<<");
     NSTimeInterval lastSeen = [[NSDate date] timeIntervalSinceDate:self.lastInteraction];
+    
+    for (DNYInteraction *interaction in self.interactions) {
+        if ([interaction conformsToProtocol:@protocol(DNYEvaluatedInteraction)]) {
+            [interaction performSelector:@selector(evaluate)];
+        }
+    }
     
     if (lastSeen >= kNeglectInterval) {
         NSLog(@"Time interval %f", lastSeen);
