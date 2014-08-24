@@ -13,6 +13,8 @@
 		05569A4219A882E4006BD00D /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3E19A882E4006BD00D /* Icon-76.png */; };
 		05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3F19A882E4006BD00D /* Icon-76@2x.png */; };
 		0567920B19A969DB00F478EF /* DNYSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567920A19A969DB00F478EF /* DNYSpriteNode.m */; };
+		0567920E19A9EA7B00F478EF /* fx-bad.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0567920C19A9EA7B00F478EF /* fx-bad.wav */; };
+		0567920F19A9EA7B00F478EF /* fx-good.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0567920D19A9EA7B00F478EF /* fx-good.wav */; };
 		064B65C219A992D800AE2180 /* NSIndexPath+CGPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 064B65C119A992D800AE2180 /* NSIndexPath+CGPoint.m */; };
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
@@ -103,6 +105,8 @@
 		05569A3F19A882E4006BD00D /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		0567920919A969DB00F478EF /* DNYSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYSpriteNode.h; path = src/DNYSpriteNode.h; sourceTree = SOURCE_ROOT; };
 		0567920A19A969DB00F478EF /* DNYSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYSpriteNode.m; path = src/DNYSpriteNode.m; sourceTree = SOURCE_ROOT; };
+		0567920C19A9EA7B00F478EF /* fx-bad.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fx-bad.wav"; sourceTree = "<group>"; };
+		0567920D19A9EA7B00F478EF /* fx-good.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fx-good.wav"; sourceTree = "<group>"; };
 		064B65C019A992D800AE2180 /* NSIndexPath+CGPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+CGPoint.h"; sourceTree = "<group>"; };
 		064B65C119A992D800AE2180 /* NSIndexPath+CGPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+CGPoint.m"; sourceTree = "<group>"; };
 		0654E1D019A82BE200A5964F /* Donny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donny.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -344,6 +348,8 @@
 		5ADE03CF19A99A3A00F8F426 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				0567920C19A9EA7B00F478EF /* fx-bad.wav */,
+				0567920D19A9EA7B00F478EF /* fx-good.wav */,
 				5ADE03DD19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav */,
 				5ADE03DB19A9C23200F8F426 /* ecs_fx_12.wav */,
 				5ADE03D019A99A3A00F8F426 /* beepoo.aif */,
@@ -585,11 +591,13 @@
 				FA077A4319A94EDF00C9CEC3 /* mouth-good-reaction@2x.png in Resources */,
 				FA077A3B19A94EDF00C9CEC3 /* tear-big@2x.png in Resources */,
 				5ADE03DC19A9C23200F8F426 /* ecs_fx_12.wav in Resources */,
+				0567920E19A9EA7B00F478EF /* fx-bad.wav in Resources */,
 				FA077A4A19A94EDF00C9CEC3 /* mouth-straight@2x.png in Resources */,
 				FA077A3719A94EDF00C9CEC3 /* rainbow-orange@2x.png in Resources */,
 				FA077A3919A94EDF00C9CEC3 /* rainbow-red@2x.png in Resources */,
 				FA077A4B19A94EDF00C9CEC3 /* mouth-vomit@2x.png in Resources */,
 				FA077A3619A94EDF00C9CEC3 /* rainbow-green@2x.png in Resources */,
+				0567920F19A9EA7B00F478EF /* fx-good.wav in Resources */,
 				FA077A4219A94EDF00C9CEC3 /* mouth-frown@2x.png in Resources */,
 				FA077A4019A94EDF00C9CEC3 /* eye-wink@2x.png in Resources */,
 				05569A4019A882E4006BD00D /* Icon-60.png in Resources */,
