@@ -177,12 +177,22 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     NSNumber *newHappiness = @(self.happiness + 1);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self happinessDidChange:newHappiness.integerValue];
 }
 
 - (void)decreaseHappiness {
     NSNumber *newHappiness = @(self.happiness - 1);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self happinessDidChange:newHappiness.integerValue];
+}
+
+- (void)happinessDidChange:(NSInteger)newHappy {
+    if (!self.isAwake) return;
+    
+    
 }
 
 - (NSInteger)happiness {

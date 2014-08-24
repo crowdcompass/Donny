@@ -42,6 +42,7 @@ extern NSString *const kUserDefaultKeyHappiness;
 
 - (void)increaseHappiness;
 - (void)decreaseHappiness;
+- (void)happinessDidChange:(NSInteger)newHappy;
 
 - (BOOL)isSleeping;
 - (BOOL)isAwake;
