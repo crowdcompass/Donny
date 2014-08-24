@@ -13,6 +13,7 @@
 #import "DNYMotionInteraction.h"
 #import "DNYFaceInteraction.h"
 #import "DNYFoodInteraction.h"
+#import "DNYPetInteraction.h"
 
 #define kDefaultCreatureLoopRate 30 // 60hz/2, number of frames to pass before next eval
 #define kDefaultCreatureTimerSeconds 0.5
@@ -107,6 +108,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
       [[DNYFaceInteraction alloc] initWithCreature:self],
       [[DNYMotionInteraction alloc] initWithCreature:self],
       [[DNYFoodInteraction alloc] initWithCreature:self],
+      [[DNYPetInteraction alloc] initWithCreature:self],
       nil];
 }
 

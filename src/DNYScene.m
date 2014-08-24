@@ -13,6 +13,8 @@
 
 @interface DNYScene()
 
+-(void)notifyTouchOnNose;
+
 @end
 
 @implementation DNYScene
@@ -43,11 +45,17 @@
         if ([node.description containsString:@"eye"]) {
             NSLog(@"Touched eye");
         } else if ([node.description containsString:@"nose"]) {
-            NSLog(@"Touched nose");
+            [self notifyTouchOnNose];
         } else if ([node.description containsString:@"mouth"]) {
             NSLog(@"Touched mouth");
         }
     }
+}
+
+- (void)notifyTouchOnNose
+{
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter postNotificationName:@"touchedNose" object:self];
 }
 
 @end

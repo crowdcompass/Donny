@@ -18,7 +18,7 @@
 
 -(void) dny_PetInteractionPetNose
 {
-    NSLog(@"Pet nose");
+    NSLog(@"Petted on nose");
 }
 
 @end
@@ -37,7 +37,7 @@
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter addObserver:self
                                selector:@selector(touchEventReceived)
-                                   name:@"touchEvent"
+                                   name:@"touchedNose"
                                  object:nil];
     }
     return self;
@@ -45,7 +45,13 @@
 
 -(void)touchEventReceived
 {
-    
+    [self.creature dny_PetInteractionPetNose];
+}
+
+-(void)dealloc
+{
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter removeObserver:self];
 }
 
 @end
