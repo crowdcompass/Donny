@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class DNYCreatureModel;
+#import "DNYCreatureModel.h"
+
+//@class DNYCreatureModel;
 
 @interface DNYCreatureViewController : UIViewController
 

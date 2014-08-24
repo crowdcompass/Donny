@@ -7,22 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DNYCreatureViewController.h"
 #import "StateMachine.h"
+
+@class DNYCreatureViewController;
 
 @interface DNYCreatureModel : NSObject
 
 @property (weak, nonatomic) DNYCreatureViewController *controller;
-
 @property (nonatomic, retain) NSString *state; // Property managed by StateMachine
-
 @property (nonatomic, retain) NSDate *terminatedAt;
+@property (nonatomic, strong) NSArray *interactions;
 
 @end
 
 @interface DNYCreatureModel (State)
 
 - (void)initializeStateMachine;
+- (void)setupInteractions;
 
 - (BOOL)sleep;
 - (BOOL)wake;

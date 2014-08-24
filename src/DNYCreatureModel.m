@@ -10,6 +10,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import <AudioToolbox/AudioToolbox.h>
 
+#import "DNYMotionInteraction.h"
+#import "DNYFaceInteraction.h"
+#import "DNYFoodInteraction.h"
+
 #define kDefaultCreatureLoopRate 30 // 60hz/2, number of frames to pass before next eval
 
 @interface DNYCreatureModel ()
@@ -70,10 +74,19 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     self = [super init];
     if (self) {
         [self initializeStateMachine];
+        [self setupInteractions];
     }
     return self;
 }
 
+- (void)setupInteractions
+{
+    self.interactions = [NSArray arrayWithObjects:
+      [[DNYFaceInteraction alloc] initWithCreature:self],
+      [[DNYMotionInteraction alloc] initWithCreature:self],
+      [[DNYFoodInteraction alloc] initWithCreature:self],
+      nil];
+}
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark -
