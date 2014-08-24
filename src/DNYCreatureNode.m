@@ -29,7 +29,7 @@
         [self addChild:_leftEyeBrow];
         _leftEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _leftEye.position = CGPointMake(70.f, 393.f);
-        [self addDropShadowToSpriteNode:_leftEye];
+        self.leftEyeShadow = [self addDropShadowToSpriteNode:_leftEye];
         [self addChild:_leftEye];
         
         _rightEyeBrow = [DNYSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
@@ -37,17 +37,17 @@
         [self addChild:_rightEyeBrow];
         _rightEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _rightEye.position = CGPointMake(250.f, 393.f);
-        [self addDropShadowToSpriteNode:_rightEye];
+        self.rightEyeShadow = [self addDropShadowToSpriteNode:_rightEye];
         [self addChild:_rightEye];
        
         _nose = [DNYSpriteNode spriteNodeWithImageNamed:@"nose.png"];
         _nose.position = CGPointMake(160.f, 353.f);
-        [self addDropShadowToSpriteNode:_nose];
+        self.noseShadow = [self addDropShadowToSpriteNode:_nose];
         [self addChild:_nose];
         
         _mouth = [DNYSpriteNode spriteNodeWithImageNamed:@"mouth-sleep-01.png"];
         _mouth.position = CGPointMake(180.f, 218.f);
-        [self addDropShadowToSpriteNode:_mouth];
+        self.mouthShadow = [self addDropShadowToSpriteNode:_mouth];
         [self addChild:_mouth];
         
         _lookingAt = [NSIndexPath indexPathForItem:1 inSection:1];
@@ -57,7 +57,7 @@
 }
 
 static const float kDropShadowYOffset = 8.f;
-- (void)addDropShadowToSpriteNode:(DNYSpriteNode *)spriteNode {
+- (DNYSpriteNode *)addDropShadowToSpriteNode:(DNYSpriteNode *)spriteNode {
     spriteNode.zPosition++;
     DNYSpriteNode *dropShadow = [spriteNode copy];
     dropShadow.alpha = 0.25;
@@ -65,6 +65,8 @@ static const float kDropShadowYOffset = 8.f;
 
     spriteNode.dropShadow = dropShadow;
     [self addChild:dropShadow];
+
+    return dropShadow;
 }
 
 - (void)removeAllActions {
@@ -101,7 +103,8 @@ static const float kDropShadowYOffset = 8.f;
     [self.rightEye runAction:actionGroup];
 }
 
-- (void)displayFaceForHappiness:(int)happiness {
+- (void)displayFaceForHappiness:(NSInteger)happiness {
+    [self setCreatureColorForHappiness:happiness];
     switch (happiness) {
         case -3:
             [self normalMinus3];
@@ -466,7 +469,7 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
     return flashAction;
 }
 
-- (void)setCreatureColorForHappiness:(int)happiness {
+- (void)setCreatureColorForHappiness:(NSInteger)happiness {
     switch (happiness) {
         case -3:
             self.scene.backgroundColor = [SKColor colorWithRed:255/255.f green:152/255.f blue:152/255.f alpha:1];
