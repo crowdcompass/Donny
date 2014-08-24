@@ -15,15 +15,21 @@
 #import "DNYFoodInteraction.h"
 
 #define kDefaultCreatureLoopRate 30 // 60hz/2, number of frames to pass before next eval
+#define kDefaultCreatureTimerSeconds 0.5
+#define kNeglectInterval 20 // seconds that define being neglected
 
 @interface DNYCreatureModel ()
+
+@property (nonatomic, strong) NSDate *lastInteraction;
 
 - (void)makeAwake;
 - (void)makeAsleep;
 - (void)makeVibrate;
 - (void)makeVibrateChuckle;
 - (void)makeStopVibrating;
+- (void)makeNeglected;
 
+- (void)updateLastInteractionTime;
 - (void)evaluate;
 
 @end
@@ -100,12 +106,17 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 
 - (void)makeAwake {
     NSLog(@"Model::makeAwake");
-    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(evaluate)];
-    displayLink.frameInterval = kDefaultCreatureLoopRate;
-    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    NSTimer *timer = [NSTimer timerWithTimeInterval:kDefaultCreatureTimerSeconds target:self selector:@selector(evaluate) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+    
+//    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(evaluate)];
+//    displayLink.frameInterval = kDefaultCreatureLoopRate;
+//    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.creatureNode wakeup];
     });
+    [self updateLastInteractionTime];
 }
 
 - (void)makeAsleep {
@@ -113,10 +124,12 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.creatureNode sleep];
     });
+    [self updateLastInteractionTime];
 }
 
 - (void)makeVibrate {
      AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
+    [self updateLastInteractionTime];
 }
 
 /**
@@ -144,11 +157,21 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     
     AudioServicesPlaySystemSoundWithVibration(kSystemSoundID_Vibrate,nil,patternsDict);
 #pragma clang diagnostic pop
-    
+    [self updateLastInteractionTime];
 }
 
 - (void)makeStopVibrating {
     AudioServicesStopSystemSound();
+    [self updateLastInteractionTime];
+}
+
+- (void)makeNeglected {
+    NSLog(@"Model::makeNeglected I AM BEING NEGLECTED WAAAAA");
+    [self updateLastInteractionTime];
+}
+
+- (void)updateLastInteractionTime {
+    self.lastInteraction = [NSDate date];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -157,6 +180,12 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 
 - (void)evaluate {
     NSLog(@">>> Evaluating Donny's State <<<");
+    NSTimeInterval lastSeen = [[NSDate date] timeIntervalSinceDate:self.lastInteraction];
+    
+    if (lastSeen >= kNeglectInterval) {
+        NSLog(@"Time interval %f", lastSeen);
+        [self makeNeglected];
+    }
 }
 
 
