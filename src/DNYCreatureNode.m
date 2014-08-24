@@ -103,73 +103,24 @@ static const float kDropShadowYOffset = 8.f;
     [self.rightEye runAction:actionGroup];
 }
 
-//1 1.5, 2 1.75
+
 - (void)sleep {
     [self removeAllActions];
 
-    //show brows
-    self.leftEyeBrow.hidden = YES;
-    self.rightEyeBrow.hidden = YES;
-
-    //setup brow actions
-    SKTexture *leftEyeTexture = [SKTexture textureWithImageNamed:@"eye-sleep.png"];
-    SKAction *leftEyeAction = [SKAction setTexture:leftEyeTexture resize:YES];
-
-    SKTexture *rightEyeTexture = [SKTexture textureWithImageNamed:@"eye-sleep.png"];
-    SKAction *rightEyeAction = [SKAction setTexture:rightEyeTexture resize:YES];
-    SKAction *flipEyeAction = [SKAction scaleXBy:-1 y:1 duration:0];
-
-    SKTexture *sleep1Texture = [SKTexture textureWithImageNamed:@"mouth-sleep-01.png"];
-    SKTexture *sleep2Texture = [SKTexture textureWithImageNamed:@"mouth-sleep-02.png"];
-    
-    SKAction *time1 = [SKAction waitForDuration:1.5];
-    SKAction *time2 = [SKAction waitForDuration:1.75];
-    
-    SKAction *goToSleep1 = [SKAction setTexture:sleep1Texture resize:YES];
-    
-    SKAction *moveDown = [SKAction moveByX:10.f y:-10.f duration:0];
-    SKAction *moveUp = [SKAction moveByX:-10.f y:10.f duration:0];
-
-    SKAction *goToSleep2 = [SKAction setTexture:sleep2Texture resize:YES];
-
-    SKAction *groupAction = [SKAction sequence:@[ goToSleep1, time1, moveDown, goToSleep2, time2, moveUp ]];
-    SKAction *repeatingAction = [SKAction repeatActionForever:groupAction];
-    
-    [self.mouth runAction:repeatingAction];
-    [self.leftEye runAction:leftEyeAction];
-    [self.rightEye runAction:rightEyeAction];
-    [self.rightEye runAction:flipEyeAction];
-    
-    /*
-    SKAction *animateAction = [SKAction animateWithTextures:@[ sleep1Texture, sleep2Texture ] timePerFrame:1.5 resize:YES restore:YES];
-    [self.mouth runAction:[SKAction repeatActionForever:animateAction]];
-     */
+    [self eyebrowsNone];
+    [self eyesSleep];
+    [self mouthSleeping];
 }
 
 - (void)wakeup {
-    self.leftEyeBrow.hidden = YES;
-    self.rightEyeBrow.hidden = YES;
-    
-    SKTexture *normalEyeTexture = [SKTexture textureWithImageNamed:@"eye-standard.png"];
-    SKAction *normalEyeActionTexture = [SKAction setTexture:normalEyeTexture resize:YES];
-    SKAction *normalEyeActionMoveLeft = [SKAction moveTo:CGPointMake(70.f, 383.f) duration:0];
-    SKAction *normalEyeActionMoveRight = [SKAction moveTo:CGPointMake(250.f, 383.f) duration:0];
-    
-    SKAction *leftEyeGroup = [SKAction group:@[ normalEyeActionTexture, normalEyeActionMoveLeft]];
-    SKAction *rightEyeGroup = [SKAction group:@[ normalEyeActionTexture, normalEyeActionMoveRight ]];
-    
-    SKTexture *normalMouthTexture = [SKTexture textureWithImageNamed:@"mouth-smile.png"];
-    SKAction *normalMouthActionTexture = [SKAction setTexture:normalMouthTexture resize:YES];
-    SKAction *normalMouthActionMove = [SKAction moveTo:CGPointMake(160.f, 243.f) duration:0];
-    SKAction *mouthGroup = [SKAction group:@[ normalMouthActionTexture, normalMouthActionMove ]];
-    
     [self removeAllActions];
 
+    [self eyebrowsNone];
+    [self eyesStandard];
+    [self mouthSmile];
+
     [self runAction:[self flashAction]];
-    [self.leftEye runAction:leftEyeGroup];
-    [self.rightEye runAction:rightEyeGroup];
-    [self.mouth runAction:mouthGroup];
-    
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self blink:2];
     });
@@ -177,97 +128,185 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)reactPositively {
     [self removeAllActions];
-    self.leftEyeBrow.hidden = NO;
-    self.leftEyeBrow.position = CGPointMake(50.f, 453.f);
 
-    self.rightEyeBrow.hidden = NO;
-    self.rightEyeBrow.position = CGPointMake(270.f, 453.f);
-
-    self.leftEye.position = CGPointMake(70.f, 378.f);
-    self.rightEye.position = CGPointMake(250.f, 378.f);
-
-    self.mouth.position = CGPointMake(160.f, 223.f);
-
-    SKTexture *happyEyebrowTexture = [SKTexture textureWithImageNamed:@"eyebrow-positive"];
-    SKAction *happyEyebrowAction = [SKAction setTexture:happyEyebrowTexture resize:YES];
-    SKAction *flipEyebrowAction = [SKAction scaleXBy:-1 y:1 duration:0];
-
-    SKTexture *happyEyeTexture = [SKTexture textureWithImageNamed:@"eye-wink"];
-    SKAction *happyEyeAction = [SKAction setTexture:happyEyeTexture resize:YES];
-
-    SKTexture *happyMouthTexture = [SKTexture textureWithImageNamed:@"mouth-happy"];
-    SKAction *happyMouthAction = [SKAction setTexture:happyMouthTexture resize:YES];
-
-    [self.leftEyeBrow runAction:happyEyebrowAction];
-    [self.rightEyeBrow runAction:happyEyebrowAction];
-    [self.rightEyeBrow runAction:flipEyebrowAction];
-    [self.leftEye runAction:happyEyeAction];
-    [self.rightEye runAction:happyEyeAction];
-    [self.mouth runAction:happyMouthAction];
-
+    [self eyebrowsPositive];
+    [self eyesWink];
+    [self mouthGood];
 }
 
 - (void)reactNegatively {
     [self removeAllActions];
 
+    [self eyebrowsNegative];
+    [self eyesSmall];
+    [self mouthBad];
+
+}
+
+
+
+#pragma mark Fine Grain Control
+
+//Eyebrows
+- (void)eyebrowsNone {
+    self.leftEyeBrow.hidden = YES;
+    self.rightEyeBrow.hidden = YES;
+
+}
+
+- (void)eyebrowsPositive {
     self.leftEyeBrow.hidden = NO;
     self.leftEyeBrow.position = CGPointMake(80.f, 453.f);
 
     self.rightEyeBrow.hidden = NO;
     self.rightEyeBrow.position = CGPointMake(240.f, 453.f);
 
-    self.leftEye.position = CGPointMake(70.f, 393.f);
-    self.rightEye.position = CGPointMake(250.f, 393.f);
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"eyebrow-positive"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+    SKAction *flip = [SKAction scaleXTo:-self.leftEyeBrow.xScale duration:0];
 
-    self.nose.position = CGPointMake(160.f, 353.f);
+    [self.leftEyeBrow runAction:action];
+    [self.rightEyeBrow runAction:flip];
+    [self.rightEyeBrow runAction:action];
+}
+
+- (void)eyebrowsSad {
+    self.leftEyeBrow.hidden = NO;
+    self.leftEyeBrow.position = CGPointMake(80.f, 453.f);
+
+    self.rightEyeBrow.hidden = NO;
+    self.rightEyeBrow.position = CGPointMake(240.f, 453.f);
+
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"eyebrow-sad"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+    SKAction *flip = [SKAction scaleXTo:-self.leftEyeBrow.xScale duration:0];
+
+    [self.leftEyeBrow runAction:action];
+    [self.rightEyeBrow runAction:flip];
+    [self.rightEyeBrow runAction:action];
+
+}
+
+- (void)eyebrowsNegative {
+    self.leftEyeBrow.hidden = NO;
+    self.leftEyeBrow.position = CGPointMake(80.f, 453.f);
+
+    self.rightEyeBrow.hidden = NO;
+    self.rightEyeBrow.position = CGPointMake(240.f, 453.f);
+
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"eyebrow-negative"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+    SKAction *flip = [SKAction scaleXTo:-self.leftEyeBrow.xScale duration:0];
+
+    [self.leftEyeBrow runAction:action];
+    [self.rightEyeBrow runAction:flip];
+    [self.rightEyeBrow runAction:action];
+
+}
+
+//Eyes
+- (void)eyesStandard {
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"eye-standard"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+
+    [self.leftEye runAction:action];
+    [self.rightEye runAction:action];
+}
+
+- (void)eyesSmall {
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"eye-small"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+
+    [self.leftEye runAction:action];
+    [self.rightEye runAction:action];
+
+}
+
+- (void)eyesSleep {
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"eye-sleep"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+
+    [self.leftEye runAction:action];
+    [self.rightEye runAction:action];
+
+}
+
+- (void)eyesWink {
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"eye-wink"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+
+    [self.leftEye runAction:action];
+    [self.rightEye runAction:action];
+
+}
+
+//Mouth
+- (void)mouthBad {
     self.mouth.position = CGPointMake(160.f, 203.f);
 
-    SKTexture *madEyebrowTexture = [SKTexture textureWithImageNamed:@"eyebrow-negative"];
-    SKAction *madEyebrowAction = [SKAction setTexture:madEyebrowTexture resize:YES];
-    SKAction *flipEyebrowAction = [SKAction scaleXBy:-1 y:1 duration:0];
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-bad-reaction"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
 
-    SKTexture *madEyeTexture = [SKTexture textureWithImageNamed:@"eye-small"];
-    SKAction *madEyeAction = [SKAction setTexture:madEyeTexture resize:YES];
-
-    SKTexture *madMouthTexture = [SKTexture textureWithImageNamed:@"mouth-bad-reaction"];
-    SKAction *madMouthAction = [SKAction setTexture:madMouthTexture resize:YES];
-
-    [self.leftEyeBrow runAction:madEyebrowAction];
-    [self.rightEyeBrow runAction:madEyebrowAction];
-    [self.rightEyeBrow runAction:flipEyebrowAction];
-    [self.leftEye runAction:madEyeAction];
-    [self.rightEye runAction:madEyeAction];
-    [self.mouth runAction:madMouthAction];
-
-
+    [self.mouth runAction:action];
 }
 
-- (void)showFaceMinus3 {
-
+- (void)mouthFrown {
+    [NSException raise:@"Not Implemented" format:@"Not implemented"];
 }
 
-- (void)showFaceMinus2 {
+- (void)mouthGood {
+    self.mouth.position = CGPointMake(160.f, 223.f);
 
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-good-reaction.png"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+
+    [self.mouth runAction:action];
 }
 
-- (void)showFaceMinus1 {
-
+- (void)mouthSick {
+    [NSException raise:@"Not Implemented" format:@"Not implemented"];
 }
 
-- (void)showFaceNormal {
-
+- (void)mouthSicker {
+    [NSException raise:@"Not Implemented" format:@"Not implemented"];
 }
 
-- (void)showFacePlus1 {
+- (void)mouthSleeping {
+    //animated
+    SKTexture *texture1 = [SKTexture textureWithImageNamed:@"mouth-sleep-01.png"];
+    SKTexture *texture2 = [SKTexture textureWithImageNamed:@"mouth-sleep-02.png"];
 
+    SKAction *time1 = [SKAction waitForDuration:1.5];
+    SKAction *time2 = [SKAction waitForDuration:1.75];
+
+    SKAction *action1 = [SKAction setTexture:texture1 resize:YES];
+
+    SKAction *moveDown = [SKAction moveByX:10.f y:-10.f duration:0];
+    SKAction *moveUp = [SKAction moveByX:-10.f y:10.f duration:0];
+
+    SKAction *action2 = [SKAction setTexture:texture2 resize:YES];
+
+    SKAction *groupAction = [SKAction sequence:@[ action1, time1, moveDown, action2, time2, moveUp ]];
+    SKAction *repeatingAction = [SKAction repeatActionForever:groupAction];
+
+    [self.mouth runAction:repeatingAction];
 }
 
-- (void)showFacePlus2 {
+- (void)mouthSmile {
+    self.mouth.position = CGPointMake(160.f, 223.f);
 
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-smile"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+
+    [self.mouth runAction:action];
 }
 
-- (void)showFacePlus3 {
+- (void)mouthStraight {
+    [NSException raise:@"Not Implemented" format:@"Not implemented"];
+}
 
+- (void)mouthVomit {
+    [NSException raise:@"Not Implemented" format:@"Not implemented"];
 }
 
 - (void)lookAt:(NSIndexPath *)path {
