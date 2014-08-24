@@ -26,7 +26,7 @@
 		5AE708A019A9CDB200FB6307 /* DNYPetInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7089F19A9CDB200FB6307 /* DNYPetInteraction.m */; };
 		5AE708A719A9CDCB00FB6307 /* DNYProximitySensorInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE708A219A9CDCB00FB6307 /* DNYProximitySensorInteraction.m */; };
 		5AE708A819A9CDCB00FB6307 /* DNYVomitNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE708A419A9CDCB00FB6307 /* DNYVomitNode.m */; };
-		5AE708A919A9CDCB00FB6307 /* DNYMotionInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE708A619A9CDCB00FB6307 /* DNYMotionInteraction.m */; };
+		5AE708AF19A9D15D00FB6307 /* DNYMotionInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE708AD19A9D15D00FB6307 /* DNYMotionInteraction.m */; };
 		FA00A40719A9757C00E81740 /* LSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FA19A9757C00E81740 /* LSEvent.m */; };
 		FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FC19A9757C00E81740 /* LSStateMachine.m */; };
 		FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */; };
@@ -127,8 +127,8 @@
 		5AE708A219A9CDCB00FB6307 /* DNYProximitySensorInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYProximitySensorInteraction.m; path = src/DNYProximitySensorInteraction.m; sourceTree = SOURCE_ROOT; };
 		5AE708A319A9CDCB00FB6307 /* DNYVomitNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYVomitNode.h; path = src/DNYVomitNode.h; sourceTree = SOURCE_ROOT; };
 		5AE708A419A9CDCB00FB6307 /* DNYVomitNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYVomitNode.m; path = src/DNYVomitNode.m; sourceTree = SOURCE_ROOT; };
-		5AE708A519A9CDCB00FB6307 /* DNYMotionInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYMotionInteraction.h; path = src/DNYMotionInteraction.h; sourceTree = SOURCE_ROOT; };
-		5AE708A619A9CDCB00FB6307 /* DNYMotionInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYMotionInteraction.m; path = src/DNYMotionInteraction.m; sourceTree = SOURCE_ROOT; };
+		5AE708AD19A9D15D00FB6307 /* DNYMotionInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYMotionInteraction.m; sourceTree = "<group>"; };
+		5AE708AE19A9D15D00FB6307 /* DNYMotionInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYMotionInteraction.h; sourceTree = "<group>"; };
 		FA00A3F919A9757C00E81740 /* LSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSEvent.h; path = StateMachine/LSEvent.h; sourceTree = "<group>"; };
 		FA00A3FA19A9757C00E81740 /* LSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSEvent.m; path = StateMachine/LSEvent.m; sourceTree = "<group>"; };
 		FA00A3FB19A9757C00E81740 /* LSStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachine.h; path = StateMachine/LSStateMachine.h; sourceTree = "<group>"; };
@@ -319,12 +319,12 @@
 		0654E1FD19A85DFA00A5964F /* Interactions */ = {
 			isa = PBXGroup;
 			children = (
+				5AE708AD19A9D15D00FB6307 /* DNYMotionInteraction.m */,
+				5AE708AE19A9D15D00FB6307 /* DNYMotionInteraction.h */,
 				5AE708A119A9CDCB00FB6307 /* DNYProximitySensorInteraction.h */,
 				5AE708A219A9CDCB00FB6307 /* DNYProximitySensorInteraction.m */,
 				5AE708A319A9CDCB00FB6307 /* DNYVomitNode.h */,
 				5AE708A419A9CDCB00FB6307 /* DNYVomitNode.m */,
-				5AE708A519A9CDCB00FB6307 /* DNYMotionInteraction.h */,
-				5AE708A619A9CDCB00FB6307 /* DNYMotionInteraction.m */,
 				5AE7089E19A9CDB200FB6307 /* DNYPetInteraction.h */,
 				5AE7089F19A9CDB200FB6307 /* DNYPetInteraction.m */,
 				FA077A5019A974CA00C9CEC3 /* DNYFoodInteraction.h */,
@@ -625,7 +625,6 @@
 				FA683B6519A85A3500CD2FEC /* UIColor+RGB.m in Sources */,
 				5AE708A719A9CDCB00FB6307 /* DNYProximitySensorInteraction.m in Sources */,
 				0567920B19A969DB00F478EF /* DNYSpriteNode.m in Sources */,
-				5AE708A919A9CDCB00FB6307 /* DNYMotionInteraction.m in Sources */,
 				FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */,
 				FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */,
 				FA683BA819A860D600CD2FEC /* DNYScene.m in Sources */,
@@ -634,6 +633,7 @@
 				FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */,
 				FA077A5219A974CA00C9CEC3 /* DNYFoodInteraction.m in Sources */,
 				FA00A40A19A9757C00E81740 /* LSTransition.m in Sources */,
+				5AE708AF19A9D15D00FB6307 /* DNYMotionInteraction.m in Sources */,
 				FA077A4F19A9607F00C9CEC3 /* NSIndexPath+CGVector.m in Sources */,
 				FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */,
 				5AE708A819A9CDCB00FB6307 /* DNYVomitNode.m in Sources */,
