@@ -13,6 +13,8 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "NSIndexPath+CGPoint.h"
 
+#define kSmileInterval 3
+
 @interface DNYCreatureModel (DNYFaceInteractionBehavior)
 
 -(void) dny_FaceInteractionToggleLeftEyeWink;
@@ -213,7 +215,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //            self.rightEyeClosed = YES;
 //        }
         if ( ff.hasSmile ) {
-            [self.creature dny_FaceInteractionSetSmile];
+            if (!self.creature.lastSmiledAt || [[self.creature.lastSmiledAt dateByAddingTimeInterval:kSmileInterval] compare:[NSDate date]] == NSOrderedAscending) {
+                [self.creature dny_FaceInteractionSetSmile];
+                self.creature.lastSmiledAt = [NSDate date];
+            }
         }
         if ( ff.hasMouthPosition ) {
             [self.creature dny_FaceInteractionTrackFacePosition:[self pointForCreatureFromPoint:ff.mouthPosition]];
