@@ -12,42 +12,45 @@
 		05569A4119A882E4006BD00D /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3D19A882E4006BD00D /* Icon-60@2x.png */; };
 		05569A4219A882E4006BD00D /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3E19A882E4006BD00D /* Icon-76.png */; };
 		05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3F19A882E4006BD00D /* Icon-76@2x.png */; };
+		05569A4919A93F92006BD00D /* DNYMotionInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05569A4819A93F92006BD00D /* DNYMotionInteraction.m */; };
+		0567920B19A969DB00F478EF /* DNYSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567920A19A969DB00F478EF /* DNYSpriteNode.m */; };
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
 		5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */; };
-		5ADE038E19A9698900F8F426 /* LSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE038119A9698900F8F426 /* LSEvent.m */; };
-		5ADE038F19A9698900F8F426 /* LSStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE038319A9698900F8F426 /* LSStateMachine.m */; };
-		5ADE039019A9698900F8F426 /* LSStateMachineDynamicAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE038519A9698900F8F426 /* LSStateMachineDynamicAdditions.m */; };
-		5ADE039119A9698900F8F426 /* LSTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE038919A9698900F8F426 /* LSTransition.m */; };
-		5ADE039219A9698900F8F426 /* NSString+Capitalize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE038B19A9698900F8F426 /* NSString+Capitalize.m */; };
-		5ADE039519A969F400F8F426 /* DNYMotionInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE039419A969F400F8F426 /* DNYMotionInteraction.m */; };
-		5ADE03B519A96A4700F8F426 /* eyebrow-negative@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE039819A96A4700F8F426 /* eyebrow-negative@2x.png */; };
-		5ADE03B619A96A4700F8F426 /* eyebrow-positive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE039919A96A4700F8F426 /* eyebrow-positive@2x.png */; };
-		5ADE03B719A96A4700F8F426 /* eyebrow-sad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE039A19A96A4700F8F426 /* eyebrow-sad@2x.png */; };
-		5ADE03B819A96A4700F8F426 /* rainbow-green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE039B19A96A4700F8F426 /* rainbow-green@2x.png */; };
-		5ADE03B919A96A4700F8F426 /* rainbow-orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE039C19A96A4700F8F426 /* rainbow-orange@2x.png */; };
-		5ADE03BA19A96A4700F8F426 /* rainbow-purple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE039D19A96A4700F8F426 /* rainbow-purple@2x.png */; };
-		5ADE03BB19A96A4700F8F426 /* rainbow-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE039E19A96A4700F8F426 /* rainbow-red@2x.png */; };
-		5ADE03BC19A96A4700F8F426 /* rainbow-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE039F19A96A4700F8F426 /* rainbow-yellow@2x.png */; };
-		5ADE03BD19A96A4700F8F426 /* tear-big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03A019A96A4700F8F426 /* tear-big@2x.png */; };
-		5ADE03BE19A96A4700F8F426 /* tear-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03A119A96A4700F8F426 /* tear-small@2x.png */; };
-		5ADE03BF19A96A4700F8F426 /* eye-sleep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03A319A96A4700F8F426 /* eye-sleep@2x.png */; };
-		5ADE03C019A96A4700F8F426 /* eye-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03A419A96A4700F8F426 /* eye-small@2x.png */; };
-		5ADE03C119A96A4700F8F426 /* eye-standard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03A519A96A4700F8F426 /* eye-standard@2x.png */; };
-		5ADE03C219A96A4700F8F426 /* eye-wink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03A619A96A4700F8F426 /* eye-wink@2x.png */; };
-		5ADE03C319A96A4700F8F426 /* mouth-bad-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03A819A96A4700F8F426 /* mouth-bad-reaction@2x.png */; };
-		5ADE03C419A96A4700F8F426 /* mouth-frown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03A919A96A4700F8F426 /* mouth-frown@2x.png */; };
-		5ADE03C519A96A4700F8F426 /* mouth-good-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03AA19A96A4700F8F426 /* mouth-good-reaction@2x.png */; };
-		5ADE03C619A96A4700F8F426 /* mouth-happy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03AB19A96A4700F8F426 /* mouth-happy@2x.png */; };
-		5ADE03C719A96A4700F8F426 /* mouth-sick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03AC19A96A4700F8F426 /* mouth-sick@2x.png */; };
-		5ADE03C819A96A4700F8F426 /* mouth-sicker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03AD19A96A4700F8F426 /* mouth-sicker@2x.png */; };
-		5ADE03C919A96A4700F8F426 /* mouth-sleep-01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03AE19A96A4700F8F426 /* mouth-sleep-01@2x.png */; };
-		5ADE03CA19A96A4700F8F426 /* mouth-sleep-02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03AF19A96A4700F8F426 /* mouth-sleep-02@2x.png */; };
-		5ADE03CB19A96A4700F8F426 /* mouth-smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03B019A96A4700F8F426 /* mouth-smile@2x.png */; };
-		5ADE03CC19A96A4700F8F426 /* mouth-straight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03B119A96A4700F8F426 /* mouth-straight@2x.png */; };
-		5ADE03CD19A96A4700F8F426 /* mouth-vomit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03B219A96A4700F8F426 /* mouth-vomit@2x.png */; };
-		5ADE03CE19A96A4700F8F426 /* nose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03B419A96A4700F8F426 /* nose@2x.png */; };
+		FA00A40719A9757C00E81740 /* LSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FA19A9757C00E81740 /* LSEvent.m */; };
+		FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FC19A9757C00E81740 /* LSStateMachine.m */; };
+		FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */; };
+		FA00A40A19A9757C00E81740 /* LSTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A40219A9757C00E81740 /* LSTransition.m */; };
+		FA00A40B19A9757C00E81740 /* NSString+Capitalize.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A40419A9757C00E81740 /* NSString+Capitalize.m */; };
+		FA077A3319A94EDF00C9CEC3 /* eyebrow-negative@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1619A94EDF00C9CEC3 /* eyebrow-negative@2x.png */; };
+		FA077A3419A94EDF00C9CEC3 /* eyebrow-positive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1719A94EDF00C9CEC3 /* eyebrow-positive@2x.png */; };
+		FA077A3519A94EDF00C9CEC3 /* eyebrow-sad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1819A94EDF00C9CEC3 /* eyebrow-sad@2x.png */; };
+		FA077A3619A94EDF00C9CEC3 /* rainbow-green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1919A94EDF00C9CEC3 /* rainbow-green@2x.png */; };
+		FA077A3719A94EDF00C9CEC3 /* rainbow-orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1A19A94EDF00C9CEC3 /* rainbow-orange@2x.png */; };
+		FA077A3819A94EDF00C9CEC3 /* rainbow-purple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1B19A94EDF00C9CEC3 /* rainbow-purple@2x.png */; };
+		FA077A3919A94EDF00C9CEC3 /* rainbow-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1C19A94EDF00C9CEC3 /* rainbow-red@2x.png */; };
+		FA077A3A19A94EDF00C9CEC3 /* rainbow-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1D19A94EDF00C9CEC3 /* rainbow-yellow@2x.png */; };
+		FA077A3B19A94EDF00C9CEC3 /* tear-big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1E19A94EDF00C9CEC3 /* tear-big@2x.png */; };
+		FA077A3C19A94EDF00C9CEC3 /* tear-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1F19A94EDF00C9CEC3 /* tear-small@2x.png */; };
+		FA077A3D19A94EDF00C9CEC3 /* eye-sleep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2119A94EDF00C9CEC3 /* eye-sleep@2x.png */; };
+		FA077A3E19A94EDF00C9CEC3 /* eye-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2219A94EDF00C9CEC3 /* eye-small@2x.png */; };
+		FA077A3F19A94EDF00C9CEC3 /* eye-standard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2319A94EDF00C9CEC3 /* eye-standard@2x.png */; };
+		FA077A4019A94EDF00C9CEC3 /* eye-wink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2419A94EDF00C9CEC3 /* eye-wink@2x.png */; };
+		FA077A4119A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2619A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png */; };
+		FA077A4219A94EDF00C9CEC3 /* mouth-frown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2719A94EDF00C9CEC3 /* mouth-frown@2x.png */; };
+		FA077A4319A94EDF00C9CEC3 /* mouth-good-reaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2819A94EDF00C9CEC3 /* mouth-good-reaction@2x.png */; };
+		FA077A4419A94EDF00C9CEC3 /* mouth-happy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2919A94EDF00C9CEC3 /* mouth-happy@2x.png */; };
+		FA077A4519A94EDF00C9CEC3 /* mouth-sick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2A19A94EDF00C9CEC3 /* mouth-sick@2x.png */; };
+		FA077A4619A94EDF00C9CEC3 /* mouth-sicker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2B19A94EDF00C9CEC3 /* mouth-sicker@2x.png */; };
+		FA077A4719A94EDF00C9CEC3 /* mouth-sleep-01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2C19A94EDF00C9CEC3 /* mouth-sleep-01@2x.png */; };
+		FA077A4819A94EDF00C9CEC3 /* mouth-sleep-02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2D19A94EDF00C9CEC3 /* mouth-sleep-02@2x.png */; };
+		FA077A4919A94EDF00C9CEC3 /* mouth-smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2E19A94EDF00C9CEC3 /* mouth-smile@2x.png */; };
+		FA077A4A19A94EDF00C9CEC3 /* mouth-straight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A2F19A94EDF00C9CEC3 /* mouth-straight@2x.png */; };
+		FA077A4B19A94EDF00C9CEC3 /* mouth-vomit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A3019A94EDF00C9CEC3 /* mouth-vomit@2x.png */; };
+		FA077A4C19A94EDF00C9CEC3 /* nose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A3219A94EDF00C9CEC3 /* nose@2x.png */; };
+		FA077A4F19A9607F00C9CEC3 /* NSIndexPath+CGVector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA077A4E19A9607F00C9CEC3 /* NSIndexPath+CGVector.m */; };
+		FA077A5219A974CA00C9CEC3 /* DNYFoodInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA077A5119A974CA00C9CEC3 /* DNYFoodInteraction.m */; };
 		FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA520D5019A908F300197278 /* DNYCreatureNode.m */; };
 		FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5A19A834F600CD2FEC /* DNYPersistence.m */; };
 		FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */; };
@@ -89,6 +92,10 @@
 		05569A3D19A882E4006BD00D /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		05569A3E19A882E4006BD00D /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
 		05569A3F19A882E4006BD00D /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		05569A4719A93F92006BD00D /* DNYMotionInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYMotionInteraction.h; sourceTree = "<group>"; };
+		05569A4819A93F92006BD00D /* DNYMotionInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYMotionInteraction.m; sourceTree = "<group>"; };
+		0567920919A969DB00F478EF /* DNYSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYSpriteNode.h; path = src/DNYSpriteNode.h; sourceTree = SOURCE_ROOT; };
+		0567920A19A969DB00F478EF /* DNYSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYSpriteNode.m; path = src/DNYSpriteNode.m; sourceTree = SOURCE_ROOT; };
 		0654E1D019A82BE200A5964F /* Donny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0654E1D419A82BE200A5964F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0654E1D519A82BE200A5964F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,48 +105,50 @@
 		0654E1FE19A85E0700A5964F /* DNYInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYInteraction.h; sourceTree = "<group>"; };
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
 		5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		5ADE038019A9698900F8F426 /* LSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSEvent.h; sourceTree = "<group>"; };
-		5ADE038119A9698900F8F426 /* LSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSEvent.m; sourceTree = "<group>"; };
-		5ADE038219A9698900F8F426 /* LSStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStateMachine.h; sourceTree = "<group>"; };
-		5ADE038319A9698900F8F426 /* LSStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStateMachine.m; sourceTree = "<group>"; };
-		5ADE038419A9698900F8F426 /* LSStateMachineDynamicAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStateMachineDynamicAdditions.h; sourceTree = "<group>"; };
-		5ADE038519A9698900F8F426 /* LSStateMachineDynamicAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStateMachineDynamicAdditions.m; sourceTree = "<group>"; };
-		5ADE038619A9698900F8F426 /* LSStateMachineMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStateMachineMacros.h; sourceTree = "<group>"; };
-		5ADE038719A9698900F8F426 /* LSStateMachineTypedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStateMachineTypedefs.h; sourceTree = "<group>"; };
-		5ADE038819A9698900F8F426 /* LSTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSTransition.h; sourceTree = "<group>"; };
-		5ADE038919A9698900F8F426 /* LSTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTransition.m; sourceTree = "<group>"; };
-		5ADE038A19A9698900F8F426 /* NSString+Capitalize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Capitalize.h"; sourceTree = "<group>"; };
-		5ADE038B19A9698900F8F426 /* NSString+Capitalize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Capitalize.m"; sourceTree = "<group>"; };
-		5ADE038C19A9698900F8F426 /* StateMachine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StateMachine-Prefix.pch"; sourceTree = "<group>"; };
-		5ADE038D19A9698900F8F426 /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateMachine.h; sourceTree = "<group>"; };
-		5ADE039319A969F400F8F426 /* DNYMotionInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYMotionInteraction.h; sourceTree = "<group>"; };
-		5ADE039419A969F400F8F426 /* DNYMotionInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYMotionInteraction.m; sourceTree = "<group>"; };
-		5ADE039819A96A4700F8F426 /* eyebrow-negative@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-negative@2x.png"; sourceTree = "<group>"; };
-		5ADE039919A96A4700F8F426 /* eyebrow-positive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-positive@2x.png"; sourceTree = "<group>"; };
-		5ADE039A19A96A4700F8F426 /* eyebrow-sad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-sad@2x.png"; sourceTree = "<group>"; };
-		5ADE039B19A96A4700F8F426 /* rainbow-green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-green@2x.png"; sourceTree = "<group>"; };
-		5ADE039C19A96A4700F8F426 /* rainbow-orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-orange@2x.png"; sourceTree = "<group>"; };
-		5ADE039D19A96A4700F8F426 /* rainbow-purple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-purple@2x.png"; sourceTree = "<group>"; };
-		5ADE039E19A96A4700F8F426 /* rainbow-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-red@2x.png"; sourceTree = "<group>"; };
-		5ADE039F19A96A4700F8F426 /* rainbow-yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-yellow@2x.png"; sourceTree = "<group>"; };
-		5ADE03A019A96A4700F8F426 /* tear-big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tear-big@2x.png"; sourceTree = "<group>"; };
-		5ADE03A119A96A4700F8F426 /* tear-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tear-small@2x.png"; sourceTree = "<group>"; };
-		5ADE03A319A96A4700F8F426 /* eye-sleep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-sleep@2x.png"; sourceTree = "<group>"; };
-		5ADE03A419A96A4700F8F426 /* eye-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-small@2x.png"; sourceTree = "<group>"; };
-		5ADE03A519A96A4700F8F426 /* eye-standard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-standard@2x.png"; sourceTree = "<group>"; };
-		5ADE03A619A96A4700F8F426 /* eye-wink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-wink@2x.png"; sourceTree = "<group>"; };
-		5ADE03A819A96A4700F8F426 /* mouth-bad-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-bad-reaction@2x.png"; sourceTree = "<group>"; };
-		5ADE03A919A96A4700F8F426 /* mouth-frown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-frown@2x.png"; sourceTree = "<group>"; };
-		5ADE03AA19A96A4700F8F426 /* mouth-good-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-good-reaction@2x.png"; sourceTree = "<group>"; };
-		5ADE03AB19A96A4700F8F426 /* mouth-happy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-happy@2x.png"; sourceTree = "<group>"; };
-		5ADE03AC19A96A4700F8F426 /* mouth-sick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sick@2x.png"; sourceTree = "<group>"; };
-		5ADE03AD19A96A4700F8F426 /* mouth-sicker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sicker@2x.png"; sourceTree = "<group>"; };
-		5ADE03AE19A96A4700F8F426 /* mouth-sleep-01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-01@2x.png"; sourceTree = "<group>"; };
-		5ADE03AF19A96A4700F8F426 /* mouth-sleep-02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-02@2x.png"; sourceTree = "<group>"; };
-		5ADE03B019A96A4700F8F426 /* mouth-smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-smile@2x.png"; sourceTree = "<group>"; };
-		5ADE03B119A96A4700F8F426 /* mouth-straight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-straight@2x.png"; sourceTree = "<group>"; };
-		5ADE03B219A96A4700F8F426 /* mouth-vomit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-vomit@2x.png"; sourceTree = "<group>"; };
-		5ADE03B419A96A4700F8F426 /* nose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nose@2x.png"; sourceTree = "<group>"; };
+		FA00A3F919A9757C00E81740 /* LSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSEvent.h; path = StateMachine/LSEvent.h; sourceTree = "<group>"; };
+		FA00A3FA19A9757C00E81740 /* LSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSEvent.m; path = StateMachine/LSEvent.m; sourceTree = "<group>"; };
+		FA00A3FB19A9757C00E81740 /* LSStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachine.h; path = StateMachine/LSStateMachine.h; sourceTree = "<group>"; };
+		FA00A3FC19A9757C00E81740 /* LSStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStateMachine.m; path = StateMachine/LSStateMachine.m; sourceTree = "<group>"; };
+		FA00A3FD19A9757C00E81740 /* LSStateMachineDynamicAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachineDynamicAdditions.h; path = StateMachine/LSStateMachineDynamicAdditions.h; sourceTree = "<group>"; };
+		FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStateMachineDynamicAdditions.m; path = StateMachine/LSStateMachineDynamicAdditions.m; sourceTree = "<group>"; };
+		FA00A3FF19A9757C00E81740 /* LSStateMachineMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachineMacros.h; path = StateMachine/LSStateMachineMacros.h; sourceTree = "<group>"; };
+		FA00A40019A9757C00E81740 /* LSStateMachineTypedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachineTypedefs.h; path = StateMachine/LSStateMachineTypedefs.h; sourceTree = "<group>"; };
+		FA00A40119A9757C00E81740 /* LSTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSTransition.h; path = StateMachine/LSTransition.h; sourceTree = "<group>"; };
+		FA00A40219A9757C00E81740 /* LSTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSTransition.m; path = StateMachine/LSTransition.m; sourceTree = "<group>"; };
+		FA00A40319A9757C00E81740 /* NSString+Capitalize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Capitalize.h"; path = "StateMachine/NSString+Capitalize.h"; sourceTree = "<group>"; };
+		FA00A40419A9757C00E81740 /* NSString+Capitalize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Capitalize.m"; path = "StateMachine/NSString+Capitalize.m"; sourceTree = "<group>"; };
+		FA00A40519A9757C00E81740 /* StateMachine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "StateMachine-Prefix.pch"; path = "StateMachine/StateMachine-Prefix.pch"; sourceTree = "<group>"; };
+		FA00A40619A9757C00E81740 /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StateMachine.h; path = StateMachine/StateMachine.h; sourceTree = "<group>"; };
+		FA077A1619A94EDF00C9CEC3 /* eyebrow-negative@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-negative@2x.png"; sourceTree = "<group>"; };
+		FA077A1719A94EDF00C9CEC3 /* eyebrow-positive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-positive@2x.png"; sourceTree = "<group>"; };
+		FA077A1819A94EDF00C9CEC3 /* eyebrow-sad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-sad@2x.png"; sourceTree = "<group>"; };
+		FA077A1919A94EDF00C9CEC3 /* rainbow-green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-green@2x.png"; sourceTree = "<group>"; };
+		FA077A1A19A94EDF00C9CEC3 /* rainbow-orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-orange@2x.png"; sourceTree = "<group>"; };
+		FA077A1B19A94EDF00C9CEC3 /* rainbow-purple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-purple@2x.png"; sourceTree = "<group>"; };
+		FA077A1C19A94EDF00C9CEC3 /* rainbow-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-red@2x.png"; sourceTree = "<group>"; };
+		FA077A1D19A94EDF00C9CEC3 /* rainbow-yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rainbow-yellow@2x.png"; sourceTree = "<group>"; };
+		FA077A1E19A94EDF00C9CEC3 /* tear-big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tear-big@2x.png"; sourceTree = "<group>"; };
+		FA077A1F19A94EDF00C9CEC3 /* tear-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tear-small@2x.png"; sourceTree = "<group>"; };
+		FA077A2119A94EDF00C9CEC3 /* eye-sleep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-sleep@2x.png"; sourceTree = "<group>"; };
+		FA077A2219A94EDF00C9CEC3 /* eye-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-small@2x.png"; sourceTree = "<group>"; };
+		FA077A2319A94EDF00C9CEC3 /* eye-standard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-standard@2x.png"; sourceTree = "<group>"; };
+		FA077A2419A94EDF00C9CEC3 /* eye-wink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye-wink@2x.png"; sourceTree = "<group>"; };
+		FA077A2619A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-bad-reaction@2x.png"; sourceTree = "<group>"; };
+		FA077A2719A94EDF00C9CEC3 /* mouth-frown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-frown@2x.png"; sourceTree = "<group>"; };
+		FA077A2819A94EDF00C9CEC3 /* mouth-good-reaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-good-reaction@2x.png"; sourceTree = "<group>"; };
+		FA077A2919A94EDF00C9CEC3 /* mouth-happy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-happy@2x.png"; sourceTree = "<group>"; };
+		FA077A2A19A94EDF00C9CEC3 /* mouth-sick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sick@2x.png"; sourceTree = "<group>"; };
+		FA077A2B19A94EDF00C9CEC3 /* mouth-sicker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sicker@2x.png"; sourceTree = "<group>"; };
+		FA077A2C19A94EDF00C9CEC3 /* mouth-sleep-01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-01@2x.png"; sourceTree = "<group>"; };
+		FA077A2D19A94EDF00C9CEC3 /* mouth-sleep-02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-sleep-02@2x.png"; sourceTree = "<group>"; };
+		FA077A2E19A94EDF00C9CEC3 /* mouth-smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-smile@2x.png"; sourceTree = "<group>"; };
+		FA077A2F19A94EDF00C9CEC3 /* mouth-straight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-straight@2x.png"; sourceTree = "<group>"; };
+		FA077A3019A94EDF00C9CEC3 /* mouth-vomit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mouth-vomit@2x.png"; sourceTree = "<group>"; };
+		FA077A3219A94EDF00C9CEC3 /* nose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nose@2x.png"; sourceTree = "<group>"; };
+		FA077A4D19A9607F00C9CEC3 /* NSIndexPath+CGVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSIndexPath+CGVector.h"; path = "src/NSIndexPath+CGVector.h"; sourceTree = SOURCE_ROOT; };
+		FA077A4E19A9607F00C9CEC3 /* NSIndexPath+CGVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSIndexPath+CGVector.m"; path = "src/NSIndexPath+CGVector.m"; sourceTree = SOURCE_ROOT; };
+		FA077A5019A974CA00C9CEC3 /* DNYFoodInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYFoodInteraction.h; sourceTree = "<group>"; };
+		FA077A5119A974CA00C9CEC3 /* DNYFoodInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYFoodInteraction.m; sourceTree = "<group>"; };
 		FA520D4F19A908F300197278 /* DNYCreatureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureNode.h; path = src/DNYCreatureNode.h; sourceTree = SOURCE_ROOT; };
 		FA520D5019A908F300197278 /* DNYCreatureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureNode.m; path = src/DNYCreatureNode.m; sourceTree = SOURCE_ROOT; };
 		FA683B5919A834F600CD2FEC /* DNYPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYPersistence.h; path = src/DNYPersistence.h; sourceTree = SOURCE_ROOT; };
@@ -227,7 +236,7 @@
 		0654E1D219A82BE200A5964F /* Donny */ = {
 			isa = PBXGroup;
 			children = (
-				5ADE037F19A9698900F8F426 /* StateMachine */,
+				FA00A3F819A9756B00E81740 /* state machine */,
 				FA683BA519A8608200CD2FEC /* sprite */,
 				FA683B6219A85A0300CD2FEC /* categories */,
 				0654E1FD19A85DFA00A5964F /* Interactions */,
@@ -286,8 +295,10 @@
 		0654E1FD19A85DFA00A5964F /* Interactions */ = {
 			isa = PBXGroup;
 			children = (
-				5ADE039319A969F400F8F426 /* DNYMotionInteraction.h */,
-				5ADE039419A969F400F8F426 /* DNYMotionInteraction.m */,
+				FA077A5019A974CA00C9CEC3 /* DNYFoodInteraction.h */,
+				FA077A5119A974CA00C9CEC3 /* DNYFoodInteraction.m */,
+				05569A4719A93F92006BD00D /* DNYMotionInteraction.h */,
+				05569A4819A93F92006BD00D /* DNYMotionInteraction.m */,
 				0654E1FE19A85E0700A5964F /* DNYInteraction.h */,
 				0654E1FF19A85E0700A5964F /* DNYInteraction.m */,
 				05569A2919A85E6D006BD00D /* DNYFaceInteraction.h */,
@@ -296,89 +307,89 @@
 			name = Interactions;
 			sourceTree = "<group>";
 		};
-		5ADE037F19A9698900F8F426 /* StateMachine */ = {
+		FA00A3F819A9756B00E81740 /* state machine */ = {
 			isa = PBXGroup;
 			children = (
-				5ADE038019A9698900F8F426 /* LSEvent.h */,
-				5ADE038119A9698900F8F426 /* LSEvent.m */,
-				5ADE038219A9698900F8F426 /* LSStateMachine.h */,
-				5ADE038319A9698900F8F426 /* LSStateMachine.m */,
-				5ADE038419A9698900F8F426 /* LSStateMachineDynamicAdditions.h */,
-				5ADE038519A9698900F8F426 /* LSStateMachineDynamicAdditions.m */,
-				5ADE038619A9698900F8F426 /* LSStateMachineMacros.h */,
-				5ADE038719A9698900F8F426 /* LSStateMachineTypedefs.h */,
-				5ADE038819A9698900F8F426 /* LSTransition.h */,
-				5ADE038919A9698900F8F426 /* LSTransition.m */,
-				5ADE038A19A9698900F8F426 /* NSString+Capitalize.h */,
-				5ADE038B19A9698900F8F426 /* NSString+Capitalize.m */,
-				5ADE038C19A9698900F8F426 /* StateMachine-Prefix.pch */,
-				5ADE038D19A9698900F8F426 /* StateMachine.h */,
+				FA00A3F919A9757C00E81740 /* LSEvent.h */,
+				FA00A3FA19A9757C00E81740 /* LSEvent.m */,
+				FA00A3FB19A9757C00E81740 /* LSStateMachine.h */,
+				FA00A3FC19A9757C00E81740 /* LSStateMachine.m */,
+				FA00A3FD19A9757C00E81740 /* LSStateMachineDynamicAdditions.h */,
+				FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */,
+				FA00A3FF19A9757C00E81740 /* LSStateMachineMacros.h */,
+				FA00A40019A9757C00E81740 /* LSStateMachineTypedefs.h */,
+				FA00A40119A9757C00E81740 /* LSTransition.h */,
+				FA00A40219A9757C00E81740 /* LSTransition.m */,
+				FA00A40319A9757C00E81740 /* NSString+Capitalize.h */,
+				FA00A40419A9757C00E81740 /* NSString+Capitalize.m */,
+				FA00A40519A9757C00E81740 /* StateMachine-Prefix.pch */,
+				FA00A40619A9757C00E81740 /* StateMachine.h */,
 			);
-			path = StateMachine;
+			name = "state machine";
 			sourceTree = "<group>";
 		};
-		5ADE039619A96A4700F8F426 /* graphics */ = {
+		FA077A1419A94EDF00C9CEC3 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
-				5ADE039719A96A4700F8F426 /* extras */,
-				5ADE03A219A96A4700F8F426 /* eyes */,
-				5ADE03A719A96A4700F8F426 /* mouth */,
-				5ADE03B319A96A4700F8F426 /* nose */,
+				FA077A1519A94EDF00C9CEC3 /* extras */,
+				FA077A2019A94EDF00C9CEC3 /* eyes */,
+				FA077A2519A94EDF00C9CEC3 /* mouth */,
+				FA077A3119A94EDF00C9CEC3 /* nose */,
 			);
 			name = graphics;
 			path = res/graphics;
 			sourceTree = "<group>";
 		};
-		5ADE039719A96A4700F8F426 /* extras */ = {
+		FA077A1519A94EDF00C9CEC3 /* extras */ = {
 			isa = PBXGroup;
 			children = (
-				5ADE039819A96A4700F8F426 /* eyebrow-negative@2x.png */,
-				5ADE039919A96A4700F8F426 /* eyebrow-positive@2x.png */,
-				5ADE039A19A96A4700F8F426 /* eyebrow-sad@2x.png */,
-				5ADE039B19A96A4700F8F426 /* rainbow-green@2x.png */,
-				5ADE039C19A96A4700F8F426 /* rainbow-orange@2x.png */,
-				5ADE039D19A96A4700F8F426 /* rainbow-purple@2x.png */,
-				5ADE039E19A96A4700F8F426 /* rainbow-red@2x.png */,
-				5ADE039F19A96A4700F8F426 /* rainbow-yellow@2x.png */,
-				5ADE03A019A96A4700F8F426 /* tear-big@2x.png */,
-				5ADE03A119A96A4700F8F426 /* tear-small@2x.png */,
+				FA077A1619A94EDF00C9CEC3 /* eyebrow-negative@2x.png */,
+				FA077A1719A94EDF00C9CEC3 /* eyebrow-positive@2x.png */,
+				FA077A1819A94EDF00C9CEC3 /* eyebrow-sad@2x.png */,
+				FA077A1919A94EDF00C9CEC3 /* rainbow-green@2x.png */,
+				FA077A1A19A94EDF00C9CEC3 /* rainbow-orange@2x.png */,
+				FA077A1B19A94EDF00C9CEC3 /* rainbow-purple@2x.png */,
+				FA077A1C19A94EDF00C9CEC3 /* rainbow-red@2x.png */,
+				FA077A1D19A94EDF00C9CEC3 /* rainbow-yellow@2x.png */,
+				FA077A1E19A94EDF00C9CEC3 /* tear-big@2x.png */,
+				FA077A1F19A94EDF00C9CEC3 /* tear-small@2x.png */,
 			);
 			path = extras;
 			sourceTree = "<group>";
 		};
-		5ADE03A219A96A4700F8F426 /* eyes */ = {
+		FA077A2019A94EDF00C9CEC3 /* eyes */ = {
 			isa = PBXGroup;
 			children = (
-				5ADE03A319A96A4700F8F426 /* eye-sleep@2x.png */,
-				5ADE03A419A96A4700F8F426 /* eye-small@2x.png */,
-				5ADE03A519A96A4700F8F426 /* eye-standard@2x.png */,
-				5ADE03A619A96A4700F8F426 /* eye-wink@2x.png */,
+				FA077A2119A94EDF00C9CEC3 /* eye-sleep@2x.png */,
+				FA077A2219A94EDF00C9CEC3 /* eye-small@2x.png */,
+				FA077A2319A94EDF00C9CEC3 /* eye-standard@2x.png */,
+				FA077A2419A94EDF00C9CEC3 /* eye-wink@2x.png */,
 			);
 			path = eyes;
 			sourceTree = "<group>";
 		};
-		5ADE03A719A96A4700F8F426 /* mouth */ = {
+		FA077A2519A94EDF00C9CEC3 /* mouth */ = {
 			isa = PBXGroup;
 			children = (
-				5ADE03A819A96A4700F8F426 /* mouth-bad-reaction@2x.png */,
-				5ADE03A919A96A4700F8F426 /* mouth-frown@2x.png */,
-				5ADE03AA19A96A4700F8F426 /* mouth-good-reaction@2x.png */,
-				5ADE03AB19A96A4700F8F426 /* mouth-happy@2x.png */,
-				5ADE03AC19A96A4700F8F426 /* mouth-sick@2x.png */,
-				5ADE03AD19A96A4700F8F426 /* mouth-sicker@2x.png */,
-				5ADE03AE19A96A4700F8F426 /* mouth-sleep-01@2x.png */,
-				5ADE03AF19A96A4700F8F426 /* mouth-sleep-02@2x.png */,
-				5ADE03B019A96A4700F8F426 /* mouth-smile@2x.png */,
-				5ADE03B119A96A4700F8F426 /* mouth-straight@2x.png */,
-				5ADE03B219A96A4700F8F426 /* mouth-vomit@2x.png */,
+				FA077A2619A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png */,
+				FA077A2719A94EDF00C9CEC3 /* mouth-frown@2x.png */,
+				FA077A2819A94EDF00C9CEC3 /* mouth-good-reaction@2x.png */,
+				FA077A2919A94EDF00C9CEC3 /* mouth-happy@2x.png */,
+				FA077A2A19A94EDF00C9CEC3 /* mouth-sick@2x.png */,
+				FA077A2B19A94EDF00C9CEC3 /* mouth-sicker@2x.png */,
+				FA077A2C19A94EDF00C9CEC3 /* mouth-sleep-01@2x.png */,
+				FA077A2D19A94EDF00C9CEC3 /* mouth-sleep-02@2x.png */,
+				FA077A2E19A94EDF00C9CEC3 /* mouth-smile@2x.png */,
+				FA077A2F19A94EDF00C9CEC3 /* mouth-straight@2x.png */,
+				FA077A3019A94EDF00C9CEC3 /* mouth-vomit@2x.png */,
 			);
 			path = mouth;
 			sourceTree = "<group>";
 		};
-		5ADE03B319A96A4700F8F426 /* nose */ = {
+		FA077A3119A94EDF00C9CEC3 /* nose */ = {
 			isa = PBXGroup;
 			children = (
-				5ADE03B419A96A4700F8F426 /* nose@2x.png */,
+				FA077A3219A94EDF00C9CEC3 /* nose@2x.png */,
 			);
 			path = nose;
 			sourceTree = "<group>";
@@ -388,6 +399,8 @@
 			children = (
 				FA683B6319A85A3500CD2FEC /* UIColor+RGB.h */,
 				FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */,
+				FA077A4D19A9607F00C9CEC3 /* NSIndexPath+CGVector.h */,
+				FA077A4E19A9607F00C9CEC3 /* NSIndexPath+CGVector.m */,
 			);
 			name = categories;
 			sourceTree = "<group>";
@@ -397,6 +410,8 @@
 			children = (
 				FA683BA619A860D600CD2FEC /* DNYScene.h */,
 				FA683BA719A860D600CD2FEC /* DNYScene.m */,
+				0567920919A969DB00F478EF /* DNYSpriteNode.h */,
+				0567920A19A969DB00F478EF /* DNYSpriteNode.m */,
 				FA520D4F19A908F300197278 /* DNYCreatureNode.h */,
 				FA520D5019A908F300197278 /* DNYCreatureNode.m */,
 			);
@@ -406,7 +421,7 @@
 		FAD9A37019A8337600B7C401 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5ADE039619A96A4700F8F426 /* graphics */,
+				FA077A1419A94EDF00C9CEC3 /* graphics */,
 				05569A3C19A882E4006BD00D /* Icon-60.png */,
 				05569A3D19A882E4006BD00D /* Icon-60@2x.png */,
 				05569A3E19A882E4006BD00D /* Icon-76.png */,
@@ -497,37 +512,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ADE03B619A96A4700F8F426 /* eyebrow-positive@2x.png in Resources */,
-				5ADE03BE19A96A4700F8F426 /* tear-small@2x.png in Resources */,
-				5ADE03BC19A96A4700F8F426 /* rainbow-yellow@2x.png in Resources */,
-				5ADE03CB19A96A4700F8F426 /* mouth-smile@2x.png in Resources */,
-				5ADE03B719A96A4700F8F426 /* eyebrow-sad@2x.png in Resources */,
-				5ADE03BA19A96A4700F8F426 /* rainbow-purple@2x.png in Resources */,
+				FA077A3419A94EDF00C9CEC3 /* eyebrow-positive@2x.png in Resources */,
+				FA077A3C19A94EDF00C9CEC3 /* tear-small@2x.png in Resources */,
+				FA077A3A19A94EDF00C9CEC3 /* rainbow-yellow@2x.png in Resources */,
+				FA077A4919A94EDF00C9CEC3 /* mouth-smile@2x.png in Resources */,
+				FA077A3519A94EDF00C9CEC3 /* eyebrow-sad@2x.png in Resources */,
+				FA077A3819A94EDF00C9CEC3 /* rainbow-purple@2x.png in Resources */,
 				FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */,
-				5ADE03C619A96A4700F8F426 /* mouth-happy@2x.png in Resources */,
-				5ADE03C919A96A4700F8F426 /* mouth-sleep-01@2x.png in Resources */,
-				5ADE03BF19A96A4700F8F426 /* eye-sleep@2x.png in Resources */,
+				FA077A4419A94EDF00C9CEC3 /* mouth-happy@2x.png in Resources */,
+				FA077A4719A94EDF00C9CEC3 /* mouth-sleep-01@2x.png in Resources */,
+				FA077A3D19A94EDF00C9CEC3 /* eye-sleep@2x.png in Resources */,
 				05569A4119A882E4006BD00D /* Icon-60@2x.png in Resources */,
-				5ADE03C019A96A4700F8F426 /* eye-small@2x.png in Resources */,
-				5ADE03C719A96A4700F8F426 /* mouth-sick@2x.png in Resources */,
-				5ADE03C319A96A4700F8F426 /* mouth-bad-reaction@2x.png in Resources */,
-				5ADE03C119A96A4700F8F426 /* eye-standard@2x.png in Resources */,
-				5ADE03CE19A96A4700F8F426 /* nose@2x.png in Resources */,
+				FA077A3E19A94EDF00C9CEC3 /* eye-small@2x.png in Resources */,
+				FA077A4519A94EDF00C9CEC3 /* mouth-sick@2x.png in Resources */,
+				FA077A4119A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png in Resources */,
+				FA077A3F19A94EDF00C9CEC3 /* eye-standard@2x.png in Resources */,
+				FA077A4C19A94EDF00C9CEC3 /* nose@2x.png in Resources */,
 				05569A4219A882E4006BD00D /* Icon-76.png in Resources */,
-				5ADE03B519A96A4700F8F426 /* eyebrow-negative@2x.png in Resources */,
-				5ADE03CA19A96A4700F8F426 /* mouth-sleep-02@2x.png in Resources */,
+				FA077A3319A94EDF00C9CEC3 /* eyebrow-negative@2x.png in Resources */,
+				FA077A4819A94EDF00C9CEC3 /* mouth-sleep-02@2x.png in Resources */,
 				05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */,
-				5ADE03C519A96A4700F8F426 /* mouth-good-reaction@2x.png in Resources */,
-				5ADE03BD19A96A4700F8F426 /* tear-big@2x.png in Resources */,
-				5ADE03CC19A96A4700F8F426 /* mouth-straight@2x.png in Resources */,
-				5ADE03B919A96A4700F8F426 /* rainbow-orange@2x.png in Resources */,
-				5ADE03BB19A96A4700F8F426 /* rainbow-red@2x.png in Resources */,
-				5ADE03CD19A96A4700F8F426 /* mouth-vomit@2x.png in Resources */,
-				5ADE03B819A96A4700F8F426 /* rainbow-green@2x.png in Resources */,
-				5ADE03C419A96A4700F8F426 /* mouth-frown@2x.png in Resources */,
-				5ADE03C219A96A4700F8F426 /* eye-wink@2x.png in Resources */,
+				FA077A4319A94EDF00C9CEC3 /* mouth-good-reaction@2x.png in Resources */,
+				FA077A3B19A94EDF00C9CEC3 /* tear-big@2x.png in Resources */,
+				FA077A4A19A94EDF00C9CEC3 /* mouth-straight@2x.png in Resources */,
+				FA077A3719A94EDF00C9CEC3 /* rainbow-orange@2x.png in Resources */,
+				FA077A3919A94EDF00C9CEC3 /* rainbow-red@2x.png in Resources */,
+				FA077A4B19A94EDF00C9CEC3 /* mouth-vomit@2x.png in Resources */,
+				FA077A3619A94EDF00C9CEC3 /* rainbow-green@2x.png in Resources */,
+				FA077A4219A94EDF00C9CEC3 /* mouth-frown@2x.png in Resources */,
+				FA077A4019A94EDF00C9CEC3 /* eye-wink@2x.png in Resources */,
 				05569A4019A882E4006BD00D /* Icon-60.png in Resources */,
-				5ADE03C819A96A4700F8F426 /* mouth-sicker@2x.png in Resources */,
+				FA077A4619A94EDF00C9CEC3 /* mouth-sicker@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,23 +560,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */,
+				FA00A40719A9757C00E81740 /* LSEvent.m in Sources */,
 				05569A2B19A85E6D006BD00D /* DNYFaceInteraction.m in Sources */,
 				FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */,
 				FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */,
+				FA00A40B19A9757C00E81740 /* NSString+Capitalize.m in Sources */,
 				0654E1D619A82BE200A5964F /* main.m in Sources */,
-				5ADE039019A9698900F8F426 /* LSStateMachineDynamicAdditions.m in Sources */,
 				FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */,
-				5ADE039119A9698900F8F426 /* LSTransition.m in Sources */,
 				FA683B6519A85A3500CD2FEC /* UIColor+RGB.m in Sources */,
+				05569A4919A93F92006BD00D /* DNYMotionInteraction.m in Sources */,
+				0567920B19A969DB00F478EF /* DNYSpriteNode.m in Sources */,
 				FAD9A37419A8339D00B7C401 /* Donny.xcdatamodeld in Sources */,
-				5ADE039219A9698900F8F426 /* NSString+Capitalize.m in Sources */,
 				FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */,
-				5ADE039519A969F400F8F426 /* DNYMotionInteraction.m in Sources */,
 				FA683BA819A860D600CD2FEC /* DNYScene.m in Sources */,
-				5ADE038E19A9698900F8F426 /* LSEvent.m in Sources */,
 				0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */,
 				FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */,
-				5ADE038F19A9698900F8F426 /* LSStateMachine.m in Sources */,
+				FA077A5219A974CA00C9CEC3 /* DNYFoodInteraction.m in Sources */,
+				FA00A40A19A9757C00E81740 /* LSTransition.m in Sources */,
+				FA077A4F19A9607F00C9CEC3 /* NSIndexPath+CGVector.m in Sources */,
+				FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

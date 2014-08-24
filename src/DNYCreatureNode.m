@@ -7,10 +7,12 @@
 //
 
 #import "DNYCreatureNode.h"
+#import <Foundation/Foundation.h>
+
+#import "NSIndexPath+CGVector.h"
+
 
 @interface DNYCreatureNode ()
-
-@property (strong, nonatomic) NSArray *nodes;
 
 @end
 
@@ -22,39 +24,55 @@
     self = [super init];
     
     if (self) {
-        _leftEyeBrow = [SKSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
+        _leftEyeBrow = [DNYSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
         _leftEyeBrow.hidden = YES;
+        [self addDropShadowToSpriteNode:_leftEyeBrow];
         [self addChild:_leftEyeBrow];
-        _leftEye = [SKSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
+        _leftEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _leftEye.position = CGPointMake(70.f, 393.f);
+        [self addDropShadowToSpriteNode:_leftEye];
         [self addChild:_leftEye];
         
-        _rightEyeBrow = [SKSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
+        _rightEyeBrow = [DNYSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
         _rightEyeBrow.hidden = YES;
+        [self addDropShadowToSpriteNode:_rightEyeBrow];
         [self addChild:_rightEyeBrow];
-        _rightEye = [SKSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
+        _rightEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _rightEye.position = CGPointMake(250.f, 393.f);
+        [self addDropShadowToSpriteNode:_rightEye];
         [self addChild:_rightEye];
        
-        _nose = [SKSpriteNode spriteNodeWithImageNamed:@"nose.png"];
+        _nose = [DNYSpriteNode spriteNodeWithImageNamed:@"nose.png"];
         _nose.position = CGPointMake(160.f, 353.f);
+        [self addDropShadowToSpriteNode:_nose];
         [self addChild:_nose];
         
-        _mouth = [SKSpriteNode spriteNodeWithImageNamed:@"mouth-sleep-01.png"];
+        _mouth = [DNYSpriteNode spriteNodeWithImageNamed:@"mouth-sleep-01.png"];
         _mouth.position = CGPointMake(180.f, 218.f);
+        [self addDropShadowToSpriteNode:_mouth];
         [self addChild:_mouth];
         
-        self.nodes = @[ _leftEyeBrow, _leftEye, _rightEyeBrow, _rightEye,
-                        _nose, _mouth ];
+        _lookingAt = [NSIndexPath indexPathForItem:1 inSection:1];
     }
     
     return self;
 }
 
+static const float kDropShadowYOffset = 8.f;
+- (void)addDropShadowToSpriteNode:(DNYSpriteNode *)spriteNode {
+    spriteNode.zPosition++;
+    DNYSpriteNode *dropShadow = [spriteNode copy];
+    dropShadow.alpha = 0.25;
+    dropShadow.position = CGPointMake(spriteNode.position.x, spriteNode.position.y - kDropShadowYOffset);
+
+    spriteNode.dropShadow = dropShadow;
+    [self addChild:dropShadow];
+}
+
 - (void)removeAllActions {
     [super removeAllActions];
     
-    for (SKNode *node in self.nodes) {
+    for (SKNode *node in self.children) {
         [node removeAllActions];
     }
 }
@@ -129,6 +147,31 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self blink];
     });
+}
+
+- (void)lookAt:(NSIndexPath *)path {
+    NSAssert(path.row >= 0 && path.row <=3 && path.item >=0 && path.item <= 3,
+             @"Over the line, Donny!");
+    
+    CGVector baseVector = [self.lookingAt vectorTo:path];
+    CGVector moveEyesBy = scaleVectorBy(baseVector, 6.f);
+    CGVector moveBy = scaleVectorBy(baseVector, 3.f);
+    
+    SKAction *moveEyeAction = [SKAction moveBy:moveEyesBy duration:.33];
+    [self.leftEye runAction:moveEyeAction];
+    [self.rightEye runAction:moveEyeAction];
+    
+    SKAction *moveNoseAction = [SKAction moveBy:moveBy duration:.33];
+    [self.nose runAction:moveNoseAction];
+    
+    SKAction *moveMouthAction = [SKAction moveBy:moveBy duration:.33];
+    [self.mouth runAction:moveMouthAction];
+    
+    self.lookingAt = path;
+}
+
+CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
+    return CGVectorMake(vec.dx * scale, vec.dy * scale);
 }
 
 @end

@@ -9,32 +9,34 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
+#import "NSIndexPath+CGVector.h"
+
 @interface DonnyTests : XCTestCase
 
 @end
 
+BOOL vectorsEqual(CGVector a, CGVector b) {
+    return a.dx == b.dx && a.dy == b.dy;
+}
+
 @implementation DonnyTests
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testVector {
+    NSIndexPath *initial1 = [NSIndexPath indexPathForItem:0 inSection:1];
+    NSIndexPath *to1 = [NSIndexPath indexPathForItem:2 inSection:0];
+    
+    CGVector computed1 = [initial1 vectorTo:to1];
+    CGVector expected1 = CGVectorMake(2.f, 1.f);
+    
+    XCTAssertTrue(vectorsEqual(computed1, expected1));
+    
+    NSIndexPath *initial2 = [NSIndexPath indexPathForItem:1 inSection:0];
+    NSIndexPath *to2 = [NSIndexPath indexPathForItem:1 inSection:1];
+    
+    CGVector computed2 = [initial2 vectorTo:to2];
+    CGVector expected2 = CGVectorMake(0.f, -1.f);
+    
+    XCTAssertTrue(vectorsEqual(computed2, expected2));
 }
 
 @end
