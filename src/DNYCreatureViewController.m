@@ -10,20 +10,13 @@
 #import <SpriteKit/SpriteKit.h>
 
 //model
-#import "DNYFaceInteraction.h"
-#import "DNYFoodInteraction.h"
 #import "DNYScene.h"
 #import "DNYCreatureNode.h"
-#import "DNYMotionInteraction.h"
 
 @interface DNYCreatureViewController ()
 
 @property (strong, nonatomic) DNYScene *scene;
 @property (weak, nonatomic) SKView *skView;
-
-@property (nonatomic, strong) DNYFaceInteraction *faceInteraction;
-@property (nonatomic, strong) DNYMotionInteraction *motionInteraction;
-@property (nonatomic, strong) DNYFoodInteraction *foodInteraction;
 
 @end
 
@@ -50,10 +43,6 @@
     SKView *view = [[SKView alloc] initWithFrame:CGRectMake(0.f, 0.f, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
     [self.view addSubview:view];
     self.skView = view;
-    
-    self.faceInteraction = [[DNYFaceInteraction alloc] initWithCreature:self.creatureModel];
-    self.motionInteraction = [[DNYMotionInteraction alloc] initWithCreature:self.creatureModel];
-    self.foodInteraction = [[DNYFoodInteraction alloc] initWithCreature:self.creatureModel];
 }
 
 - (void)viewWillLayoutSubviews {

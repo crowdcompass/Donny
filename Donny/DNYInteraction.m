@@ -15,6 +15,7 @@
     if (self) {
         _creature = creature;
     }
+    NSLog(@"Initialized %@",self);
 
     return  self;
 }
