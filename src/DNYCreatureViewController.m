@@ -12,6 +12,8 @@
 //model
 #import "DNYFaceInteraction.h"
 #import "DNYScene.h"
+#import "DNYCreatureNode.h"
+#import "DNYMotionInteraction.h"
 
 @interface DNYCreatureViewController ()
 
@@ -19,6 +21,7 @@
 @property (weak, nonatomic) SKView *skView;
 
 @property (nonatomic, strong) DNYFaceInteraction *faceInteraction;
+@property (nonatomic, strong) DNYMotionInteraction *motionInteraction;
 
 @end
 
@@ -39,6 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 
     [self.creatureModel wake];
     
@@ -47,6 +52,7 @@
     self.skView = view;
     
     self.faceInteraction = [[DNYFaceInteraction alloc] initWithCreature:self.creatureModel];
+    self.motionInteraction = [[DNYMotionInteraction alloc] initWithCreature:self.creatureModel];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -70,6 +76,10 @@
     self.scene = [[DNYScene alloc] initWithSize:self.skView.bounds.size];
     
     [self.skView presentScene:self.scene];
+    [self.scene.creatureNode sleep];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.scene.creatureNode wakeup];
+    });
 }
 
 @end

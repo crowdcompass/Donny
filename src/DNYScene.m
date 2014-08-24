@@ -16,6 +16,8 @@
 
 @implementation DNYScene
 
+#pragma mark - SKScene
+
 - (instancetype)initWithSize:(CGSize)size {
     self = [super initWithSize:size];
     
@@ -26,6 +28,24 @@
     }
     
     return self;
+}
+
+- (void)didEvaluateActions {
+    int debug = 1;
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        SKNode *node = [self.creatureNode nodeAtPoint:[touch locationInNode:self]];
+        if ([node.description containsString:@"eye"]) {
+            NSLog(@"Touched eye");
+        } else if ([node.description containsString:@"nose"]) {
+            NSLog(@"Touched nose");
+        } else if ([node.description containsString:@"mouth"]) {
+            NSLog(@"Touched mouth");
+        }
+    }
 }
 
 @end

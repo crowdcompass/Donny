@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DNYCreatureViewController.h"
-#import <StateMachine/StateMachine.h>
+#import "StateMachine.h"
 
 @interface DNYCreatureModel : NSObject
 
