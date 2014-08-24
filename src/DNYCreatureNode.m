@@ -81,6 +81,38 @@ static const float kDropShadowYOffset = 8.f;
 
 #pragma mark Actions
 
+- (void)setCreatureColorForHappiness:(int)happiness {
+    switch (happiness) {
+        case -3:
+            self.scene.backgroundColor = [SKColor colorWithRed:255/255.f green:152/255.f blue:152/255.f alpha:1];
+            break;
+        case -2:
+            self.scene.backgroundColor = [SKColor colorWithRed:237/255.f green:168/255.f blue:186/255.f alpha:1];
+            break;
+        case -1:
+            self.scene.backgroundColor = [SKColor colorWithRed:220/255.f green:185/255.f blue:220/255.f alpha:1];
+            break;
+        case 0:
+            self.scene.backgroundColor = [SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1];
+            break;
+        case 1:
+            self.scene.backgroundColor = [SKColor colorWithRed:163/255.f green:202/255.f blue:252/255.f alpha:1];
+            break;
+        case 2:
+            self.scene.backgroundColor = [SKColor colorWithRed:123/255.f green:202/255.f blue:250/255.f alpha:1];
+            break;
+        case 3:
+            self.scene.backgroundColor = [SKColor colorWithRed:123/255.f green:202/255.f blue:248/255.f alpha:1];
+            break;
+        case 4:
+            //Crazy rainbow vomit
+            break;
+        default:
+            //??
+            break;
+    }
+}
+
 - (void)blink:(NSUInteger)count {
     SKTexture *currentEyeTexture = [self.leftEye.texture copy];
     SKTexture *blinkEyeTexture = [SKTexture textureWithImageNamed:@"eye-wink.png"];
