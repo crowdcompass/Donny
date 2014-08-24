@@ -61,8 +61,6 @@
 }
 
 -(void)locationManager:(DNYLocationManager *)manager didRangeBeacon:(CLBeacon*)beacon {
-    if (![self.expectedBeaconUUID isEqual:beacon.proximityUUID]) { return; }
-    
     if (beacon.proximity == CLProximityImmediate) {
         [self.creature dny_FoodInteractionReceiveFood];
     } else if (beacon.proximity == CLProximityNear) {
