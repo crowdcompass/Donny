@@ -9,6 +9,7 @@
 #import "DNYScene.h"
 
 #import "DNYCreatureNode.h"
+#import "UIColor+RGB.h"
 
 @interface DNYScene()
 
@@ -23,6 +24,7 @@
     
     if (self) {
         self.scaleMode = SKSceneScaleModeAspectFill;
+        self.backgroundColor = [UIColor colorWithR:203 G:202 B:255];
         _creatureNode = [[DNYCreatureNode alloc] init];
         [self addChild:_creatureNode];
     }
