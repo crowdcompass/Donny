@@ -20,6 +20,7 @@
 #define kDefaultCreatureLoopRate 30 // 60hz/2, number of frames to pass before next eval
 #define kDefaultCreatureTimerSeconds 0.5
 #define kNeglectInterval 20 // seconds that define being neglected
+#define kMoodSettleInterval 5 // seconds
 
 
 NSString *const kSoundBeepoo                    = @"31867_HardPCM_Chip030";
@@ -35,6 +36,7 @@ NSString *const kUserDefaultKeyHappiness        = @"happiness";
 - (void)makeAwake;
 - (void)makeAsleep;
 - (void)makeNeglected;
+- (void)settleMoodSince:(NSTimeInterval)duration;
 
 - (void)playSoundWithName:(NSString *)filename;
 - (void)makeTalkWithText:(NSString *)text;
@@ -110,9 +112,6 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     NSTimer *timer = [NSTimer timerWithTimeInterval:kDefaultCreatureTimerSeconds target:self selector:@selector(evaluate) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     
-//    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(evaluate)];
-//    displayLink.frameInterval = kDefaultCreatureLoopRate;
-//    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.creatureNode wakeup];
     });
@@ -193,6 +192,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     
     [self.creatureNode reactPositively];
     [self happinessDidChange:newHappiness.integerValue];
+    [self updateLastInteractionTime];
 }
 
 - (void)decreaseHappiness {
@@ -204,6 +204,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     
     [self.creatureNode reactNegatively];
     [self happinessDidChange:newHappiness.integerValue];
+    [self updateLastInteractionTime];
 }
 
 - (void)happinessDidChange:(NSInteger)newHappy {
@@ -216,7 +217,17 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     return [[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultKeyHappiness] integerValue];
 }
 
-
+- (void)settleMoodSince:(NSTimeInterval)duration {
+    if (!self.isAwake) return;
+    
+    if (duration >= kMoodSettleInterval) {
+        if (self.happiness > 0) {
+            [self decreaseHappiness];
+        } else if (self.happiness < 0) {
+            [self increaseHappiness];
+        }
+    }
+}
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -231,6 +242,8 @@ STATE_MACHINE(^(LSStateMachine * sm) {
             [interaction performSelector:@selector(evaluate)];
         }
     }
+    
+    [self settleMoodSince:lastSeen];
     
     if (lastSeen >= kNeglectInterval) {
         NSLog(@"Time interval %f", lastSeen);

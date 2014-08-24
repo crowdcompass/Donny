@@ -319,8 +319,8 @@
 		0654E1FD19A85DFA00A5964F /* Interactions */ = {
 			isa = PBXGroup;
 			children = (
-				5AE708AD19A9D15D00FB6307 /* DNYMotionInteraction.m */,
 				5AE708AE19A9D15D00FB6307 /* DNYMotionInteraction.h */,
+				5AE708AD19A9D15D00FB6307 /* DNYMotionInteraction.m */,
 				5AE708A119A9CDCB00FB6307 /* DNYProximitySensorInteraction.h */,
 				5AE708A219A9CDCB00FB6307 /* DNYProximitySensorInteraction.m */,
 				5AE708A319A9CDCB00FB6307 /* DNYVomitNode.h */,
