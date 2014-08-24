@@ -105,6 +105,20 @@ static const float kDropShadowYOffset = 8.f;
 
 //1 1.5, 2 1.75
 - (void)sleep {
+    [self removeAllActions];
+
+    //show brows
+    self.leftEyeBrow.hidden = YES;
+    self.rightEyeBrow.hidden = YES;
+
+    //setup brow actions
+    SKTexture *leftEyeTexture = [SKTexture textureWithImageNamed:@"eye-sleep.png"];
+    SKAction *leftEyeAction = [SKAction setTexture:leftEyeTexture resize:YES];
+
+    SKTexture *rightEyeTexture = [SKTexture textureWithImageNamed:@"eye-sleep.png"];
+    SKAction *rightEyeAction = [SKAction setTexture:rightEyeTexture resize:YES];
+    SKAction *flipEyeAction = [SKAction scaleXBy:-1 y:1 duration:0];
+
     SKTexture *sleep1Texture = [SKTexture textureWithImageNamed:@"mouth-sleep-01.png"];
     SKTexture *sleep2Texture = [SKTexture textureWithImageNamed:@"mouth-sleep-02.png"];
     
@@ -122,6 +136,9 @@ static const float kDropShadowYOffset = 8.f;
     SKAction *repeatingAction = [SKAction repeatActionForever:groupAction];
     
     [self.mouth runAction:repeatingAction];
+    [self.leftEye runAction:leftEyeAction];
+    [self.rightEye runAction:rightEyeAction];
+    [self.rightEye runAction:flipEyeAction];
     
     /*
     SKAction *animateAction = [SKAction animateWithTextures:@[ sleep1Texture, sleep2Texture ] timePerFrame:1.5 resize:YES restore:YES];
@@ -156,6 +173,101 @@ static const float kDropShadowYOffset = 8.f;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self blink:2];
     });
+}
+
+- (void)reactPositively {
+    [self removeAllActions];
+    self.leftEyeBrow.hidden = NO;
+    self.leftEyeBrow.position = CGPointMake(50.f, 453.f);
+
+    self.rightEyeBrow.hidden = NO;
+    self.rightEyeBrow.position = CGPointMake(270.f, 453.f);
+
+    self.leftEye.position = CGPointMake(70.f, 378.f);
+    self.rightEye.position = CGPointMake(250.f, 378.f);
+
+    self.mouth.position = CGPointMake(160.f, 223.f);
+
+    SKTexture *happyEyebrowTexture = [SKTexture textureWithImageNamed:@"eyebrow-positive"];
+    SKAction *happyEyebrowAction = [SKAction setTexture:happyEyebrowTexture resize:YES];
+    SKAction *flipEyebrowAction = [SKAction scaleXBy:-1 y:1 duration:0];
+
+    SKTexture *happyEyeTexture = [SKTexture textureWithImageNamed:@"eye-wink"];
+    SKAction *happyEyeAction = [SKAction setTexture:happyEyeTexture resize:YES];
+
+    SKTexture *happyMouthTexture = [SKTexture textureWithImageNamed:@"mouth-happy"];
+    SKAction *happyMouthAction = [SKAction setTexture:happyMouthTexture resize:YES];
+
+    [self.leftEyeBrow runAction:happyEyebrowAction];
+    [self.rightEyeBrow runAction:happyEyebrowAction];
+    [self.rightEyeBrow runAction:flipEyebrowAction];
+    [self.leftEye runAction:happyEyeAction];
+    [self.rightEye runAction:happyEyeAction];
+    [self.mouth runAction:happyMouthAction];
+
+}
+
+- (void)reactNegatively {
+    [self removeAllActions];
+
+    self.leftEyeBrow.hidden = NO;
+    self.leftEyeBrow.position = CGPointMake(80.f, 453.f);
+
+    self.rightEyeBrow.hidden = NO;
+    self.rightEyeBrow.position = CGPointMake(240.f, 453.f);
+
+    self.leftEye.position = CGPointMake(70.f, 393.f);
+    self.rightEye.position = CGPointMake(250.f, 393.f);
+
+    self.nose.position = CGPointMake(160.f, 353.f);
+    self.mouth.position = CGPointMake(160.f, 203.f);
+
+    SKTexture *madEyebrowTexture = [SKTexture textureWithImageNamed:@"eyebrow-negative"];
+    SKAction *madEyebrowAction = [SKAction setTexture:madEyebrowTexture resize:YES];
+    SKAction *flipEyebrowAction = [SKAction scaleXBy:-1 y:1 duration:0];
+
+    SKTexture *madEyeTexture = [SKTexture textureWithImageNamed:@"eye-small"];
+    SKAction *madEyeAction = [SKAction setTexture:madEyeTexture resize:YES];
+
+    SKTexture *madMouthTexture = [SKTexture textureWithImageNamed:@"mouth-bad-reaction"];
+    SKAction *madMouthAction = [SKAction setTexture:madMouthTexture resize:YES];
+
+    [self.leftEyeBrow runAction:madEyebrowAction];
+    [self.rightEyeBrow runAction:madEyebrowAction];
+    [self.rightEyeBrow runAction:flipEyebrowAction];
+    [self.leftEye runAction:madEyeAction];
+    [self.rightEye runAction:madEyeAction];
+    [self.mouth runAction:madMouthAction];
+
+
+}
+
+- (void)showFaceMinus3 {
+
+}
+
+- (void)showFaceMinus2 {
+
+}
+
+- (void)showFaceMinus1 {
+
+}
+
+- (void)showFaceNormal {
+
+}
+
+- (void)showFacePlus1 {
+
+}
+
+- (void)showFacePlus2 {
+
+}
+
+- (void)showFacePlus3 {
+
 }
 
 - (void)lookAt:(NSIndexPath *)path {
@@ -228,5 +340,7 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
             break;
     }
 }
+
+
 
 @end
