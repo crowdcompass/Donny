@@ -7,6 +7,9 @@
 //
 
 #import "DNYCreatureNode.h"
+#import <Foundation/Foundation.h>
+
+#import "NSIndexPath+CGVector.h"
 
 @interface DNYCreatureNode ()
 
@@ -46,6 +49,8 @@
         
         self.nodes = @[ _leftEyeBrow, _leftEye, _rightEyeBrow, _rightEye,
                         _nose, _mouth ];
+        
+        _lookingAt = [NSIndexPath indexPathForItem:1 inSection:1];
     }
     
     return self;
@@ -129,6 +134,31 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self blink];
     });
+}
+
+- (void)lookAt:(NSIndexPath *)path {
+    NSAssert(path.row >= 0 && path.row <=3 && path.item >=0 && path.item <= 3,
+             @"Over the line, Donny!");
+    
+    CGVector baseVector = [self.lookingAt vectorTo:path];
+    CGVector moveEyesBy = scaleVectorBy(baseVector, 6.f);
+    CGVector moveBy = scaleVectorBy(baseVector, 3.f);
+    
+    SKAction *moveEyeAction = [SKAction moveBy:moveEyesBy duration:.33];
+    [self.leftEye runAction:moveEyeAction];
+    [self.rightEye runAction:moveEyeAction];
+    
+    SKAction *moveNoseAction = [SKAction moveBy:moveBy duration:.33];
+    [self.nose runAction:moveNoseAction];
+    
+    SKAction *moveMouthAction = [SKAction moveBy:moveBy duration:.33];
+    [self.mouth runAction:moveMouthAction];
+    
+    self.lookingAt = path;
+}
+
+CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
+    return CGVectorMake(vec.dx * scale, vec.dy * scale);
 }
 
 @end
