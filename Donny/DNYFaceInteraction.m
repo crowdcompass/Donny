@@ -37,7 +37,7 @@
 -(void) dny_FaceInteractionSetSmile
 {
     NSLog(@"Smile");
-    [self vibrateChuckle];
+    if (!self.isSleeping) { [self vibrateChuckle]; }
 }
 
 -(void) dny_FaceInteractionTrackFacePosition:(CGPoint)coord

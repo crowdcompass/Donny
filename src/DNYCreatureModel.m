@@ -33,9 +33,6 @@ NSString *const kUserDefaultKeyHappiness        = @"happiness";
 
 - (void)makeAwake;
 - (void)makeAsleep;
-- (void)makeVibrate;
-- (void)makeVibrateChuckle;
-- (void)makeStopVibrating;
 - (void)makeNeglected;
 
 - (void)playSoundWithName:(NSString *)filename;
@@ -61,7 +58,6 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [sm addState:@"awake"];
     [sm addState:@"suspended"];
     [sm addState:@"terminated"];
-    [sm addState:@"vibrating"];
     
     [sm when:@"sleep" transitionFrom:@"sleeping" to:@"sleeping"];
     [sm when:@"sleep" transitionFrom:@"awake" to:@"sleeping"];
@@ -71,23 +67,11 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [sm when:@"terminate" transitionFrom:@"awake" to:@"terminated"];
     [sm when:@"terminate" transitionFrom:@"sleeping" to:@"terminated"];
     
-    [sm when:@"vibrate" transitionFrom:@"awake" to:@"vibrating"];
-    [sm when:@"vibrateChuckle" transitionFrom:@"awake" to:@"vibrating"];
-    [sm when:@"makeStopVibrating" transitionFrom:@"vibrating" to:@"awake"];
-    
     [sm after:@"sleep" do:^(DNYCreatureModel *creature) {
         [creature makeAsleep];
     }];
     [sm after:@"wake" do:^(DNYCreatureModel *creature) {
         [creature makeAwake];
-    }];
-    [sm after:@"vibrate" do:^(DNYCreatureModel *creature) {
-        [creature makeVibrate];
-        [creature makeStopVibrating];
-    }];
-    [sm after:@"vibrateChuckle" do:^(DNYCreatureModel *creature) {
-        [creature makeVibrateChuckle];
-        [creature makeStopVibrating];
     }];
 })
 
@@ -148,15 +132,15 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [self updateLastInteractionTime];
 }
 
-- (void)makeVibrate {
+- (void)vibrate {
      AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
-    [self updateLastInteractionTime];
+    [self stopVibrating];
 }
 
 /**
  This uses a private API method, so would need to be compiled out of a sumbitted app
  */
-- (void)makeVibrateChuckle {
+- (void)vibrateChuckle {
     NSMutableDictionary* patternsDict = [@{} mutableCopy];
     NSMutableArray* patternsArray = [@[] mutableCopy];
     
@@ -178,12 +162,11 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     
     AudioServicesPlaySystemSoundWithVibration(kSystemSoundID_Vibrate,nil,patternsDict);
 #pragma clang diagnostic pop
-    [self updateLastInteractionTime];
+    [self stopVibrating];
 }
 
-- (void)makeStopVibrating {
+- (void)stopVibrating {
     AudioServicesStopSystemSound();
-    [self updateLastInteractionTime];
 }
 
 - (void)makeNeglected {
