@@ -14,6 +14,7 @@
 #import "DNYFaceInteraction.h"
 #import "DNYFoodInteraction.h"
 #import "DNYPetInteraction.h"
+#import "DNYProximitySensorInteraction.h"
 
 #define kDefaultCreatureLoopRate 30 // 60hz/2, number of frames to pass before next eval
 #define kDefaultCreatureTimerSeconds 0.5
@@ -102,14 +103,14 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     return self;
 }
 
-- (void)setupInteractions
-{
-    self.interactions = [NSArray arrayWithObjects:
-      [[DNYFaceInteraction alloc] initWithCreature:self],
-      [[DNYMotionInteraction alloc] initWithCreature:self],
-      [[DNYFoodInteraction alloc] initWithCreature:self],
-      [[DNYPetInteraction alloc] initWithCreature:self],
-      nil];
+- (void)setupInteractions {
+    self.interactions = @[
+                          [[DNYFaceInteraction alloc] initWithCreature:self],
+                          [[DNYMotionInteraction alloc] initWithCreature:self],
+                          [[DNYFoodInteraction alloc] initWithCreature:self],
+                          [[DNYPetInteraction alloc] initWithCreature:self],
+                          [[DNYProximitySensorInteraction alloc] initWithCreature:self]
+                          ];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -227,6 +228,12 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 - (void)evaluate {
     NSLog(@">>> Evaluating Donny's State <<<");
     NSTimeInterval lastSeen = [[NSDate date] timeIntervalSinceDate:self.lastInteraction];
+    
+    for (DNYInteraction *interaction in self.interactions) {
+        if ([interaction conformsToProtocol:@protocol(DNYEvaluatedInteraction)]) {
+            [interaction performSelector:@selector(evaluate)];
+        }
+    }
     
     if (lastSeen >= kNeglectInterval) {
         NSLog(@"Time interval %f", lastSeen);
