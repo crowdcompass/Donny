@@ -85,6 +85,8 @@
             self.delegates[uuid] = [NSMutableSet setWithObject:container];
         }
     }
+    
+    int debug = 1;
 }
 
 #pragma mark - CLLocationDelegate
@@ -99,6 +101,10 @@
             });
         }
     }
+}
+
+- (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error {
+    int debug = 1;
 }
 
 @end
