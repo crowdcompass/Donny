@@ -76,6 +76,7 @@
 -(void) dny_FaceInteractionTrackFacePosition:(CGPoint)coord
 {
     NSIndexPath *path = [NSIndexPath fromPoint:coord];
+//    NSLog(@"!!!!COORD---  (%f, %f)", coord.x, coord.y);
 //    NSLog(@"Looking at %@", path);
     [self.creatureNode lookAt:path];
 }
@@ -206,8 +207,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
     NSArray *features = [self.faceDetector featuresInImage:ciImage
                                                    options:imageOptions];
+    
 
     for (CIFaceFeature *ff in features) {
+//        NSLog(@"-----MouthPosition-----:(%f, %f)", ff.mouthPosition.x, ff.mouthPosition.y);
 //        if ( ff.hasLeftEyePosition && ff.leftEyeClosed ) {
 //            self.leftEyeClosed = YES;
 //        }
@@ -277,11 +280,31 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 -(CGPoint) pointForCreatureFromPoint:(CGPoint)point
 {
-    CGAffineTransform coordinatesTransform = CGAffineTransformMakeRotation(M_PI/2);
-    coordinatesTransform = CGAffineTransformTranslate(coordinatesTransform, 1.f, -[[UIScreen mainScreen] bounds].size.width);
+    static CGSize screenSize;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        screenSize = [[UIScreen mainScreen] bounds].size;
+    });
     
-    CGPoint transformedPoint = CGPointApplyAffineTransform(point, coordinatesTransform);
+    CGAffineTransform coordinatesTransform = CGAffineTransformMakeRotation(M_PI/2);
+    coordinatesTransform = CGAffineTransformTranslate(coordinatesTransform, 1.f, -screenSize.width);
+    
+    CGPoint normalizedPoint = normalizeTransformedPoint(point);
+    CGPoint scaledPoint = {screenSize.width * normalizedPoint.x, screenSize.height * normalizedPoint.y};
+    CGPoint transformedPoint = CGPointApplyAffineTransform(scaledPoint, coordinatesTransform);
     return transformedPoint;
+}
+
+//normalize for these observed ranges
+//x (50-150)
+//y (30-110)
+CGPoint normalizeTransformedPoint(CGPoint point) {
+    CGFloat x = (point.x - 50.f) / 100.f;
+    CGFloat y = (point.y - 30.f) / 80.f;
+    
+//    NSLog(@"Normalized: (%f, %f)", x, y);
+    
+    return CGPointMake(x, y);
 }
 
 //////////////////////////////////////////////////////////////////////
