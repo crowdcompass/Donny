@@ -14,6 +14,7 @@
 
 @interface DNYCreatureViewController : UIViewController
 
+@property (weak, nonatomic) SKView *skView;
 @property (strong, nonatomic) DNYCreatureModel *creatureModel;
 
 @end

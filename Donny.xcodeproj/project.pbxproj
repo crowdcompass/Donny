@@ -20,6 +20,10 @@
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
 		5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */; };
 		5ADE03D119A99A3A00F8F426 /* beepoo.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03D019A99A3A00F8F426 /* beepoo.aif */; };
+		5ADE03D719A9B64A00F8F426 /* DNYTickleInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE03D619A9B64A00F8F426 /* DNYTickleInteraction.m */; };
+		5ADE03DA19A9BBB300F8F426 /* DNYTickleGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE03D919A9BBB300F8F426 /* DNYTickleGestureRecognizer.m */; };
+		5ADE03DC19A9C23200F8F426 /* ecs_fx_12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03DB19A9C23200F8F426 /* ecs_fx_12.wav */; };
+		5ADE03DE19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03DD19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav */; };
 		FA00A40719A9757C00E81740 /* LSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FA19A9757C00E81740 /* LSEvent.m */; };
 		FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FC19A9757C00E81740 /* LSStateMachine.m */; };
 		FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */; };
@@ -110,6 +114,12 @@
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
 		5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5ADE03D019A99A3A00F8F426 /* beepoo.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = beepoo.aif; sourceTree = "<group>"; };
+		5ADE03D519A9B64A00F8F426 /* DNYTickleInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYTickleInteraction.h; path = src/DNYTickleInteraction.h; sourceTree = SOURCE_ROOT; };
+		5ADE03D619A9B64A00F8F426 /* DNYTickleInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYTickleInteraction.m; path = src/DNYTickleInteraction.m; sourceTree = SOURCE_ROOT; };
+		5ADE03D819A9BBB300F8F426 /* DNYTickleGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYTickleGestureRecognizer.h; path = src/DNYTickleGestureRecognizer.h; sourceTree = SOURCE_ROOT; };
+		5ADE03D919A9BBB300F8F426 /* DNYTickleGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYTickleGestureRecognizer.m; path = src/DNYTickleGestureRecognizer.m; sourceTree = SOURCE_ROOT; };
+		5ADE03DB19A9C23200F8F426 /* ecs_fx_12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ecs_fx_12.wav; sourceTree = "<group>"; };
+		5ADE03DD19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 31867_HardPCM_Chip030.wav; sourceTree = "<group>"; };
 		FA00A3F919A9757C00E81740 /* LSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSEvent.h; path = StateMachine/LSEvent.h; sourceTree = "<group>"; };
 		FA00A3FA19A9757C00E81740 /* LSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSEvent.m; path = StateMachine/LSEvent.m; sourceTree = "<group>"; };
 		FA00A3FB19A9757C00E81740 /* LSStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachine.h; path = StateMachine/LSStateMachine.h; sourceTree = "<group>"; };
@@ -308,6 +318,10 @@
 				0654E1FF19A85E0700A5964F /* DNYInteraction.m */,
 				05569A2919A85E6D006BD00D /* DNYFaceInteraction.h */,
 				05569A2A19A85E6D006BD00D /* DNYFaceInteraction.m */,
+				5ADE03D519A9B64A00F8F426 /* DNYTickleInteraction.h */,
+				5ADE03D619A9B64A00F8F426 /* DNYTickleInteraction.m */,
+				5ADE03D819A9BBB300F8F426 /* DNYTickleGestureRecognizer.h */,
+				5ADE03D919A9BBB300F8F426 /* DNYTickleGestureRecognizer.m */,
 			);
 			name = Interactions;
 			sourceTree = "<group>";
@@ -315,6 +329,8 @@
 		5ADE03CF19A99A3A00F8F426 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				5ADE03DD19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav */,
+				5ADE03DB19A9C23200F8F426 /* ecs_fx_12.wav */,
 				5ADE03D019A99A3A00F8F426 /* beepoo.aif */,
 			);
 			name = sounds;
@@ -539,6 +555,7 @@
 				FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */,
 				FA077A4419A94EDF00C9CEC3 /* mouth-happy@2x.png in Resources */,
 				FA077A4719A94EDF00C9CEC3 /* mouth-sleep-01@2x.png in Resources */,
+				5ADE03DE19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav in Resources */,
 				FA077A3D19A94EDF00C9CEC3 /* eye-sleep@2x.png in Resources */,
 				05569A4119A882E4006BD00D /* Icon-60@2x.png in Resources */,
 				FA077A3E19A94EDF00C9CEC3 /* eye-small@2x.png in Resources */,
@@ -552,6 +569,7 @@
 				05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */,
 				FA077A4319A94EDF00C9CEC3 /* mouth-good-reaction@2x.png in Resources */,
 				FA077A3B19A94EDF00C9CEC3 /* tear-big@2x.png in Resources */,
+				5ADE03DC19A9C23200F8F426 /* ecs_fx_12.wav in Resources */,
 				FA077A4A19A94EDF00C9CEC3 /* mouth-straight@2x.png in Resources */,
 				FA077A3719A94EDF00C9CEC3 /* rainbow-orange@2x.png in Resources */,
 				FA077A3919A94EDF00C9CEC3 /* rainbow-red@2x.png in Resources */,
@@ -578,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ADE03DA19A9BBB300F8F426 /* DNYTickleGestureRecognizer.m in Sources */,
 				FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */,
 				FA00A40719A9757C00E81740 /* LSEvent.m in Sources */,
 				05569A2B19A85E6D006BD00D /* DNYFaceInteraction.m in Sources */,
@@ -594,6 +613,7 @@
 				FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */,
 				FA683BA819A860D600CD2FEC /* DNYScene.m in Sources */,
 				0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */,
+				5ADE03D719A9B64A00F8F426 /* DNYTickleInteraction.m in Sources */,
 				FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */,
 				FA077A5219A974CA00C9CEC3 /* DNYFoodInteraction.m in Sources */,
 				FA00A40A19A9757C00E81740 /* LSTransition.m in Sources */,

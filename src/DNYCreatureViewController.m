@@ -16,7 +16,7 @@
 @interface DNYCreatureViewController ()
 
 @property (strong, nonatomic) DNYScene *scene;
-@property (weak, nonatomic) SKView *skView;
+
 
 @end
 
@@ -29,6 +29,7 @@
     if (self) {
         _creatureModel = [[DNYCreatureModel alloc] init];
         _creatureModel.controller = self;
+        [_creatureModel setupInteractions];
     }
 
     return self;

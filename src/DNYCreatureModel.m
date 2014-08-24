@@ -13,13 +13,14 @@
 #import "DNYMotionInteraction.h"
 #import "DNYFaceInteraction.h"
 #import "DNYFoodInteraction.h"
+#import "DNYTickleInteraction.h"
 
 #define kDefaultCreatureLoopRate 30 // 60hz/2, number of frames to pass before next eval
 #define kDefaultCreatureTimerSeconds 0.5
 #define kNeglectInterval 20 // seconds that define being neglected
 
 
-#define kSoundBeepoo @"beepoo"
+NSString *const kSoundBeepoo                    = @"31867_HardPCM_Chip030";
 
 NSString *const kUserDefaultKeyHappiness        = @"happiness";
 
@@ -93,9 +94,8 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     self = [super init];
     if (self) {
         [self initializeStateMachine];
-        [self setupInteractions];
         self.synth = [AVSpeechSynthesizer new];
-        NSLog(@"%@", [AVSpeechSynthesisVoice speechVoices]);
+//        NSLog(@"%@", [AVSpeechSynthesisVoice speechVoices]);
         self.synth.delegate = self;
     }
     return self;
@@ -107,6 +107,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
       [[DNYFaceInteraction alloc] initWithCreature:self],
       [[DNYMotionInteraction alloc] initWithCreature:self],
       [[DNYFoodInteraction alloc] initWithCreature:self],
+      [[DNYTickleInteraction alloc] initWithCreature:self],
       nil];
 }
 
@@ -132,8 +133,8 @@ STATE_MACHINE(^(LSStateMachine * sm) {
         NSLog(@"%@", error);
     }
     
-//    [self playSoundWithName:kSoundBeepoo];
-    [self makeTalkWithText:@"Donny is awake. Let's play"];
+    [self playSoundWithName:kSoundBeepoo];
+//    [self makeTalkWithText:@"beeep beeep booop booop boop"];
     [self updateLastInteractionTime];
 }
 
@@ -175,6 +176,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     
     AudioServicesPlaySystemSoundWithVibration(kSystemSoundID_Vibrate,nil,patternsDict);
 #pragma clang diagnostic pop
+    [self makeTalkWithText:@"Hee hee heee"];
     [self updateLastInteractionTime];
 }
 
@@ -193,18 +195,25 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 }
 
 - (void)increaseHappiness {
+    if (!self.isAwake) return;
+    
+    NSLog(@":) happier");
     NSNumber *newHappiness = @(self.happiness + 1);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    [self.creatureNode reactPositively];
     [self happinessDidChange:newHappiness.integerValue];
 }
 
 - (void)decreaseHappiness {
+    if (!self.isAwake) return;
+    NSLog(@":( unhappier");
     NSNumber *newHappiness = @(self.happiness - 1);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    [self.creatureNode reactNegatively];
     [self happinessDidChange:newHappiness.integerValue];
 }
 
@@ -218,12 +227,14 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     return [[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultKeyHappiness] integerValue];
 }
 
+
+
 //////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Creature runloop
 
 - (void)evaluate {
-    NSLog(@">>> Evaluating Donny's State <<<");
+//    NSLog(@">>> Evaluating Donny's State <<<");
     NSTimeInterval lastSeen = [[NSDate date] timeIntervalSinceDate:self.lastInteraction];
     
     if (lastSeen >= kNeglectInterval) {
@@ -238,23 +249,25 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 #pragma mark Helpers
 
 - (void)playSoundWithName:(NSString *)filename {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"aif"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"wav"];
     NSURL *fileUrl = [NSURL URLWithString:filePath];
     SystemSoundID soundId;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileUrl, &soundId);
     AudioServicesPlaySystemSound(soundId);
+//    NSError *error;
+//    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileUrl error:&error];
+//    NSLog(@"%@", error);
+//    player.volume = 1.0;
+//    [player prepareToPlay];
+//    [player play];
 }
 
 - (void)makeTalkWithText:(NSString *)text {
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:text];
-    utterance.rate = 0.3;
-    utterance.pitchMultiplier = 0.5;
-    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
+    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"ja-JP"];
+    utterance.rate = 0.1;
+    utterance.pitchMultiplier = 1.2;
     [self.synth speakUtterance:utterance];
-//    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"fr-CA"];
-//    [self.synth speakUtterance:utterance];
-//    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
-//    [self.synth speakUtterance:utterance];
 }
 
 @end

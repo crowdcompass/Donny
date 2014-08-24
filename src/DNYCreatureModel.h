@@ -23,8 +23,12 @@ extern NSString *const kUserDefaultKeyHappiness;
 @property (nonatomic, strong) NSArray *interactions;
 
 @property (assign, nonatomic, readonly) NSInteger happiness;
+@property (assign, nonatomic) BOOL flat;
 
 @property (nonatomic, weak) DNYCreatureNode *creatureNode;
+
+- (void)increaseHappiness;
+- (void)decreaseHappiness;
 
 @end
 

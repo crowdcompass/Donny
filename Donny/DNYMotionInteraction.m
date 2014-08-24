@@ -71,6 +71,7 @@
         self.layingCounter++;
         if (self.layingCounter > 30) {
             NSLog(@"Call lying flat for a while");
+            self.creature.flat = YES;
             self.layingCounter = 0;
         }
     } else {
