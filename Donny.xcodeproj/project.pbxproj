@@ -17,6 +17,11 @@
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
 		5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */; };
+		FA00A40719A9757C00E81740 /* LSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FA19A9757C00E81740 /* LSEvent.m */; };
+		FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FC19A9757C00E81740 /* LSStateMachine.m */; };
+		FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */; };
+		FA00A40A19A9757C00E81740 /* LSTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A40219A9757C00E81740 /* LSTransition.m */; };
+		FA00A40B19A9757C00E81740 /* NSString+Capitalize.m in Sources */ = {isa = PBXBuildFile; fileRef = FA00A40419A9757C00E81740 /* NSString+Capitalize.m */; };
 		FA077A3319A94EDF00C9CEC3 /* eyebrow-negative@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1619A94EDF00C9CEC3 /* eyebrow-negative@2x.png */; };
 		FA077A3419A94EDF00C9CEC3 /* eyebrow-positive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1719A94EDF00C9CEC3 /* eyebrow-positive@2x.png */; };
 		FA077A3519A94EDF00C9CEC3 /* eyebrow-sad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A1819A94EDF00C9CEC3 /* eyebrow-sad@2x.png */; };
@@ -44,6 +49,7 @@
 		FA077A4B19A94EDF00C9CEC3 /* mouth-vomit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A3019A94EDF00C9CEC3 /* mouth-vomit@2x.png */; };
 		FA077A4C19A94EDF00C9CEC3 /* nose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A3219A94EDF00C9CEC3 /* nose@2x.png */; };
 		FA077A4F19A9607F00C9CEC3 /* NSIndexPath+CGVector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA077A4E19A9607F00C9CEC3 /* NSIndexPath+CGVector.m */; };
+		FA077A5219A974CA00C9CEC3 /* DNYFoodInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA077A5119A974CA00C9CEC3 /* DNYFoodInteraction.m */; };
 		FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA520D5019A908F300197278 /* DNYCreatureNode.m */; };
 		FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5A19A834F600CD2FEC /* DNYPersistence.m */; };
 		FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */; };
@@ -96,6 +102,20 @@
 		0654E1FE19A85E0700A5964F /* DNYInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYInteraction.h; sourceTree = "<group>"; };
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
 		5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FA00A3F919A9757C00E81740 /* LSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSEvent.h; path = StateMachine/LSEvent.h; sourceTree = "<group>"; };
+		FA00A3FA19A9757C00E81740 /* LSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSEvent.m; path = StateMachine/LSEvent.m; sourceTree = "<group>"; };
+		FA00A3FB19A9757C00E81740 /* LSStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachine.h; path = StateMachine/LSStateMachine.h; sourceTree = "<group>"; };
+		FA00A3FC19A9757C00E81740 /* LSStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStateMachine.m; path = StateMachine/LSStateMachine.m; sourceTree = "<group>"; };
+		FA00A3FD19A9757C00E81740 /* LSStateMachineDynamicAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachineDynamicAdditions.h; path = StateMachine/LSStateMachineDynamicAdditions.h; sourceTree = "<group>"; };
+		FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStateMachineDynamicAdditions.m; path = StateMachine/LSStateMachineDynamicAdditions.m; sourceTree = "<group>"; };
+		FA00A3FF19A9757C00E81740 /* LSStateMachineMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachineMacros.h; path = StateMachine/LSStateMachineMacros.h; sourceTree = "<group>"; };
+		FA00A40019A9757C00E81740 /* LSStateMachineTypedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStateMachineTypedefs.h; path = StateMachine/LSStateMachineTypedefs.h; sourceTree = "<group>"; };
+		FA00A40119A9757C00E81740 /* LSTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSTransition.h; path = StateMachine/LSTransition.h; sourceTree = "<group>"; };
+		FA00A40219A9757C00E81740 /* LSTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSTransition.m; path = StateMachine/LSTransition.m; sourceTree = "<group>"; };
+		FA00A40319A9757C00E81740 /* NSString+Capitalize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Capitalize.h"; path = "StateMachine/NSString+Capitalize.h"; sourceTree = "<group>"; };
+		FA00A40419A9757C00E81740 /* NSString+Capitalize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Capitalize.m"; path = "StateMachine/NSString+Capitalize.m"; sourceTree = "<group>"; };
+		FA00A40519A9757C00E81740 /* StateMachine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "StateMachine-Prefix.pch"; path = "StateMachine/StateMachine-Prefix.pch"; sourceTree = "<group>"; };
+		FA00A40619A9757C00E81740 /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StateMachine.h; path = StateMachine/StateMachine.h; sourceTree = "<group>"; };
 		FA077A1619A94EDF00C9CEC3 /* eyebrow-negative@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-negative@2x.png"; sourceTree = "<group>"; };
 		FA077A1719A94EDF00C9CEC3 /* eyebrow-positive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-positive@2x.png"; sourceTree = "<group>"; };
 		FA077A1819A94EDF00C9CEC3 /* eyebrow-sad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyebrow-sad@2x.png"; sourceTree = "<group>"; };
@@ -124,6 +144,8 @@
 		FA077A3219A94EDF00C9CEC3 /* nose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nose@2x.png"; sourceTree = "<group>"; };
 		FA077A4D19A9607F00C9CEC3 /* NSIndexPath+CGVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSIndexPath+CGVector.h"; path = "src/NSIndexPath+CGVector.h"; sourceTree = SOURCE_ROOT; };
 		FA077A4E19A9607F00C9CEC3 /* NSIndexPath+CGVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSIndexPath+CGVector.m"; path = "src/NSIndexPath+CGVector.m"; sourceTree = SOURCE_ROOT; };
+		FA077A5019A974CA00C9CEC3 /* DNYFoodInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYFoodInteraction.h; sourceTree = "<group>"; };
+		FA077A5119A974CA00C9CEC3 /* DNYFoodInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYFoodInteraction.m; sourceTree = "<group>"; };
 		FA520D4F19A908F300197278 /* DNYCreatureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureNode.h; path = src/DNYCreatureNode.h; sourceTree = SOURCE_ROOT; };
 		FA520D5019A908F300197278 /* DNYCreatureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureNode.m; path = src/DNYCreatureNode.m; sourceTree = SOURCE_ROOT; };
 		FA683B5919A834F600CD2FEC /* DNYPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYPersistence.h; path = src/DNYPersistence.h; sourceTree = SOURCE_ROOT; };
@@ -211,6 +233,7 @@
 		0654E1D219A82BE200A5964F /* Donny */ = {
 			isa = PBXGroup;
 			children = (
+				FA00A3F819A9756B00E81740 /* state machine */,
 				FA683BA519A8608200CD2FEC /* sprite */,
 				FA683B6219A85A0300CD2FEC /* categories */,
 				0654E1FD19A85DFA00A5964F /* Interactions */,
@@ -269,6 +292,8 @@
 		0654E1FD19A85DFA00A5964F /* Interactions */ = {
 			isa = PBXGroup;
 			children = (
+				FA077A5019A974CA00C9CEC3 /* DNYFoodInteraction.h */,
+				FA077A5119A974CA00C9CEC3 /* DNYFoodInteraction.m */,
 				05569A4719A93F92006BD00D /* DNYMotionInteraction.h */,
 				05569A4819A93F92006BD00D /* DNYMotionInteraction.m */,
 				0654E1FE19A85E0700A5964F /* DNYInteraction.h */,
@@ -277,6 +302,27 @@
 				05569A2A19A85E6D006BD00D /* DNYFaceInteraction.m */,
 			);
 			name = Interactions;
+			sourceTree = "<group>";
+		};
+		FA00A3F819A9756B00E81740 /* state machine */ = {
+			isa = PBXGroup;
+			children = (
+				FA00A3F919A9757C00E81740 /* LSEvent.h */,
+				FA00A3FA19A9757C00E81740 /* LSEvent.m */,
+				FA00A3FB19A9757C00E81740 /* LSStateMachine.h */,
+				FA00A3FC19A9757C00E81740 /* LSStateMachine.m */,
+				FA00A3FD19A9757C00E81740 /* LSStateMachineDynamicAdditions.h */,
+				FA00A3FE19A9757C00E81740 /* LSStateMachineDynamicAdditions.m */,
+				FA00A3FF19A9757C00E81740 /* LSStateMachineMacros.h */,
+				FA00A40019A9757C00E81740 /* LSStateMachineTypedefs.h */,
+				FA00A40119A9757C00E81740 /* LSTransition.h */,
+				FA00A40219A9757C00E81740 /* LSTransition.m */,
+				FA00A40319A9757C00E81740 /* NSString+Capitalize.h */,
+				FA00A40419A9757C00E81740 /* NSString+Capitalize.m */,
+				FA00A40519A9757C00E81740 /* StateMachine-Prefix.pch */,
+				FA00A40619A9757C00E81740 /* StateMachine.h */,
+			);
+			name = "state machine";
 			sourceTree = "<group>";
 		};
 		FA077A1419A94EDF00C9CEC3 /* graphics */ = {
@@ -509,9 +555,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA00A40819A9757C00E81740 /* LSStateMachine.m in Sources */,
+				FA00A40719A9757C00E81740 /* LSEvent.m in Sources */,
 				05569A2B19A85E6D006BD00D /* DNYFaceInteraction.m in Sources */,
 				FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */,
 				FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */,
+				FA00A40B19A9757C00E81740 /* NSString+Capitalize.m in Sources */,
 				0654E1D619A82BE200A5964F /* main.m in Sources */,
 				FA683B6119A8569600CD2FEC /* DNYCreatureModel.m in Sources */,
 				FA683B6519A85A3500CD2FEC /* UIColor+RGB.m in Sources */,
@@ -521,7 +570,10 @@
 				FA683BA819A860D600CD2FEC /* DNYScene.m in Sources */,
 				0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */,
 				FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */,
+				FA077A5219A974CA00C9CEC3 /* DNYFoodInteraction.m in Sources */,
+				FA00A40A19A9757C00E81740 /* LSTransition.m in Sources */,
 				FA077A4F19A9607F00C9CEC3 /* NSIndexPath+CGVector.m in Sources */,
+				FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
