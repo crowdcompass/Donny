@@ -20,12 +20,11 @@
 
 -(void) dny_CradleInteractionSet
 {
-    NSLog(@"I'm in the cradle");
+    [self sleep];
 }
 
 -(void) dny_CradleInteractionUnset
 {
-    NSLog(@"I'm free!");
 }
 
 @end
