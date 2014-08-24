@@ -43,6 +43,8 @@
 - (void)reactNegatively;
 - (void)displayFaceForHappiness:(NSInteger)happiness;
 
+- (void)mouthVomit;
+
 /**
  @param path indexPath representing a point on a 3x3 grid, section is y, item is x
  examples:

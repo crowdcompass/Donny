@@ -35,7 +35,6 @@
     return self;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -54,10 +53,13 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    [self.creatureModel sleep];
+    [self.creatureModel wake];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.creatureModel.creatureNode mouthVomit];
+    });
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -84,10 +86,6 @@
     
     [self.skView presentScene:self.scene];
     self.creatureModel.creatureNode = self.scene.creatureNode;
-//    [self.scene.creatureNode sleep];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.scene.creatureNode wakeup];
-//    });
 }
 
 @end

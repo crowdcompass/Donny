@@ -9,6 +9,7 @@
 #import "DNYCreatureNode.h"
 #import <Foundation/Foundation.h>
 
+#import "DNYVomitNode.h"
 #import "NSIndexPath+CGVector.h"
 
 #define kDefaultBlinkDuration 0.15
@@ -508,7 +509,17 @@ static const float kDropShadowYOffset = 8.f;
 }
 
 - (void)mouthVomit {
-    [NSException raise:@"Not Implemented" format:@"Not implemented"];
+    [self mouthSicker];
+    
+    SKAction *addVomitNodeAction = [SKAction runBlock:^{
+        DNYVomitNode *vomitNode = [DNYVomitNode vomitNodeWithTargetNode:self.mouth isHappy:YES];
+        [self.mouth addChild:vomitNode];
+    }];
+    
+    SKAction *wait = [SKAction waitForDuration:1.2];
+
+    SKAction *seq = [SKAction sequence:@[ wait, addVomitNodeAction]];
+    [self runAction:seq];
 }
 
 - (void)lookAt:(NSIndexPath *)path {

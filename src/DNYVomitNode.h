@@ -8,8 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface DNYVomitNode : SKEmitterNode
+@interface DNYVomitNode : SKNode
 
-+ (instancetype)nodeWithTargetNode:(SKNode *)targetNode;
++ (instancetype)vomitNodeWithTargetNode:(SKNode *)targetNode isHappy:(BOOL)happy;
 
 @end
