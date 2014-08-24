@@ -37,7 +37,7 @@
     if (self) {
         DNYLocationManager *locationManager = [DNYLocationManager instance];
         NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"CC1F30CD-97DA-4CC4-AD8F-CB808D23D722"];
-        [locationManager registerDelegate:self forBeaconWithUUID:uuid];
+        [locationManager registerDelegate:self forBeaconWithUUID:uuid identifier:@"cradle"];
     }
     return self;
 }

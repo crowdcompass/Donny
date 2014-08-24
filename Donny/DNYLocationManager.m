@@ -8,6 +8,8 @@
 
 #import "DNYLocationManager.h"
 
+NSString *const kBaseIdentifier = @"com.crowdcompass.donny";
+
 @interface DNYLocationManagerDelegateContainer : NSObject
 
 @property (weak, nonatomic) id<DNYBeaconDelegate> delegate;
@@ -63,14 +65,16 @@
 
 #pragma mark - DNYLocationManager
 
-- (void)registerDelegate:(id<DNYBeaconDelegate>)delegate forBeaconWithUUID:(NSUUID *)uuid {
-    NSParameterAssert(!!uuid);
+- (void)registerDelegate:(id<DNYBeaconDelegate>)delegate forBeaconWithUUID:(NSUUID *)uuid identifier:(NSString *)identifier {
+    NSParameterAssert(uuid && identifier);
     
     @synchronized (self.delegates) {
         NSMutableSet *existingDelegates = self.delegates[uuid];
         
+        NSString *idString = [NSString stringWithFormat:@"%@.%@", kBaseIdentifier, identifier];
+        
         CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
-                                                                          identifier:@"com.crowdcompass.Donny"];
+                                                                          identifier:idString];
         beaconRegion.notifyEntryStateOnDisplay = YES;
         beaconRegion.notifyOnEntry = YES;
         beaconRegion.notifyOnExit = YES;

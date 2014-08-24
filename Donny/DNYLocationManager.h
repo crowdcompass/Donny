@@ -19,7 +19,7 @@
 
 + (instancetype)instance;
 
-- (void)registerDelegate:(id<DNYBeaconDelegate>)delegate forBeaconWithUUID:(NSUUID *)uuid;
+- (void)registerDelegate:(id<DNYBeaconDelegate>)delegate forBeaconWithUUID:(NSUUID *)uuid identifier:(NSString *)identifier;
 
 @end
 

@@ -55,7 +55,7 @@
         self.creature.lastFedAt = [NSDate dateWithTimeIntervalSinceNow:-300];
          _expectedBeaconUUID = [[NSUUID alloc] initWithUUIDString:@"250511CC-0000-0000-1100-000000000001"];
         
-        [[DNYLocationManager instance] registerDelegate:self forBeaconWithUUID:_expectedBeaconUUID];
+        [[DNYLocationManager instance] registerDelegate:self forBeaconWithUUID:_expectedBeaconUUID identifier:@"food"];
     }
     return self;
 }
