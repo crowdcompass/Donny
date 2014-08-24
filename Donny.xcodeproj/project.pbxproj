@@ -70,6 +70,7 @@
 		FA077A4C19A94EDF00C9CEC3 /* nose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA077A3219A94EDF00C9CEC3 /* nose@2x.png */; };
 		FA077A4F19A9607F00C9CEC3 /* NSIndexPath+CGVector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA077A4E19A9607F00C9CEC3 /* NSIndexPath+CGVector.m */; };
 		FA077A5219A974CA00C9CEC3 /* DNYFoodInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FA077A5119A974CA00C9CEC3 /* DNYFoodInteraction.m */; };
+		FA47643F19AA708E00B77F9C /* DNYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA47643E19AA708E00B77F9C /* DNYLocationManager.m */; };
 		FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA520D5019A908F300197278 /* DNYCreatureNode.m */; };
 		FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5A19A834F600CD2FEC /* DNYPersistence.m */; };
 		FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */; };
@@ -193,6 +194,8 @@
 		FA077A4E19A9607F00C9CEC3 /* NSIndexPath+CGVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSIndexPath+CGVector.m"; path = "src/NSIndexPath+CGVector.m"; sourceTree = SOURCE_ROOT; };
 		FA077A5019A974CA00C9CEC3 /* DNYFoodInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYFoodInteraction.h; sourceTree = "<group>"; };
 		FA077A5119A974CA00C9CEC3 /* DNYFoodInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYFoodInteraction.m; sourceTree = "<group>"; };
+		FA47643D19AA708E00B77F9C /* DNYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYLocationManager.h; sourceTree = "<group>"; };
+		FA47643E19AA708E00B77F9C /* DNYLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYLocationManager.m; sourceTree = "<group>"; };
 		FA520D4F19A908F300197278 /* DNYCreatureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureNode.h; path = src/DNYCreatureNode.h; sourceTree = SOURCE_ROOT; };
 		FA520D5019A908F300197278 /* DNYCreatureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureNode.m; path = src/DNYCreatureNode.m; sourceTree = SOURCE_ROOT; };
 		FA683B5919A834F600CD2FEC /* DNYPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYPersistence.h; path = src/DNYPersistence.h; sourceTree = SOURCE_ROOT; };
@@ -292,6 +295,8 @@
 				FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */,
 				FA683B5F19A8569600CD2FEC /* DNYCreatureModel.h */,
 				FA683B6019A8569600CD2FEC /* DNYCreatureModel.m */,
+				FA47643D19AA708E00B77F9C /* DNYLocationManager.h */,
+				FA47643E19AA708E00B77F9C /* DNYLocationManager.m */,
 			);
 			path = Donny;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				FA077A4F19A9607F00C9CEC3 /* NSIndexPath+CGVector.m in Sources */,
 				FA00A40919A9757C00E81740 /* LSStateMachineDynamicAdditions.m in Sources */,
 				5AE708A819A9CDCB00FB6307 /* DNYVomitNode.m in Sources */,
+				FA47643F19AA708E00B77F9C /* DNYLocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
