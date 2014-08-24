@@ -42,6 +42,8 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [sm addState:@"vibrating"];
     
     
+    [sm when:@"sleep" transitionFrom:@"sleeping" to:@"sleeping"];
+    [sm when:@"sleep" transitionFrom:@"awake" to:@"sleeping"];
     [sm when:@"wake" transitionFrom:@"sleeping" to:@"awake"];
     [sm when:@"suspend" transitionFrom:@"awake" to:@"suspended"];
     [sm when:@"unsuspend" transitionFrom:@"suspended" to:@"awake"];
@@ -52,6 +54,10 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [sm when:@"vibrateChuckle" transitionFrom:@"awake" to:@"vibrating"];
     [sm when:@"makeStopVibrating" transitionFrom:@"vibrating" to:@"awake"];
     
+    
+    [sm after:@"sleep" do:^(DNYCreatureModel *creature) {
+        [creature makeAsleep];
+    }];
     [sm after:@"wake" do:^(DNYCreatureModel *creature) {
         [creature makeAwake];
     }];
@@ -80,13 +86,20 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 #pragma mark Core capabilities
 
 - (void)makeAwake {
+    NSLog(@"Model::makeAwake");
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(evaluate)];
     displayLink.frameInterval = kDefaultCreatureLoopRate;
     [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.creatureNode wakeup];
+    });
 }
 
 - (void)makeAsleep {
-    
+    NSLog(@"Model::makeAsleep");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.creatureNode sleep];
+    });
 }
 
 - (void)makeVibrate {

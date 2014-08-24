@@ -44,8 +44,6 @@
     [super viewDidLoad];
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
-
-    [self.creatureModel wake];
     
     SKView *view = [[SKView alloc] initWithFrame:CGRectMake(0.f, 0.f, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
     [self.view addSubview:view];
@@ -63,6 +61,12 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.creatureModel sleep];
+}
+
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
@@ -76,10 +80,11 @@
     self.scene = [[DNYScene alloc] initWithSize:self.skView.bounds.size];
     
     [self.skView presentScene:self.scene];
-    [self.scene.creatureNode sleep];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.scene.creatureNode wakeup];
-    });
+    self.creatureModel.creatureNode = self.scene.creatureNode;
+//    [self.scene.creatureNode sleep];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.scene.creatureNode wakeup];
+//    });
 }
 
 @end

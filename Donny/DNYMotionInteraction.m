@@ -54,11 +54,17 @@
     if (self.rockCounter > 6) {
         NSLog(@"Call rocking nicely");
         self.rockCounter = 0;
+        if ([self.creature isAwake]) {
+            [self.creature sleep];
+        }
     }
 
     if (motion.userAcceleration.x > 1.0 || motion.userAcceleration.y > 1.0 || motion.userAcceleration.z > 1.0) {
         NSLog(@"Call shook hard x: %.2f y:%.2f z:%.2f", motion.userAcceleration.x, motion.userAcceleration.y, motion.userAcceleration.z);
         self.rockCounter = 0;
+        if (self.creature.isSleeping) {
+            [self.creature wake];
+        }
     }
 
     if (-0.99 > motion.gravity.z && motion.gravity.z > -1.01) {

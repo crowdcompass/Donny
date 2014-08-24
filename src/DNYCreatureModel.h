@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DNYCreatureViewController.h"
 #import "StateMachine.h"
+#import "DNYCreatureNode.h"
 
 @interface DNYCreatureModel : NSObject
 
@@ -17,6 +18,8 @@
 @property (nonatomic, retain) NSString *state; // Property managed by StateMachine
 
 @property (nonatomic, retain) NSDate *terminatedAt;
+
+@property (nonatomic, weak) DNYCreatureNode *creatureNode;
 
 @end
 
