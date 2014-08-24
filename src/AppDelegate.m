@@ -10,6 +10,7 @@
 
 #import "DNYPersistence.h"
 #import "DNYCreatureViewController.h"
+#import "DNYCreatureModel.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,8 @@
     DNYCreatureViewController *rootVC = [[DNYCreatureViewController alloc] init];
     self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"happiness": @(0) }];
     
     return YES;
 }
