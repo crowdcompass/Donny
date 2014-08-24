@@ -101,6 +101,92 @@ static const float kDropShadowYOffset = 8.f;
     [self.rightEye runAction:actionGroup];
 }
 
+- (void)displayFaceForHappiness:(int)happiness {
+    switch (happiness) {
+        case -3:
+            [self normalMinus3];
+            break;
+        case -2:
+            [self normalMinus2];
+            break;
+        case -1:
+            [self normalMinus1];
+            break;
+        case 0:
+            [self normal];
+            break;
+        case 1:
+            [self normalPlus1];
+            break;
+        case 2:
+            [self normalPlus2];
+            break;
+        case 3:
+            [self normalPlus3];
+            break;
+        case 4:
+            //
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)normalMinus3 {
+    [self removeAllActions];
+    
+    [self eyebrowsNegative];
+    [self eyesSmall];
+    [self mouthFrown];
+}
+
+- (void)normalMinus2 {
+    [self removeAllActions];
+    
+    [self eyebrowsNegative];
+    [self eyesSmall];
+    [self mouthFrown];
+}
+
+- (void)normalMinus1 {
+    [self removeAllActions];
+    
+    [self eyebrowsNone];
+    [self eyesStandard];
+    [self mouthStraight];
+}
+
+- (void)normal {
+    [self removeAllActions];
+    
+    [self eyebrowsNone];
+    [self eyesStandard];
+    [self mouthSmile];
+}
+
+- (void)normalPlus1 {
+    [self removeAllActions];
+    
+    [self eyebrowsPositive];
+    [self eyesStandard];
+    [self mouthSmile];
+}
+
+- (void)normalPlus2 {
+    [self removeAllActions];
+    
+    [self eyebrowsPositive];
+    [self eyesSmall];
+    [self mouthGood];
+}
+
+- (void)normalPlus3 {
+    [self removeAllActions];
+    
+    [self eyebrowsPositive];
+    [self eyesWink];
+    [self mouthHappiest];
+}
 
 - (void)sleep {
     [self removeAllActions];
@@ -140,6 +226,7 @@ static const float kDropShadowYOffset = 8.f;
     [self mouthBad];
 
 }
+
 
 
 
@@ -263,6 +350,15 @@ static const float kDropShadowYOffset = 8.f;
     SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-good-reaction.png"];
     SKAction *action = [SKAction setTexture:texture resize:YES];
 
+    [self.mouth runAction:action];
+}
+
+- (void)mouthHappiest {
+    self.mouth.position = CGPointMake(160.f, 213.f);
+    
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-happy.png"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+    
     [self.mouth runAction:action];
 }
 
