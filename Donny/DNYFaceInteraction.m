@@ -11,6 +11,7 @@
 #import <ImageIO/ImageIO.h>
 #import <AssertMacros.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "NSIndexPath+CGPoint.h"
 
 @interface DNYCreatureModel (DNYFaceInteractionBehavior)
 
@@ -41,7 +42,9 @@
 
 -(void) dny_FaceInteractionTrackFacePosition:(CGPoint)coord
 {
-    NSLog(@"Face position is %@", NSStringFromCGPoint(coord));
+    NSIndexPath *path = [NSIndexPath fromPoint:coord];
+    NSLog(@"Looking at %@", path);
+    [self.creatureNode lookAt:path];
 }
 
 @end

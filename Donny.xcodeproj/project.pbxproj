@@ -14,6 +14,7 @@
 		05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05569A3F19A882E4006BD00D /* Icon-76@2x.png */; };
 		05569A4919A93F92006BD00D /* DNYMotionInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05569A4819A93F92006BD00D /* DNYMotionInteraction.m */; };
 		0567920B19A969DB00F478EF /* DNYSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567920A19A969DB00F478EF /* DNYSpriteNode.m */; };
+		064B65C219A992D800AE2180 /* NSIndexPath+CGPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 064B65C119A992D800AE2180 /* NSIndexPath+CGPoint.m */; };
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
@@ -97,6 +98,8 @@
 		05569A4819A93F92006BD00D /* DNYMotionInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYMotionInteraction.m; sourceTree = "<group>"; };
 		0567920919A969DB00F478EF /* DNYSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYSpriteNode.h; path = src/DNYSpriteNode.h; sourceTree = SOURCE_ROOT; };
 		0567920A19A969DB00F478EF /* DNYSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYSpriteNode.m; path = src/DNYSpriteNode.m; sourceTree = SOURCE_ROOT; };
+		064B65C019A992D800AE2180 /* NSIndexPath+CGPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+CGPoint.h"; sourceTree = "<group>"; };
+		064B65C119A992D800AE2180 /* NSIndexPath+CGPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+CGPoint.m"; sourceTree = "<group>"; };
 		0654E1D019A82BE200A5964F /* Donny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0654E1D419A82BE200A5964F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0654E1D519A82BE200A5964F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -412,6 +415,8 @@
 				FA683B6419A85A3500CD2FEC /* UIColor+RGB.m */,
 				FA077A4D19A9607F00C9CEC3 /* NSIndexPath+CGVector.h */,
 				FA077A4E19A9607F00C9CEC3 /* NSIndexPath+CGVector.m */,
+				064B65C019A992D800AE2180 /* NSIndexPath+CGPoint.h */,
+				064B65C119A992D800AE2180 /* NSIndexPath+CGPoint.m */,
 			);
 			name = categories;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				FA00A40719A9757C00E81740 /* LSEvent.m in Sources */,
 				05569A2B19A85E6D006BD00D /* DNYFaceInteraction.m in Sources */,
 				FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */,
+				064B65C219A992D800AE2180 /* NSIndexPath+CGPoint.m in Sources */,
 				FAD9A36F19A8336E00B7C401 /* AppDelegate.m in Sources */,
 				FA00A40B19A9757C00E81740 /* NSString+Capitalize.m in Sources */,
 				0654E1D619A82BE200A5964F /* main.m in Sources */,
