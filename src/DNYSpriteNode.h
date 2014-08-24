@@ -12,6 +12,4 @@
 
 @property (nonatomic, strong) SKSpriteNode *dropShadow;
 
-- (void)updateDropShadow;
-
 @end

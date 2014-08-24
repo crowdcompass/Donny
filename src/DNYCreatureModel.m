@@ -108,7 +108,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
                           [[DNYFoodInteraction alloc] initWithCreature:self],
                           [[DNYCradleInteraction alloc] initWithCreature:self],
                           [[DNYPetInteraction alloc] initWithCreature:self],
-                          [[DNYProximitySensorInteraction alloc] initWithCreature:self],
+//                          [[DNYProximitySensorInteraction alloc] initWithCreature:self],
                           [[DNYTickleInteraction alloc] initWithCreature:self],
                           ];
 

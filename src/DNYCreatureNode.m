@@ -34,7 +34,7 @@
         [self addChild:_leftEyeBrow];
         _leftEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _leftEye.position = CGPointMake(70.f, 393.f);
-        self.leftEyeShadow = [self addDropShadowToSpriteNode:_leftEye];
+        [self addDropShadowToSpriteNode:_leftEye];
         [self addChild:_leftEye];
         
         _rightEyeBrow = [DNYSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
@@ -42,17 +42,17 @@
         [self addChild:_rightEyeBrow];
         _rightEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _rightEye.position = CGPointMake(250.f, 393.f);
-        self.rightEyeShadow = [self addDropShadowToSpriteNode:_rightEye];
+        [self addDropShadowToSpriteNode:_rightEye];
         [self addChild:_rightEye];
        
         _nose = [DNYSpriteNode spriteNodeWithImageNamed:@"nose.png"];
         _nose.position = CGPointMake(160.f, 353.f);
-        self.noseShadow = [self addDropShadowToSpriteNode:_nose];
+        [self addDropShadowToSpriteNode:_nose];
         [self addChild:_nose];
         
         _mouth = [DNYSpriteNode spriteNodeWithImageNamed:@"mouth-sleep-01.png"];
         _mouth.position = CGPointMake(180.f, 218.f);
-        self.mouthShadow = [self addDropShadowToSpriteNode:_mouth];
+        [self addDropShadowToSpriteNode:_mouth];
         [self addChild:_mouth];
         
         _lookingAt = [NSIndexPath indexPathForItem:1 inSection:1];
@@ -64,9 +64,9 @@
 }
 
 static const float kDropShadowYOffset = 8.f;
-- (DNYSpriteNode *)addDropShadowToSpriteNode:(DNYSpriteNode *)spriteNode {
+- (SKSpriteNode *)addDropShadowToSpriteNode:(DNYSpriteNode *)spriteNode {
     spriteNode.zPosition++;
-    DNYSpriteNode *dropShadow = [spriteNode copy];
+    SKSpriteNode *dropShadow = [spriteNode copy];
     dropShadow.alpha = 0.25;
     dropShadow.position = CGPointMake(spriteNode.position.x, spriteNode.position.y - kDropShadowYOffset);
 
@@ -182,7 +182,6 @@ static const float kDropShadowYOffset = 8.f;
 
     [self.leftEyeBrow runAction:bounce];
     [self.rightEyeBrow runAction:bounce];
-    
 }
 
 - (void)displayFaceForHappiness:(NSInteger)happiness {
@@ -221,7 +220,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)normalMinus3 {
     [self removeAllActions];
-    
+
     if (!self.sick) {
         [self eyebrowsNegative];
         [self eyesSmall];
@@ -235,7 +234,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)normalMinus2 {
     [self removeAllActions];
-    
+
     if (!self.sick) {
         [self eyebrowsNegative];
         [self eyesSmall];
@@ -249,7 +248,6 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)normalMinus1 {
     [self removeAllActions];
-    
     if (!self.sick) {
         [self eyebrowsNone];
         [self eyesStandard];
@@ -271,7 +269,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)normalPlus1 {
     [self removeAllActions];
-    
+
     if (!self.sick) {
         [self eyebrowsPositive];
         [self eyesStandard];
@@ -281,12 +279,11 @@ static const float kDropShadowYOffset = 8.f;
         [self eyesWink];
         [self mouthSick];
     }
-    
 }
 
 - (void)normalPlus2 {
     [self removeAllActions];
-    
+
     if (!self.sick) {
         [self eyebrowsPositive];
         [self eyesSmall];
@@ -300,7 +297,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)normalPlus3 {
     [self removeAllActions];
-    
+
     if (!self.sick) {
         [self eyebrowsPositive];
         [self eyesWink];
@@ -350,11 +347,10 @@ static const float kDropShadowYOffset = 8.f;
     [self removeAllActions];
     self.sick = NO;
     [self runAction:[self flashActionFromColor:[SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1]
-                                       toColor:[SKColor colorWithRed:255/255.f green:152/255.f blue:164/255.f alpha:1]]];
+                                       toColor:[SKColor colorWithRed:250/255.f green:120/255.f blue:120/255.f alpha:1]]];
     [self eyebrowsNegative];
     [self eyesSmall];
     [self mouthBad];
-
 }
 
 - (void)reactPositivelySick {
@@ -375,10 +371,7 @@ static const float kDropShadowYOffset = 8.f;
     [self eyebrowsNegative];
     [self eyesSmall];
     [self mouthSick];
-    
 }
-
-
 
 
 #pragma mark Fine Grain Control
@@ -515,7 +508,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)mouthSick {
     SKTexture *sickTexture = [SKTexture textureWithImageNamed:@"mouth-sick.png"];
-    SKAction *sickAction = [SKAction setTexture:sickTexture];
+    SKAction *sickAction = [SKAction setTexture:sickTexture resize:YES];
     
     SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0];
     
@@ -525,7 +518,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)mouthSicker {
     SKTexture *sickTexture = [SKTexture textureWithImageNamed:@"mouth-sicker.png"];
-    SKAction *sickAction = [SKAction setTexture:sickTexture];
+    SKAction *sickAction = [SKAction setTexture:sickTexture resize:YES];
     
     SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0];
     

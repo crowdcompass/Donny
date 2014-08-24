@@ -10,15 +10,24 @@
 
 @implementation DNYSpriteNode
 
-- (void)runAction:(SKAction *)action {
-    [super runAction:action];
-    if (self.dropShadow) {
-        [self.dropShadow runAction:action];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        //
     }
+    return self;
 }
 
-- (void)updateDropShadow {
-    self.dropShadow.position = CGPointMake(self.position.x, self.position.y - 8.f);
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"texture"];
+}
+
+- (void)runAction:(SKAction *)action {
+    [super runAction:action];
+    if (action.duration != 0.33) {
+        [self.dropShadow runAction:action];
+        self.dropShadow.position = CGPointMake(self.position.x, self.position.y - 8.f);
+    }
 }
 
 @end

@@ -29,13 +29,6 @@
 @property (nonatomic, assign) BOOL sick;
 
 
-//DEBUG
-@property (nonatomic, strong) DNYSpriteNode *leftEyeShadow;
-@property (nonatomic, strong) DNYSpriteNode *rightEyeShadow;
-@property (nonatomic, strong) DNYSpriteNode *noseShadow;
-@property (nonatomic, strong) DNYSpriteNode *mouthShadow;
-
-
 - (void)sleep;
 - (void)wakeup;
 - (void)blink:(NSUInteger)count;
