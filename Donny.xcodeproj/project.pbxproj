@@ -19,6 +19,14 @@
 		0654E1D619A82BE200A5964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1D519A82BE200A5964F /* main.m */; };
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
+		5A794AD219AA69E900717D75 /* boo.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5A794ACA19AA69E900717D75 /* boo.aif */; };
+		5A794AD319AA69E900717D75 /* getting_sick.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5A794ACB19AA69E900717D75 /* getting_sick.aif */; };
+		5A794AD419AA69E900717D75 /* hey_there.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5A794ACC19AA69E900717D75 /* hey_there.aif */; };
+		5A794AD519AA69E900717D75 /* no.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5A794ACD19AA69E900717D75 /* no.aif */; };
+		5A794AD619AA69E900717D75 /* please_stop.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5A794ACE19AA69E900717D75 /* please_stop.aif */; };
+		5A794AD719AA69E900717D75 /* tasty.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5A794ACF19AA69E900717D75 /* tasty.aif */; };
+		5A794AD819AA69E900717D75 /* that_smell.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5A794AD019AA69E900717D75 /* that_smell.aif */; };
+		5A794AD919AA69E900717D75 /* yay.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5A794AD119AA69E900717D75 /* yay.aif */; };
 		5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */; };
 		5ADE03D119A99A3A00F8F426 /* beepoo.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE03D019A99A3A00F8F426 /* beepoo.aif */; };
 		5ADE03D719A9B64A00F8F426 /* DNYTickleInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE03D619A9B64A00F8F426 /* DNYTickleInteraction.m */; };
@@ -117,6 +125,14 @@
 		0654E1EF19A82BE200A5964F /* DonnyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonnyTests.m; sourceTree = "<group>"; };
 		0654E1FE19A85E0700A5964F /* DNYInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYInteraction.h; sourceTree = "<group>"; };
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
+		5A794ACA19AA69E900717D75 /* boo.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = boo.aif; sourceTree = "<group>"; };
+		5A794ACB19AA69E900717D75 /* getting_sick.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = getting_sick.aif; sourceTree = "<group>"; };
+		5A794ACC19AA69E900717D75 /* hey_there.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = hey_there.aif; sourceTree = "<group>"; };
+		5A794ACD19AA69E900717D75 /* no.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = no.aif; sourceTree = "<group>"; };
+		5A794ACE19AA69E900717D75 /* please_stop.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = please_stop.aif; sourceTree = "<group>"; };
+		5A794ACF19AA69E900717D75 /* tasty.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = tasty.aif; sourceTree = "<group>"; };
+		5A794AD019AA69E900717D75 /* that_smell.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = that_smell.aif; sourceTree = "<group>"; };
+		5A794AD119AA69E900717D75 /* yay.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = yay.aif; sourceTree = "<group>"; };
 		5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5ADE03D019A99A3A00F8F426 /* beepoo.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = beepoo.aif; sourceTree = "<group>"; };
 		5ADE03D519A9B64A00F8F426 /* DNYTickleInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYTickleInteraction.h; path = src/DNYTickleInteraction.h; sourceTree = SOURCE_ROOT; };
@@ -348,6 +364,14 @@
 		5ADE03CF19A99A3A00F8F426 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				5A794ACA19AA69E900717D75 /* boo.aif */,
+				5A794ACB19AA69E900717D75 /* getting_sick.aif */,
+				5A794ACC19AA69E900717D75 /* hey_there.aif */,
+				5A794ACD19AA69E900717D75 /* no.aif */,
+				5A794ACE19AA69E900717D75 /* please_stop.aif */,
+				5A794ACF19AA69E900717D75 /* tasty.aif */,
+				5A794AD019AA69E900717D75 /* that_smell.aif */,
+				5A794AD119AA69E900717D75 /* yay.aif */,
 				0567920C19A9EA7B00F478EF /* fx-bad.wav */,
 				0567920D19A9EA7B00F478EF /* fx-good.wav */,
 				5ADE03DD19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav */,
@@ -575,31 +599,39 @@
 				FA077A3819A94EDF00C9CEC3 /* rainbow-purple@2x.png in Resources */,
 				FAD9A37519A8339D00B7C401 /* Images.xcassets in Resources */,
 				FA077A4419A94EDF00C9CEC3 /* mouth-happy@2x.png in Resources */,
+				5A794AD219AA69E900717D75 /* boo.aif in Resources */,
 				FA077A4719A94EDF00C9CEC3 /* mouth-sleep-01@2x.png in Resources */,
 				5ADE03DE19A9C42E00F8F426 /* 31867_HardPCM_Chip030.wav in Resources */,
 				FA077A3D19A94EDF00C9CEC3 /* eye-sleep@2x.png in Resources */,
+				5A794AD419AA69E900717D75 /* hey_there.aif in Resources */,
+				5A794AD719AA69E900717D75 /* tasty.aif in Resources */,
 				05569A4119A882E4006BD00D /* Icon-60@2x.png in Resources */,
 				FA077A3E19A94EDF00C9CEC3 /* eye-small@2x.png in Resources */,
+				5A794AD319AA69E900717D75 /* getting_sick.aif in Resources */,
 				FA077A4519A94EDF00C9CEC3 /* mouth-sick@2x.png in Resources */,
 				FA077A4119A94EDF00C9CEC3 /* mouth-bad-reaction@2x.png in Resources */,
 				FA077A3F19A94EDF00C9CEC3 /* eye-standard@2x.png in Resources */,
 				FA077A4C19A94EDF00C9CEC3 /* nose@2x.png in Resources */,
 				05569A4219A882E4006BD00D /* Icon-76.png in Resources */,
 				FA077A3319A94EDF00C9CEC3 /* eyebrow-negative@2x.png in Resources */,
+				5A794AD919AA69E900717D75 /* yay.aif in Resources */,
 				FA077A4819A94EDF00C9CEC3 /* mouth-sleep-02@2x.png in Resources */,
 				05569A4319A882E4006BD00D /* Icon-76@2x.png in Resources */,
+				5A794AD519AA69E900717D75 /* no.aif in Resources */,
 				FA077A4319A94EDF00C9CEC3 /* mouth-good-reaction@2x.png in Resources */,
 				FA077A3B19A94EDF00C9CEC3 /* tear-big@2x.png in Resources */,
 				5ADE03DC19A9C23200F8F426 /* ecs_fx_12.wav in Resources */,
 				0567920E19A9EA7B00F478EF /* fx-bad.wav in Resources */,
 				FA077A4A19A94EDF00C9CEC3 /* mouth-straight@2x.png in Resources */,
 				FA077A3719A94EDF00C9CEC3 /* rainbow-orange@2x.png in Resources */,
+				5A794AD819AA69E900717D75 /* that_smell.aif in Resources */,
 				FA077A3919A94EDF00C9CEC3 /* rainbow-red@2x.png in Resources */,
 				FA077A4B19A94EDF00C9CEC3 /* mouth-vomit@2x.png in Resources */,
 				FA077A3619A94EDF00C9CEC3 /* rainbow-green@2x.png in Resources */,
 				0567920F19A9EA7B00F478EF /* fx-good.wav in Resources */,
 				FA077A4219A94EDF00C9CEC3 /* mouth-frown@2x.png in Resources */,
 				FA077A4019A94EDF00C9CEC3 /* eye-wink@2x.png in Resources */,
+				5A794AD619AA69E900717D75 /* please_stop.aif in Resources */,
 				05569A4019A882E4006BD00D /* Icon-60.png in Resources */,
 				FA077A4619A94EDF00C9CEC3 /* mouth-sicker@2x.png in Resources */,
 			);
