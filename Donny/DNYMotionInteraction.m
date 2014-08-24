@@ -64,7 +64,10 @@
         self.rockCounter = 0;
         if (self.creature.isSleeping) {
             [self.creature wake];
+        } else {
+            [self.creature decreaseHappinessWithReaction:YES withSickness:YES];
         }
+        
     }
 
     if (-0.99 > motion.gravity.z && motion.gravity.z > -1.01) {

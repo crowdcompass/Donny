@@ -17,6 +17,8 @@
 
 @interface DNYCreatureNode ()
 
+@property (nonatomic, assign) BOOL sick;
+
 @end
 
 @implementation DNYCreatureNode
@@ -54,6 +56,8 @@
         [self addChild:_mouth];
         
         _lookingAt = [NSIndexPath indexPathForItem:1 inSection:1];
+        
+        self.sick = NO;
     }
     
     return self;
@@ -85,6 +89,7 @@ static const float kDropShadowYOffset = 8.f;
 #pragma mark Actions
 
 - (void)blink:(NSUInteger)count {
+    if (self.creature.isSleeping) return;
     [self blink:count withDuration:kDefaultBlinkDuration];
 }
 
@@ -111,10 +116,12 @@ static const float kDropShadowYOffset = 8.f;
 }
 
 - (void)leftEyeWink {
+    if (self.creature.isSleeping) return;
     [self leftEyeWink:1 withDuration:kDefaultWinkDuration];
 }
 
 - (void)rightEyeWink {
+    if (self.creature.isSleeping) return;
     [self rightEyeWink:1 withDuration:kDefaultWinkDuration];
 }
 
@@ -268,6 +275,23 @@ static const float kDropShadowYOffset = 8.f;
     [self mouthHappiest];
 }
 
+- (void)sick1 {
+    [self removeAllActions];
+    
+    [self eyebrowsNone];
+    [self eyesWink];
+    [self mouthSick];
+}
+
+- (void)sick2 {
+    [self removeAllActions];
+    
+    [self eyebrowsNone];
+    [self eyesWink];
+    [self mouthSicker];
+}
+
+
 - (void)sleep {
     [self removeAllActions];
 
@@ -293,7 +317,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)reactPositively {
     [self removeAllActions];
-
+    self.sick = NO;
     [self runAction:[self flashActionFromColor:[SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1]
                                        toColor:[SKColor colorWithRed:152/225.f green:255/255.f blue:164/255.f alpha:1]]];
     [self eyebrowsPositive];
@@ -303,13 +327,34 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)reactNegatively {
     [self removeAllActions];
-
+    self.sick = NO;
     [self runAction:[self flashActionFromColor:[SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1]
                                        toColor:[SKColor colorWithRed:255/255.f green:152/255.f blue:164/255.f alpha:1]]];
     [self eyebrowsNegative];
     [self eyesSmall];
     [self mouthBad];
 
+}
+
+- (void)reactPositivelySick {
+    [self removeAllActions];
+    self.sick = YES;
+    [self runAction:[self flashActionFromColor:[SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1]
+                                       toColor:[SKColor colorWithRed:152/225.f green:255/255.f blue:164/255.f alpha:1]]];
+    [self eyebrowsPositive];
+    [self eyesWink];
+    [self mouthSick];
+}
+
+- (void)reactNegativelySick {
+    [self removeAllActions];
+    self.sick = YES;
+    [self runAction:[self flashActionFromColor:[SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1]
+                                       toColor:[SKColor colorWithRed:255/255.f green:152/255.f blue:164/255.f alpha:1]]];
+    [self eyebrowsNegative];
+    [self eyesSmall];
+    [self mouthSick];
+    
 }
 
 

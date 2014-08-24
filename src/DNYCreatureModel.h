@@ -26,6 +26,7 @@ extern NSString *const kUserDefaultKeyHappiness;
 @property (nonatomic, strong) NSDate *lastFedAt;
 @property (nonatomic, assign) BOOL leftEyeClosed;
 @property (nonatomic, assign) BOOL rightEyeClosed;
+@property (nonatomic, assign) BOOL sick;
 
 
 @property (assign, nonatomic, readonly) NSInteger happiness;
@@ -33,8 +34,10 @@ extern NSString *const kUserDefaultKeyHappiness;
 
 @property (nonatomic, weak) DNYCreatureNode *creatureNode;
 
-- (void)increaseHappinessWithReaction:(BOOL)shoudlReact;
-- (void)decreaseHappinessWithReaction:(BOOL)shouldReact;
+- (void)increaseHappinessWithReaction:(BOOL)shoudlReact withSickness:(BOOL)sick;
+- (void)decreaseHappinessWithReaction:(BOOL)shouldReact withSickness:(BOOL)sick;
+
+
 
 @end
 
@@ -51,9 +54,6 @@ extern NSString *const kUserDefaultKeyHappiness;
 
 - (void)vibrate;
 - (void)vibrateChuckle;
-- (void)increaseHappinessWithReaction:(BOOL)shoudlReact;
-- (void)decreaseHappinessWithReaction:(BOOL)shouldReact;
-- (void)happinessDidChange:(NSInteger)newHappy;
 
 - (BOOL)isSleeping;
 - (BOOL)isAwake;

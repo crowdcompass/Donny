@@ -8,9 +8,13 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "DNYSpriteNode.h"
+#import "DNYCreatureModel.h"
+
+@class DNYCreatureModel;
 
 @interface DNYCreatureNode : SKNode
 
+@property (weak, nonatomic) DNYCreatureModel *creature;
 @property (strong, nonatomic) DNYSpriteNode *leftEyeBrow;
 @property (strong, nonatomic) DNYSpriteNode *leftEye;
 
@@ -41,6 +45,9 @@
 - (void)bounceEyebrows;
 - (void)reactPositively;
 - (void)reactNegatively;
+- (void)reactPositivelySick;
+- (void)reactNegativelySick;
+
 - (void)displayFaceForHappiness:(NSInteger)happiness;
 
 - (void)mouthVomit;
