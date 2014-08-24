@@ -14,30 +14,89 @@
 
 @interface DNYCreatureModel ()
 
+- (void)makeAwake;
+- (void)makeAsleep;
+- (void)makeVibrate;
+- (void)makeVibrateChuckle;
+- (void)makeStopVibrating;
+
 - (void)evaluate;
 
 @end
+
 
 @implementation DNYCreatureModel
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark -
+#pragma mark State Machine
+
+
+STATE_MACHINE(^(LSStateMachine * sm) {
+    sm.initialState = @"sleeping";
+    
+    [sm addState:@"sleeping"];
+    [sm addState:@"awake"];
+    [sm addState:@"suspended"];
+    [sm addState:@"terminated"];
+    [sm addState:@"vibrating"];
+    
+    
+    [sm when:@"wake" transitionFrom:@"sleeping" to:@"awake"];
+    [sm when:@"suspend" transitionFrom:@"awake" to:@"suspended"];
+    [sm when:@"unsuspend" transitionFrom:@"suspended" to:@"awake"];
+    [sm when:@"terminate" transitionFrom:@"awake" to:@"terminated"];
+    [sm when:@"terminate" transitionFrom:@"sleeping" to:@"terminated"];
+    
+    [sm when:@"vibrate" transitionFrom:@"awake" to:@"vibrating"];
+    [sm when:@"vibrateChuckle" transitionFrom:@"awake" to:@"vibrating"];
+    [sm when:@"makeStopVibrating" transitionFrom:@"vibrating" to:@"awake"];
+    
+    [sm after:@"wake" do:^(DNYCreatureModel *creature) {
+        [creature makeAwake];
+    }];
+    [sm after:@"vibrate" do:^(DNYCreatureModel *creature) {
+        [creature makeVibrate];
+        [creature makeStopVibrating];
+    }];
+    [sm after:@"vibrateChuckle" do:^(DNYCreatureModel *creature) {
+        [creature makeVibrateChuckle];
+        [creature makeStopVibrating];
+    }];
+    
+})
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self initializeStateMachine];
+    }
+    return self;
+}
+
+
+//////////////////////////////////////////////////////////////////////
+#pragma mark -
 #pragma mark Core capabilities
 
-- (void)makeAlive {
+- (void)makeAwake {
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(evaluate)];
     displayLink.frameInterval = kDefaultCreatureLoopRate;
     [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
-- (void)vibrate {
+- (void)makeAsleep {
+    
+}
+
+- (void)makeVibrate {
      AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
 }
 
 /**
  This uses a private API method, so would need to be compiled out of a sumbitted app
  */
-- (void)vibrateChuckle {
+- (void)makeVibrateChuckle {
     NSMutableDictionary* patternsDict = [@{} mutableCopy];
     NSMutableArray* patternsArray = [@[] mutableCopy];
     
@@ -59,8 +118,12 @@
     
     AudioServicesPlaySystemSoundWithVibration(kSystemSoundID_Vibrate,nil,patternsDict);
 #pragma clang diagnostic pop
+    
 }
 
+- (void)makeStopVibrating {
+    AudioServicesStopSystemSound();
+}
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark -

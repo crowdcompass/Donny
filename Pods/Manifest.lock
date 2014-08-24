@@ -1,1 +1,10 @@
+PODS:
+  - StateMachine (0.1)
+
+DEPENDENCIES:
+  - StateMachine
+
+SPEC CHECKSUMS:
+  StateMachine: 2297e5c66a293f095462cc9c8b4358c4749f52ef
+
 COCOAPODS: 0.33.1

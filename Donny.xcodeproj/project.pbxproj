@@ -16,6 +16,7 @@
 		0654E1F019A82BE200A5964F /* DonnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1EF19A82BE200A5964F /* DonnyTests.m */; };
 		0654E20019A85E0700A5964F /* DNYInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0654E1FF19A85E0700A5964F /* DNYInteraction.m */; };
 		5AB97F1019A9381C0090C208 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */; };
+		A9D04C843641465D9E2BB1AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 892CEBDC87354FA1912D52C4 /* libPods.a */; };
 		FA520D5119A908F300197278 /* DNYCreatureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA520D5019A908F300197278 /* DNYCreatureNode.m */; };
 		FA683B5B19A834F600CD2FEC /* DNYPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5A19A834F600CD2FEC /* DNYPersistence.m */; };
 		FA683B5E19A8561F00CD2FEC /* DNYCreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA683B5D19A8561F00CD2FEC /* DNYCreatureViewController.m */; };
@@ -81,6 +82,8 @@
 		0654E1FE19A85E0700A5964F /* DNYInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNYInteraction.h; sourceTree = "<group>"; };
 		0654E1FF19A85E0700A5964F /* DNYInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNYInteraction.m; sourceTree = "<group>"; };
 		5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		619C64AB357B4D82A9F21C71 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		892CEBDC87354FA1912D52C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA520D4F19A908F300197278 /* DNYCreatureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYCreatureNode.h; path = src/DNYCreatureNode.h; sourceTree = SOURCE_ROOT; };
 		FA520D5019A908F300197278 /* DNYCreatureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNYCreatureNode.m; path = src/DNYCreatureNode.m; sourceTree = SOURCE_ROOT; };
 		FA683B5919A834F600CD2FEC /* DNYPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNYPersistence.h; path = src/DNYPersistence.h; sourceTree = SOURCE_ROOT; };
@@ -146,6 +149,7 @@
 				FA683B9819A85F3400CD2FEC /* CoreGraphics.framework in Frameworks */,
 				FA683B9919A85F3400CD2FEC /* CoreImage.framework in Frameworks */,
 				FA683B9A19A85F3400CD2FEC /* CoreLocation.framework in Frameworks */,
+				A9D04C843641465D9E2BB1AF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,12 +166,13 @@
 		0654E1C719A82BE200A5964F = {
 			isa = PBXGroup;
 			children = (
-				5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */,
 				0654E1D219A82BE200A5964F /* Donny */,
 				0654E1D319A82BE200A5964F /* Supporting Files */,
 				FAD9A37019A8337600B7C401 /* Resources */,
 				0654E1EC19A82BE200A5964F /* DonnyTests */,
 				0654E1D119A82BE200A5964F /* Products */,
+				619C64AB357B4D82A9F21C71 /* Pods.xcconfig */,
+				A5057AE370754970A44EBB77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +206,7 @@
 		0654E1D319A82BE200A5964F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5AB97F0F19A9381C0090C208 /* AudioToolbox.framework */,
 				FA683B9F19A8600100CD2FEC /* MediaToolbox.framework */,
 				FA683BA019A8600100CD2FEC /* SpriteKit.framework */,
 				FA683BA119A8600100CD2FEC /* UIKit.framework */,
@@ -247,6 +253,14 @@
 				05569A2A19A85E6D006BD00D /* DNYFaceInteraction.m */,
 			);
 			name = Interactions;
+			sourceTree = "<group>";
+		};
+		A5057AE370754970A44EBB77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				892CEBDC87354FA1912D52C4 /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FA683B6219A85A0300CD2FEC /* categories */ = {
@@ -348,9 +362,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0654E1F319A82BE200A5964F /* Build configuration list for PBXNativeTarget "Donny" */;
 			buildPhases = (
+				B0B8FD9174E243FC9AF3665B /* Check Pods Manifest.lock */,
 				0654E1CC19A82BE200A5964F /* Sources */,
 				0654E1CD19A82BE200A5964F /* Frameworks */,
 				0654E1CE19A82BE200A5964F /* Resources */,
+				A2AC5368F1AF45198BEAE89C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -452,6 +468,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A2AC5368F1AF45198BEAE89C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0B8FD9174E243FC9AF3665B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0654E1CC19A82BE200A5964F /* Sources */ = {
@@ -571,24 +620,26 @@
 		};
 		0654E1F419A82BE200A5964F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 619C64AB357B4D82A9F21C71 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Donny/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		0654E1F519A82BE200A5964F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 619C64AB357B4D82A9F21C71 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Donny/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
