@@ -9,6 +9,8 @@
 #import "DNYFoodInteraction.h"
 #import "DNYCreatureModel.h"
 
+#define kFedInterval 30 // wait to feed again
+
 @interface DNYCreatureModel (DNYFoodInteractionBehavior)
 
 -(void) dny_FoodInteractionSmellFood;
@@ -25,7 +27,14 @@
 
 -(void) dny_FoodInteractionReceiveFood
 {
-    NSLog(@"YUM CHICKEN");
+    NSTimeInterval diff = [[NSDate date] timeIntervalSinceDate:self.lastFedAt];
+    if (diff >= kFedInterval) {
+        NSLog(@"YUM CHICKEN");
+        [self increaseHappiness];
+        self.lastFedAt = [NSDate date];
+    } else {
+        NSLog(@"NO THANKS I'M FULL");
+    }
 }
 
 @end
@@ -35,6 +44,7 @@
 - (instancetype)initWithCreature:(DNYCreatureModel *)creature {
     self = [super initWithCreature:creature];
     if (self) {
+        self.creature.lastFedAt = [NSDate dateWithTimeIntervalSinceNow:-300];
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         [_locationManager requestAlwaysAuthorization];

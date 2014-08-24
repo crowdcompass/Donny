@@ -22,6 +22,10 @@ extern NSString *const kUserDefaultKeyHappiness;
 @property (nonatomic, retain) NSDate *terminatedAt;
 @property (nonatomic, strong) NSArray *interactions;
 
+// This would ideally be defined via extension
+@property (nonatomic, strong) NSDate *lastFedAt;
+
+
 @property (assign, nonatomic, readonly) NSInteger happiness;
 @property (assign, nonatomic) BOOL flat;
 

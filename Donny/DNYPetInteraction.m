@@ -18,7 +18,7 @@
 
 -(void) dny_PetInteractionPetNose
 {
-    NSLog(@"Petted on nose");
+    [self decreaseHappiness];
 }
 
 @end

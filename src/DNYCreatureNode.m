@@ -29,7 +29,7 @@
         [self addChild:_leftEyeBrow];
         _leftEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _leftEye.position = CGPointMake(70.f, 393.f);
-        [self addDropShadowToSpriteNode:_leftEye];
+        self.leftEyeShadow = [self addDropShadowToSpriteNode:_leftEye];
         [self addChild:_leftEye];
         
         _rightEyeBrow = [DNYSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
@@ -37,17 +37,17 @@
         [self addChild:_rightEyeBrow];
         _rightEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _rightEye.position = CGPointMake(250.f, 393.f);
-        [self addDropShadowToSpriteNode:_rightEye];
+        self.rightEyeShadow = [self addDropShadowToSpriteNode:_rightEye];
         [self addChild:_rightEye];
        
         _nose = [DNYSpriteNode spriteNodeWithImageNamed:@"nose.png"];
         _nose.position = CGPointMake(160.f, 353.f);
-        [self addDropShadowToSpriteNode:_nose];
+        self.noseShadow = [self addDropShadowToSpriteNode:_nose];
         [self addChild:_nose];
         
         _mouth = [DNYSpriteNode spriteNodeWithImageNamed:@"mouth-sleep-01.png"];
         _mouth.position = CGPointMake(180.f, 218.f);
-        [self addDropShadowToSpriteNode:_mouth];
+        self.mouthShadow = [self addDropShadowToSpriteNode:_mouth];
         [self addChild:_mouth];
         
         _lookingAt = [NSIndexPath indexPathForItem:1 inSection:1];
@@ -57,7 +57,7 @@
 }
 
 static const float kDropShadowYOffset = 8.f;
-- (void)addDropShadowToSpriteNode:(DNYSpriteNode *)spriteNode {
+- (DNYSpriteNode *)addDropShadowToSpriteNode:(DNYSpriteNode *)spriteNode {
     spriteNode.zPosition++;
     DNYSpriteNode *dropShadow = [spriteNode copy];
     dropShadow.alpha = 0.25;
@@ -65,6 +65,8 @@ static const float kDropShadowYOffset = 8.f;
 
     spriteNode.dropShadow = dropShadow;
     [self addChild:dropShadow];
+
+    return dropShadow;
 }
 
 - (void)removeAllActions {
@@ -101,6 +103,93 @@ static const float kDropShadowYOffset = 8.f;
     [self.rightEye runAction:actionGroup];
 }
 
+- (void)displayFaceForHappiness:(NSInteger)happiness {
+    [self setCreatureColorForHappiness:happiness];
+    switch (happiness) {
+        case -3:
+            [self normalMinus3];
+            break;
+        case -2:
+            [self normalMinus2];
+            break;
+        case -1:
+            [self normalMinus1];
+            break;
+        case 0:
+            [self normal];
+            break;
+        case 1:
+            [self normalPlus1];
+            break;
+        case 2:
+            [self normalPlus2];
+            break;
+        case 3:
+            [self normalPlus3];
+            break;
+        case 4:
+            //
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)normalMinus3 {
+    [self removeAllActions];
+    
+    [self eyebrowsNegative];
+    [self eyesSmall];
+    [self mouthFrown];
+}
+
+- (void)normalMinus2 {
+    [self removeAllActions];
+    
+    [self eyebrowsNegative];
+    [self eyesSmall];
+    [self mouthFrown];
+}
+
+- (void)normalMinus1 {
+    [self removeAllActions];
+    
+    [self eyebrowsNone];
+    [self eyesStandard];
+    [self mouthStraight];
+}
+
+- (void)normal {
+    [self removeAllActions];
+    
+    [self eyebrowsNone];
+    [self eyesStandard];
+    [self mouthSmile];
+}
+
+- (void)normalPlus1 {
+    [self removeAllActions];
+    
+    [self eyebrowsPositive];
+    [self eyesStandard];
+    [self mouthSmile];
+}
+
+- (void)normalPlus2 {
+    [self removeAllActions];
+    
+    [self eyebrowsPositive];
+    [self eyesSmall];
+    [self mouthGood];
+}
+
+- (void)normalPlus3 {
+    [self removeAllActions];
+    
+    [self eyebrowsPositive];
+    [self eyesWink];
+    [self mouthHappiest];
+}
 
 - (void)sleep {
     [self removeAllActions];
@@ -140,6 +229,7 @@ static const float kDropShadowYOffset = 8.f;
     [self mouthBad];
 
 }
+
 
 
 
@@ -266,6 +356,15 @@ static const float kDropShadowYOffset = 8.f;
     [self.mouth runAction:action];
 }
 
+- (void)mouthHappiest {
+    self.mouth.position = CGPointMake(160.f, 213.f);
+    
+    SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-happy.png"];
+    SKAction *action = [SKAction setTexture:texture resize:YES];
+    
+    [self.mouth runAction:action];
+}
+
 - (void)mouthSick {
     SKTexture *sickTexture = [SKTexture textureWithImageNamed:@"mouth-sick.png"];
     SKAction *sickAction = [SKAction setTexture:sickTexture];
@@ -336,7 +435,7 @@ static const float kDropShadowYOffset = 8.f;
              @"Over the line, Donny!");
     
     CGVector baseVector = [self.lookingAt vectorTo:path];
-    CGVector moveEyesBy = scaleVectorBy(baseVector, 6.f);
+    CGVector moveEyesBy = scaleVectorBy(baseVector, 9.f);
     CGVector moveBy = scaleVectorBy(baseVector, 3.f);
     
     SKAction *moveEyeAction = [SKAction moveBy:moveEyesBy duration:.33];
@@ -370,7 +469,7 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
     return flashAction;
 }
 
-- (void)setCreatureColorForHappiness:(int)happiness {
+- (void)setCreatureColorForHappiness:(NSInteger)happiness {
     switch (happiness) {
         case -3:
             self.scene.backgroundColor = [SKColor colorWithRed:255/255.f green:152/255.f blue:152/255.f alpha:1];

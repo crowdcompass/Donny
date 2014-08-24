@@ -34,16 +34,16 @@
     } else {
         yOut = 2;
     }
-    
-    NSLog(@"winWidth: %i", winWidth);
-    NSLog(@"winHeight: %i", winHeight);
-    NSLog(@"xBase: %i", xBase);
-    NSLog(@"yBase: %i", yBase);
-    NSLog(@"origX: %f", point.x);
-    NSLog(@"origY: %f", point.y);
-    NSLog(@"xOut: %i", xOut);
-    NSLog(@"yOut: %i", yOut);
-    
+//    
+//    NSLog(@"winWidth: %i", winWidth);
+//    NSLog(@"winHeight: %i", winHeight);
+//    NSLog(@"xBase: %i", xBase);
+//    NSLog(@"yBase: %i", yBase);
+//    NSLog(@"origX: %f", point.x);
+//    NSLog(@"origY: %f", point.y);
+//    NSLog(@"xOut: %i", xOut);
+//    NSLog(@"yOut: %i", yOut);
+//    
     return [NSIndexPath indexPathForItem:xOut inSection:yOut];
 }
 

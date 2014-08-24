@@ -23,11 +23,20 @@
 
 @property (copy, nonatomic) NSIndexPath *lookingAt;
 
+
+//DEBUG
+@property (nonatomic, strong) DNYSpriteNode *leftEyeShadow;
+@property (nonatomic, strong) DNYSpriteNode *rightEyeShadow;
+@property (nonatomic, strong) DNYSpriteNode *noseShadow;
+@property (nonatomic, strong) DNYSpriteNode *mouthShadow;
+
+
 - (void)sleep;
 - (void)wakeup;
 - (void)blink:(NSUInteger)count;
 - (void)reactPositively;
 - (void)reactNegatively;
+- (void)displayFaceForHappiness:(NSInteger)happiness;
 
 /**
  @param path indexPath representing a point on a 3x3 grid, section is y, item is x

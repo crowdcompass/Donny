@@ -184,9 +184,9 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 
 - (void)increaseHappiness {
     if (!self.isAwake) return;
-    
+
     NSLog(@":) happier");
-    NSNumber *newHappiness = @(self.happiness + 1);
+    NSNumber *newHappiness = self.happiness <= 3 ? @(self.happiness + 1) : @(3);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -198,7 +198,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 - (void)decreaseHappiness {
     if (!self.isAwake) return;
     NSLog(@":( unhappier");
-    NSNumber *newHappiness = @(self.happiness - 1);
+    NSNumber *newHappiness = self.happiness >= -3 ? @(self.happiness - 1) : @(-3);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -209,8 +209,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 
 - (void)happinessDidChange:(NSInteger)newHappy {
     if (!self.isAwake) return;
-    
-    
+    [self.creatureNode displayFaceForHappiness:newHappy];
 }
 
 - (NSInteger)happiness {
