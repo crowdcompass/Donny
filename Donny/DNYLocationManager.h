@@ -25,7 +25,7 @@
 
 @protocol DNYBeaconDelegate <NSObject>
 
-- (void)locationManager:(DNYLocationManager *)manager didRangeBeacon:(CLBeacon *)beacon inRegion:(CLBeaconRegion *)region;
+- (void)locationManager:(DNYLocationManager *)manager didRangeBeacon:(CLBeacon *)beacon;
 
 @end
 

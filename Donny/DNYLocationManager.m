@@ -8,6 +8,32 @@
 
 #import "DNYLocationManager.h"
 
+@interface DNYLocationManagerDelegateContainer : NSObject
+
+@property (weak, nonatomic) id<DNYBeaconDelegate> delegate;
+
+- (instancetype)initWithDelegate:(id<DNYBeaconDelegate>)delegate;
+
+@end
+
+@implementation DNYLocationManagerDelegateContainer
+
+- (instancetype)initWithDelegate:(id<DNYBeaconDelegate>)delegate {
+    if (self) {
+        _delegate = delegate;
+    }
+    
+    return self;
+}
+
+@end
+
+@interface DNYLocationManager()
+
+@property (strong, atomic) NSMutableDictionary *delegates;
+
+@end
+
 @implementation DNYLocationManager
 
 + (instancetype)instance {
@@ -27,6 +53,8 @@
     if (self) {
         _locationManager = [[CLLocationManager alloc] init];
         [_locationManager requestAlwaysAuthorization];
+        
+        _delegates = [NSMutableDictionary dictionary];
     }
     
     return self;
@@ -35,7 +63,42 @@
 #pragma mark - DNYLocationManager
 
 - (void)registerDelegate:(id<DNYBeaconDelegate>)delegate forBeaconWithUUID:(NSUUID *)uuid {
+    NSParameterAssert(!!uuid);
     
+    @synchronized (self.delegates) {
+        NSMutableSet *existingDelegates = self.delegates[uuid];
+        
+        CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
+                                                                          identifier:@"com.crowdcompass.Donny"];
+        beaconRegion.notifyEntryStateOnDisplay = YES;
+        beaconRegion.notifyOnEntry = YES;
+        beaconRegion.notifyOnExit = YES;
+        
+        [self.locationManager startRangingBeaconsInRegion:beaconRegion];
+        
+        DNYLocationManagerDelegateContainer *container =
+        [[DNYLocationManagerDelegateContainer alloc] initWithDelegate:delegate];
+        
+        if (existingDelegates) {
+            [existingDelegates addObject:container];
+        } else {
+            self.delegates[uuid] = [NSMutableSet setWithObject:container];
+        }
+    }
+}
+
+#pragma mark - CLLocationDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
+    for (CLBeacon *beacon in beacons) {
+        NSSet *delegateContainers = self.delegates[beacon.proximityUUID];
+        
+        for (DNYLocationManagerDelegateContainer *container in delegateContainers) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [container.delegate locationManager:self didRangeBeacon:beacon];
+            });
+        }
+    }
 }
 
 @end
