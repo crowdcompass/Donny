@@ -85,6 +85,8 @@ STATE_MACHINE(^(LSStateMachine * sm) {
         self.synth = [AVSpeechSynthesizer new];
 //        NSLog(@"%@", [AVSpeechSynthesisVoice speechVoices]);
         self.synth.delegate = self;
+        self.leftEyeClosed = NO;
+        self.rightEyeClosed = NO;
     }
     return self;
 }
@@ -143,16 +145,19 @@ STATE_MACHINE(^(LSStateMachine * sm) {
  This uses a private API method, so would need to be compiled out of a sumbitted app
  */
 - (void)vibrateChuckle {
+    [self increaseHappiness];
     NSMutableDictionary* patternsDict = [@{} mutableCopy];
     NSMutableArray* patternsArray = [@[] mutableCopy];
     
-    [patternsArray addObjectsFromArray:@[@(YES), @(1000),
+    [patternsArray addObjectsFromArray:@[@(YES), @(500),
                                         @(NO),@(500),
                                          @(YES), @(250),
                                          @(NO), @(250),
                                          @(YES), @(250),
                                          @(NO), @(250),
-                                         @(YES), @(250)]];
+                                         @(YES), @(250),
+                                         @(NO), @(100),
+                                         @(YES), @(150)]];
         
     [patternsDict setObject:patternsArray forKey:@"VibePattern"];
     [patternsDict setObject:[NSNumber numberWithInt:1.0] forKey:@"Intensity"];
@@ -220,9 +225,9 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     if (!self.isAwake) return;
     
     if (duration >= kMoodSettleInterval) {
-        if (self.happiness > 0) {
+        if (self.happiness > -1) {
             [self decreaseHappiness];
-        } else if (self.happiness < 0) {
+        } else if (self.happiness < -1) {
             [self increaseHappiness];
         }
     }

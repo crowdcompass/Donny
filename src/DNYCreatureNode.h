@@ -34,6 +34,10 @@
 - (void)sleep;
 - (void)wakeup;
 - (void)blink:(NSUInteger)count;
+- (void)leftEyeWink;
+- (void)rightEyeWink;
+- (void)leftEyeWink:(NSUInteger)count withDuration:(NSTimeInterval) duration;
+- (void)rightEyeWink:(NSUInteger)count withDuration:(NSTimeInterval) duration;
 - (void)reactPositively;
 - (void)reactNegatively;
 - (void)displayFaceForHappiness:(NSInteger)happiness;

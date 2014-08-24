@@ -11,6 +11,8 @@
 
 #import "NSIndexPath+CGVector.h"
 
+#define kDefaultBlinkDuration 0.15
+#define kDefaultWinkDuration 1
 
 @interface DNYCreatureNode ()
 
@@ -82,6 +84,10 @@ static const float kDropShadowYOffset = 8.f;
 #pragma mark Actions
 
 - (void)blink:(NSUInteger)count {
+    [self blink:count withDuration:kDefaultBlinkDuration];
+}
+
+- (void)blink:(NSUInteger)count withDuration:(NSTimeInterval)duration {
     SKTexture *currentEyeTexture = [self.leftEye.texture copy];
     SKTexture *blinkEyeTexture = [SKTexture textureWithImageNamed:@"eye-wink.png"];
     
@@ -100,6 +106,59 @@ static const float kDropShadowYOffset = 8.f;
     SKAction *actionGroup = [SKAction sequence:groups];
 
     [self.leftEye runAction:actionGroup];
+    [self.rightEye runAction:actionGroup];
+}
+
+- (void)leftEyeWink {
+    [self leftEyeWink:1 withDuration:kDefaultWinkDuration];
+}
+
+- (void)rightEyeWink {
+    [self rightEyeWink:1 withDuration:kDefaultWinkDuration];
+}
+
+
+- (void)leftEyeWink:(NSUInteger)count withDuration:(NSTimeInterval) duration {
+    if ([self.leftEye.texture.description containsString:@"wink"]) return;
+    SKTexture *currentEyeTexture = [self.leftEye.texture copy];
+    SKTexture *blinkEyeTexture = [SKTexture textureWithImageNamed:@"eye-wink.png"];
+    
+    SKAction *blinkAction = [SKAction setTexture:blinkEyeTexture resize:YES];
+    SKAction *blinkTimeAction = [SKAction waitForDuration:duration];
+    SKAction *undoBlinkAction = [SKAction setTexture:currentEyeTexture resize:YES];
+    
+    SKAction *singleBlink = [SKAction sequence:@[ blinkAction, blinkTimeAction, undoBlinkAction ]];
+    
+    NSMutableArray *groups = [NSMutableArray array];
+    
+    for (int i = 0; i <= count; i++) {
+        [groups addObject:singleBlink];
+    }
+    
+    SKAction *actionGroup = [SKAction sequence:groups];
+    
+    [self.leftEye runAction:actionGroup];
+}
+
+- (void)rightEyeWink:(NSUInteger)count withDuration:(NSTimeInterval) duration {
+    if ([self.rightEye.texture.description containsString:@"wink"]) return;
+    SKTexture *currentEyeTexture = [self.rightEye.texture copy];
+    SKTexture *blinkEyeTexture = [SKTexture textureWithImageNamed:@"eye-wink.png"];
+    
+    SKAction *blinkAction = [SKAction setTexture:blinkEyeTexture resize:YES];
+    SKAction *blinkTimeAction = [SKAction waitForDuration:duration];
+    SKAction *undoBlinkAction = [SKAction setTexture:currentEyeTexture resize:YES];
+    
+    SKAction *singleBlink = [SKAction sequence:@[ blinkAction, blinkTimeAction, undoBlinkAction ]];
+    
+    NSMutableArray *groups = [NSMutableArray array];
+    
+    for (int i = 0; i <= count; i++) {
+        [groups addObject:singleBlink];
+    }
+    
+    SKAction *actionGroup = [SKAction sequence:groups];
+    
     [self.rightEye runAction:actionGroup];
 }
 

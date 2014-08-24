@@ -10,6 +10,6 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface DNYFaceInteraction : DNYInteraction <AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface DNYFaceInteraction : DNYInteraction <AVCaptureVideoDataOutputSampleBufferDelegate, DNYEvaluatedInteraction>
 
 @end

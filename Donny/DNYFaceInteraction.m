@@ -15,8 +15,9 @@
 
 @interface DNYCreatureModel (DNYFaceInteractionBehavior)
 
--(void) dny_FaceInteractionSetLeftEyeWink;
--(void) dny_FaceInteractionSetRightEyeWink;
+-(void) dny_FaceInteractionToggleLeftEyeWink;
+-(void) dny_FaceInteractionToggleRightEyeWink;
+-(void) dny_FaceInteractionEvaluateBlink;
 -(void) dny_FaceInteractionSetSmile;
 -(void) dny_FaceInteractionTrackFacePosition:(CGPoint)coord;
 
@@ -24,14 +25,41 @@
 
 @implementation DNYCreatureModel (DNYFaceInteractionBehavior)
 
--(void)dny_FaceInteractionSetLeftEyeWink
+
+-(void)dny_FaceInteractionToggleLeftEyeWink
 {
+    if (!self.isAwake) return;
+    
     NSLog(@"Left eye closed");
+    if (!self.leftEyeClosed) {
+        [self.creatureNode leftEyeWink];
+    }
+    self.leftEyeClosed = !self.leftEyeClosed;
+    
+    [self dny_FaceInteractionEvaluateBlink];
 }
 
--(void)dny_FaceInteractionSetRightEyeWink
+-(void)dny_FaceInteractionToggleRightEyeWink
 {
+    if (!self.isAwake) return;
+    
     NSLog(@"Right eye closed");
+    if (!self.rightEyeClosed) {
+        [self.creatureNode rightEyeWink];        
+    }
+    self.rightEyeClosed = !self.rightEyeClosed;
+
+    [self dny_FaceInteractionEvaluateBlink];
+}
+
+-(void) dny_FaceInteractionEvaluateBlink {
+    if (!self.isAwake) return;
+    
+    if (self.leftEyeClosed && self.rightEyeClosed) {
+        [self.creatureNode blink:2];
+        self.leftEyeClosed = NO;
+        self.rightEyeClosed = NO;
+    }
 }
 
 -(void) dny_FaceInteractionSetSmile
@@ -51,6 +79,9 @@
 
 @interface DNYFaceInteraction() 
 
+@property (nonatomic, assign) BOOL leftEyeClosed;
+@property (nonatomic, assign) BOOL rightEyeClosed;
+
 @property (nonatomic) BOOL isUsingFrontFacingCamera;
 @property (nonatomic, strong) AVCaptureVideoDataOutput *videoDataOutput;
 @property (nonatomic) dispatch_queue_t videoDataOutputQueue;
@@ -68,6 +99,8 @@
 - (instancetype)initWithCreature:(DNYCreatureModel *)creature {
     self = [super initWithCreature:creature];
     if (self) {
+        self.leftEyeClosed = NO;
+        self.rightEyeClosed = NO;
         [self setupAVCapture];
         NSDictionary *detectorOptions = [[NSDictionary alloc] initWithObjectsAndKeys:CIDetectorAccuracyLow, CIDetectorAccuracy, nil];
         _faceDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:detectorOptions];
@@ -170,17 +203,20 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                                                    options:imageOptions];
 
     for (CIFaceFeature *ff in features) {
-        if ( ff.hasLeftEyePosition && ff.leftEyeClosed ) {
-            [self.creature dny_FaceInteractionSetLeftEyeWink];
-        }
-        if ( ff.hasRightEyePosition && ff.rightEyeClosed ) {
-            [self.creature dny_FaceInteractionSetRightEyeWink];
-        }
+//        if ( ff.hasLeftEyePosition && ff.leftEyeClosed ) {
+//            self.leftEyeClosed = YES;
+//        }
+//        if ( ff.hasRightEyePosition && ff.rightEyeClosed ) {
+//            self.rightEyeClosed = YES;
+//        }
         if ( ff.hasSmile ) {
             [self.creature dny_FaceInteractionSetSmile];
         }
         if ( ff.hasMouthPosition ) {
             [self.creature dny_FaceInteractionTrackFacePosition:[self pointForCreatureFromPoint:ff.mouthPosition]];
+        } else {
+            self.leftEyeClosed = NO;
+            self.rightEyeClosed = NO;
         }
     }
 }
@@ -239,5 +275,21 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     CGPoint transformedPoint = CGPointApplyAffineTransform(point, coordinatesTransform);
     return transformedPoint;
 }
+
+//////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Loop
+
+- (void)evaluate {
+    if (!self.creature.isAwake) return;
+    
+    if (self.leftEyeClosed) {
+        [self.creature dny_FaceInteractionToggleLeftEyeWink];
+    }
+    if (self.rightEyeClosed) {
+        [self.creature dny_FaceInteractionToggleRightEyeWink];
+    }
+}
+
 
 @end

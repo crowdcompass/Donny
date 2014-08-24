@@ -24,6 +24,8 @@ extern NSString *const kUserDefaultKeyHappiness;
 
 // This would ideally be defined via extension
 @property (nonatomic, strong) NSDate *lastFedAt;
+@property (nonatomic, assign) BOOL leftEyeClosed;
+@property (nonatomic, assign) BOOL rightEyeClosed;
 
 
 @property (assign, nonatomic, readonly) NSInteger happiness;
