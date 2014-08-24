@@ -26,6 +26,7 @@
 @property (strong, nonatomic) DNYSpriteNode *mouth;
 
 @property (copy, nonatomic) NSIndexPath *lookingAt;
+@property (nonatomic, assign) BOOL sick;
 
 
 //DEBUG

@@ -203,6 +203,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     self.sick = sick;
+    self.creatureNode.sick = sick;
     [self updateLastInteractionTime];
 
     if (shoudlReact) {
@@ -225,6 +226,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     self.sick = sick;
+    self.creatureNode.sick = sick;
     [self updateLastInteractionTime];
 
     if (shouldReact) {

@@ -17,7 +17,7 @@
 
 @interface DNYCreatureNode ()
 
-@property (nonatomic, assign) BOOL sick;
+
 
 @end
 
