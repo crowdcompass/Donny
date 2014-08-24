@@ -42,7 +42,7 @@
     return self;
 }
 
--(void)locationManager:(CLLocationManager *)manager didRangeBeacon:(CLBeacon*)beacon
+-(void)locationManager:(DNYLocationManager *)manager didRangeBeacon:(CLBeacon*)beacon
 {
     if (beacon.proximity == CLProximityImmediate) {
         [self.creature dny_CradleInteractionSet];

@@ -9,6 +9,6 @@
 #import "DNYInteraction.h"
 #import "DNYLocationManager.h"
 
-@interface DNYCradleInteraction : DNYInteraction
+@interface DNYCradleInteraction : DNYInteraction <DNYBeaconDelegate>
 
 @end
