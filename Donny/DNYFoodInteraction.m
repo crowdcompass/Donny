@@ -13,6 +13,7 @@
 
 @interface DNYCreatureModel (DNYFoodInteractionBehavior)
 
+
 -(void) dny_FoodInteractionSmellFood;
 -(void) dny_FoodInteractionReceiveFood;
 
@@ -40,21 +41,28 @@
 
 @end
 
+@interface DNYFoodInteraction ()
+
+@property (strong, nonatomic) NSUUID *expectedBeaconUUID;
+
+@end
+
 @implementation DNYFoodInteraction
 
 - (instancetype)initWithCreature:(DNYCreatureModel *)creature {
     self = [super initWithCreature:creature];
     if (self) {
         self.creature.lastFedAt = [NSDate dateWithTimeIntervalSinceNow:-300];
-        DNYLocationManager *locationManager = [DNYLocationManager instance];
-        NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"250511CC-0000-0000-1100-000000000001"];
-        [locationManager registerDelegate:self forBeaconWithUUID:uuid];
+         _expectedBeaconUUID = [[NSUUID alloc] initWithUUIDString:@"250511CC-0000-0000-1100-000000000001"];
+        
+        [[DNYLocationManager instance] registerDelegate:self forBeaconWithUUID:_expectedBeaconUUID];
     }
     return self;
 }
 
--(void)locationManager:(CLLocationManager *)manager didRangeBeacon:(CLBeacon*)beacon
-{
+-(void)locationManager:(CLLocationManager *)manager didRangeBeacon:(CLBeacon*)beacon {
+    if (![self.expectedBeaconUUID isEqual:beacon.proximityUUID]) { return; }
+    
     if (beacon.proximity == CLProximityImmediate) {
         [self.creature dny_FoodInteractionReceiveFood];
     } else if (beacon.proximity == CLProximityNear) {
