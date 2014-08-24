@@ -30,7 +30,7 @@
     NSTimeInterval diff = [[NSDate date] timeIntervalSinceDate:self.lastFedAt];
     if (diff >= kFedInterval) {
         NSLog(@"YUM CHICKEN");
-        [self increaseHappiness];
+        [self increaseHappinessWithReaction:YES];
         self.lastFedAt = [NSDate date];
     } else {
         NSLog(@"NO THANKS I'M FULL");

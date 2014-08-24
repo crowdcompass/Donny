@@ -67,7 +67,7 @@
     NSLog(@"Smile");
     if (!self.isSleeping) {
         [self vibrateChuckle];
-        [self increaseHappiness];
+        [self increaseHappinessWithReaction:YES];
     }
 }
 

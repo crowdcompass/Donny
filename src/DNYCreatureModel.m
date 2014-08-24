@@ -20,7 +20,7 @@
 #define kDefaultCreatureLoopRate 30 // 60hz/2, number of frames to pass before next eval
 #define kDefaultCreatureTimerSeconds 0.5
 #define kNeglectInterval 20 // seconds that define being neglected
-#define kMoodSettleInterval 5 // seconds
+#define kMoodSettleInterval 10 // seconds
 
 
 NSString *const kSoundBeepoo                    = @"31867_HardPCM_Chip030";
@@ -145,7 +145,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
  This uses a private API method, so would need to be compiled out of a sumbitted app
  */
 - (void)vibrateChuckle {
-    [self increaseHappiness];
+    [self increaseHappinessWithReaction:YES];
     NSMutableDictionary* patternsDict = [@{} mutableCopy];
     NSMutableArray* patternsArray = [@[] mutableCopy];
     
@@ -187,19 +187,20 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     self.lastInteraction = [NSDate date];
 }
 
-- (void)increaseHappiness {
+- (void)increaseHappinessWithReaction:(BOOL)shoudlReact {
     if (!self.isAwake) return;
 
     NSLog(@":) happier");
     NSNumber *newHappiness = self.happiness < 3 ? @(self.happiness + 1) : @(3);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self.creatureNode reactPositively];
 
     [self updateLastInteractionTime];
 
-    [self playSoundWithName:@"fx-good"];
+    if (shoudlReact) {
+        [self.creatureNode reactPositively];
+        [self playSoundWithName:@"fx-good"];
+    }
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self happinessDidChange:newHappiness.integerValue];
@@ -207,16 +208,19 @@ STATE_MACHINE(^(LSStateMachine * sm) {
 
 }
 
-- (void)decreaseHappiness {
+- (void)decreaseHappinessWithReaction:(BOOL)shouldReact {
     if (!self.isAwake) return;
     NSLog(@":( unhappier");
     NSNumber *newHappiness = self.happiness > -3 ? @(self.happiness - 1) : @(-3);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self.creatureNode reactNegatively];
+
     [self updateLastInteractionTime];
-    [self playSoundWithName:@"fx-bad"];
+
+    if (shouldReact) {
+        [self.creatureNode reactNegatively];
+        [self playSoundWithName:@"fx-bad"];
+    }
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self happinessDidChange:newHappiness.integerValue];
@@ -237,9 +241,9 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     
     if (duration >= kMoodSettleInterval) {
         if (self.happiness > -1) {
-            [self decreaseHappiness];
+            [self decreaseHappinessWithReaction:NO];
         } else if (self.happiness < -1) {
-            [self increaseHappiness];
+            [self increaseHappinessWithReaction:NO];
         }
     }
 }

@@ -33,8 +33,8 @@ extern NSString *const kUserDefaultKeyHappiness;
 
 @property (nonatomic, weak) DNYCreatureNode *creatureNode;
 
-- (void)increaseHappiness;
-- (void)decreaseHappiness;
+- (void)increaseHappinessWithReaction:(BOOL)shoudlReact;
+- (void)decreaseHappinessWithReaction:(BOOL)shouldReact;
 
 @end
 
@@ -51,8 +51,8 @@ extern NSString *const kUserDefaultKeyHappiness;
 
 - (void)vibrate;
 - (void)vibrateChuckle;
-- (void)increaseHappiness;
-- (void)decreaseHappiness;
+- (void)increaseHappinessWithReaction:(BOOL)shoudlReact;
+- (void)decreaseHappinessWithReaction:(BOOL)shouldReact;
 - (void)happinessDidChange:(NSInteger)newHappy;
 
 - (BOOL)isSleeping;

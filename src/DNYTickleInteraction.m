@@ -28,7 +28,7 @@
 
 - (void)handleTickle:(DNYTickleGestureRecognizer *)recognizer {
     NSLog(@"DNYTickleInteraction::handleTickle tickled!");
-    [self.creature increaseHappiness];
+    [self.creature increaseHappinessWithReaction:YES];
 }
 
 @end

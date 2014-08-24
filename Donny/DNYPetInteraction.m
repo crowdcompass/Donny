@@ -18,7 +18,7 @@
 
 -(void) dny_PetInteractionPetNose
 {
-    [self decreaseHappiness];
+    [self decreaseHappinessWithReaction:YES];
 }
 
 @end
