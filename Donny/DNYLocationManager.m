@@ -26,6 +26,7 @@
     
     if (self) {
         _locationManager = [[CLLocationManager alloc] init];
+        [_locationManager requestAlwaysAuthorization];
     }
     
     return self;

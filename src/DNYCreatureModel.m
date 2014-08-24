@@ -13,6 +13,7 @@
 #import "DNYMotionInteraction.h"
 #import "DNYFaceInteraction.h"
 #import "DNYFoodInteraction.h"
+#import "DNYCradleInteraction.h"
 #import "DNYTickleInteraction.h"
 #import "DNYPetInteraction.h"
 #import "DNYProximitySensorInteraction.h"
@@ -105,6 +106,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
                           [[DNYFaceInteraction alloc] initWithCreature:self],
                           [[DNYMotionInteraction alloc] initWithCreature:self],
                           [[DNYFoodInteraction alloc] initWithCreature:self],
+                          [[DNYCradleInteraction alloc] initWithCreature:self],
                           [[DNYPetInteraction alloc] initWithCreature:self],
                           [[DNYProximitySensorInteraction alloc] initWithCreature:self],
                           [[DNYTickleInteraction alloc] initWithCreature:self],

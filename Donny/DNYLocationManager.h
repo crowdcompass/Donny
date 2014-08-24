@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import <CoreLocation/CoreLocation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
 @protocol DNYBeaconDelegate;
 

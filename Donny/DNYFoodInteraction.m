@@ -20,7 +20,7 @@
 
 @implementation DNYCreatureModel (DNYFoodInteractionBehavior)
 
--(void) dny_FoodInteractionSmellFood;
+-(void) dny_FoodInteractionSmellFood
 {
     NSLog(@"THAT SMELLS GREAT IS THAT CHICKEN");
 }
@@ -46,24 +46,15 @@
     self = [super initWithCreature:creature];
     if (self) {
         self.creature.lastFedAt = [NSDate dateWithTimeIntervalSinceNow:-300];
-        _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = self;
-        [_locationManager requestAlwaysAuthorization];
-        
+        DNYLocationManager *locationManager = [DNYLocationManager instance];
         NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"250511CC-0000-0000-1100-000000000001"];
-        _beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"com.crowdcompass.Donny"];
-        _beaconRegion.notifyEntryStateOnDisplay = YES;
-        _beaconRegion.notifyOnEntry = YES;
-        _beaconRegion.notifyOnExit = YES;
-        [_locationManager startRangingBeaconsInRegion:_beaconRegion];
-        NSLog(@"started ranging for region: %@ uuid: %@", _beaconRegion, uuid);
+        [locationManager registerDelegate:self forBeaconWithUUID:uuid];
     }
     return self;
 }
 
--(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion*)region
+-(void)locationManager:(CLLocationManager *)manager didRangeBeacon:(CLBeacon*)beacon
 {
-    CLBeacon *beacon = beacons.firstObject;
     if (beacon.proximity == CLProximityImmediate) {
         [self.creature dny_FoodInteractionReceiveFood];
     } else if (beacon.proximity == CLProximityNear) {
