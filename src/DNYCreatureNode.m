@@ -26,7 +26,6 @@
     if (self) {
         _leftEyeBrow = [DNYSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
         _leftEyeBrow.hidden = YES;
-        [self addDropShadowToSpriteNode:_leftEyeBrow];
         [self addChild:_leftEyeBrow];
         _leftEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _leftEye.position = CGPointMake(70.f, 393.f);
@@ -35,7 +34,6 @@
         
         _rightEyeBrow = [DNYSpriteNode spriteNodeWithImageNamed:@"eyebrow-positive.png"];
         _rightEyeBrow.hidden = YES;
-        [self addDropShadowToSpriteNode:_rightEyeBrow];
         [self addChild:_rightEyeBrow];
         _rightEye = [DNYSpriteNode spriteNodeWithImageNamed:@"eye-sleep.png"];
         _rightEye.position = CGPointMake(250.f, 393.f);
