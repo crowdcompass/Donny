@@ -10,8 +10,8 @@
 
 #import "UIColor+RGB.h"
 
-const CGFloat kTotalParticles = 500.f;
-const CGFloat kTotalParticleBirthRate = 100.f;
+const CGFloat kTotalParticles = 800.f;
+const CGFloat kTotalParticleBirthRate = 200.f;
 
 @implementation DNYVomitNode
 
@@ -93,7 +93,7 @@ const CGFloat kTotalParticleBirthRate = 100.f;
     
     vomit.particlePositionRange = CGVectorMake(150.f, 15.f);
     vomit.particleSpeedRange = 60.f;
-    vomit.yAcceleration = -35.f;
+    vomit.yAcceleration = -465.f;
     vomit.emissionAngle = (3.f * (CGFloat)M_PI) / 2.f;
     
     return vomit;

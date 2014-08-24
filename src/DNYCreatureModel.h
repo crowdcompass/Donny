@@ -28,6 +28,7 @@ extern NSString *const kUserDefaultKeyHappiness;
 @property (nonatomic, assign) BOOL rightEyeClosed;
 @property (nonatomic, assign) BOOL sick;
 
+@property (nonatomic, strong) NSDate *lastSmiledAt;
 
 @property (assign, nonatomic, readonly) NSInteger happiness;
 @property (assign, nonatomic) BOOL flat;
