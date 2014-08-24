@@ -222,25 +222,43 @@ static const float kDropShadowYOffset = 8.f;
 - (void)normalMinus3 {
     [self removeAllActions];
     
-    [self eyebrowsNegative];
-    [self eyesSmall];
-    [self mouthFrown];
+    if (!self.sick) {
+        [self eyebrowsNegative];
+        [self eyesSmall];
+        [self mouthFrown];
+    } else {
+        [self eyebrowsNegative];
+        [self eyesWink];
+        [self mouthVomit];
+    }
 }
 
 - (void)normalMinus2 {
     [self removeAllActions];
     
-    [self eyebrowsNegative];
-    [self eyesSmall];
-    [self mouthFrown];
+    if (!self.sick) {
+        [self eyebrowsNegative];
+        [self eyesSmall];
+        [self mouthFrown];
+    } else {
+        [self eyebrowsNegative];
+        [self eyesSmall];
+        [self mouthSicker];
+    }
 }
 
 - (void)normalMinus1 {
     [self removeAllActions];
     
-    [self eyebrowsNone];
-    [self eyesStandard];
-    [self mouthStraight];
+    if (!self.sick) {
+        [self eyebrowsNone];
+        [self eyesStandard];
+        [self mouthStraight];
+    } else {
+        [self eyebrowsNone];
+        [self eyesWink];
+        [self mouthSick];
+    }
 }
 
 - (void)normal {
@@ -254,41 +272,44 @@ static const float kDropShadowYOffset = 8.f;
 - (void)normalPlus1 {
     [self removeAllActions];
     
-    [self eyebrowsPositive];
-    [self eyesStandard];
-    [self mouthSmile];
+    if (!self.sick) {
+        [self eyebrowsPositive];
+        [self eyesStandard];
+        [self mouthSmile];
+    } else {
+        [self eyebrowsSad];
+        [self eyesWink];
+        [self mouthSick];
+    }
+    
 }
 
 - (void)normalPlus2 {
     [self removeAllActions];
     
-    [self eyebrowsPositive];
-    [self eyesSmall];
-    [self mouthGood];
+    if (!self.sick) {
+        [self eyebrowsPositive];
+        [self eyesSmall];
+        [self mouthGood];
+    } else {
+        [self eyebrowsSad];
+        [self eyesWink];
+        [self mouthSicker];
+    }
 }
 
 - (void)normalPlus3 {
     [self removeAllActions];
     
-    [self eyebrowsPositive];
-    [self eyesWink];
-    [self mouthHappiest];
-}
-
-- (void)sick1 {
-    [self removeAllActions];
-    
-    [self eyebrowsNone];
-    [self eyesWink];
-    [self mouthSick];
-}
-
-- (void)sick2 {
-    [self removeAllActions];
-    
-    [self eyebrowsNone];
-    [self eyesWink];
-    [self mouthSicker];
+    if (!self.sick) {
+        [self eyebrowsPositive];
+        [self eyesWink];
+        [self mouthHappiest];
+    } else {
+        [self eyebrowsSad];
+        [self eyesWink];
+        [self mouthVomit];
+    }
 }
 
 
@@ -603,30 +624,40 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
 
     return flashAction;
 }
-
+/*
+ 207, 219, 237 (sick 1)
+ 211, 237, 219 (sick 2)
+ 216, 255, 202 (vomit)
+ */
 - (SKColor *)creatureColorForHappiness:(NSInteger)happiness {
     SKColor *color;
     switch (happiness) {
         case -3:
-            color = [SKColor colorWithRed:255/255.f green:152/255.f blue:152/255.f alpha:1];
+            color = self.sick != YES ? [SKColor colorWithRed:255/255.f green:152/255.f blue:152/255.f alpha:1] :
+                            [SKColor colorWithRed:207/255.f green:219/255.f blue:237/255.f alpha:1];
             break;
         case -2:
-            color = [SKColor colorWithRed:237/255.f green:168/255.f blue:186/255.f alpha:1];
+            color = self.sick != YES ? [SKColor colorWithRed:237/255.f green:168/255.f blue:186/255.f alpha:1] :
+                            [SKColor colorWithRed:211/255.f green:237/255.f blue:219/255.f alpha:1];
             break;
         case -1:
-            color = [SKColor colorWithRed:220/255.f green:185/255.f blue:220/255.f alpha:1];
+            color = self.sick != YES ? [SKColor colorWithRed:220/255.f green:185/255.f blue:220/255.f alpha:1] :
+                            [SKColor colorWithRed:216/255.f green:255/255.f blue:202/255.f alpha:1];
             break;
         case 0:
             color = [SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1];
             break;
         case 1:
-            color = [SKColor colorWithRed:163/255.f green:202/255.f blue:252/255.f alpha:1];
+            color = self.sick != YES ? [SKColor colorWithRed:163/255.f green:202/255.f blue:252/255.f alpha:1] :
+                            [SKColor colorWithRed:216/255.f green:255/255.f blue:202/255.f alpha:1];
             break;
         case 2:
-            color = [SKColor colorWithRed:123/255.f green:202/255.f blue:250/255.f alpha:1];
+            color = self.sick != YES ? [SKColor colorWithRed:123/255.f green:202/255.f blue:250/255.f alpha:1] :
+                            [SKColor colorWithRed:211/255.f green:237/255.f blue:219/255.f alpha:1];
             break;
         case 3:
-            color = [SKColor colorWithRed:123/255.f green:202/255.f blue:248/255.f alpha:1];
+            color = self.sick != YES ? [SKColor colorWithRed:123/255.f green:202/255.f blue:248/255.f alpha:1] :
+                            [SKColor colorWithRed:207/255.f green:219/255.f blue:237/255.f alpha:1];
             break;
         case 4:
             //Crazy rainbow vomit

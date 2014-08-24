@@ -11,6 +11,8 @@
 #import "StateMachine.h"
 #import "DNYCreatureNode.h"
 
+@class DNYCreatureNode;
+
 extern NSString *const kUserDefaultKeyHappiness;
 
 @class DNYCreatureViewController;

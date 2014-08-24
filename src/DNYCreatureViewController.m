@@ -56,10 +56,10 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.creatureModel wake];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.creatureModel.creatureNode mouthVomit];
-    });
+//    [self.creatureModel wake];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.creatureModel.creatureNode mouthVomit];
+//    });
 }
 
 - (BOOL)prefersStatusBarHidden {
