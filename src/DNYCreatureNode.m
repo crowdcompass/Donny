@@ -98,7 +98,7 @@ static const float kDropShadowYOffset = 8.f;
     SKTexture *blinkEyeTexture = [SKTexture textureWithImageNamed:@"eye-wink.png"];
     
     SKAction *blinkAction = [SKAction setTexture:blinkEyeTexture resize:YES];
-    SKAction *blinkTimeAction = [SKAction waitForDuration:.15];
+    SKAction *blinkTimeAction = [SKAction waitForDuration:kDefaultBlinkDuration];
     SKAction *undoBlinkAction = [SKAction setTexture:currentEyeTexture resize:YES];
     
     SKAction *singleBlink = [SKAction sequence:@[ blinkAction, blinkTimeAction, undoBlinkAction ]];
@@ -472,6 +472,7 @@ static const float kDropShadowYOffset = 8.f;
 //Mouth
 - (void)mouthBad {
     self.mouth.position = CGPointMake(160.f, 203.f);
+    self.mouth.dropShadow.position = CGPointMake(self.mouth.position.x, self.mouth.position.y - 0.8);
 
     SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-bad-reaction"];
     SKAction *action = [SKAction setTexture:texture resize:YES];
@@ -480,16 +481,18 @@ static const float kDropShadowYOffset = 8.f;
 }
 
 - (void)mouthFrown {
+    self.mouth.position = CGPointMake(160.f, 233.f);
+    self.mouth.dropShadow.position = CGPointMake(self.mouth.position.x, self.mouth.position.y - 0.8);
+
     SKTexture *frownTexture = [SKTexture textureWithImageNamed:@"mouth-frown.png"];
     SKAction *textureAction = [SKAction setTexture:frownTexture resize:YES];
-    SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0.];
-    
-    SKAction *groupAction = [SKAction group:@[ textureAction, moveAction ]];
-    [self.mouth runAction:groupAction];
+
+    [self.mouth runAction:textureAction];
 }
 
 - (void)mouthGood {
     self.mouth.position = CGPointMake(160.f, 223.f);
+    self.mouth.dropShadow.position = CGPointMake(self.mouth.position.x, self.mouth.position.y - 0.8);
 
     SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-good-reaction.png"];
     SKAction *action = [SKAction setTexture:texture resize:YES];
@@ -499,6 +502,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)mouthHappiest {
     self.mouth.position = CGPointMake(160.f, 213.f);
+    self.mouth.dropShadow.position = CGPointMake(self.mouth.position.x, self.mouth.position.y - 0.8);
     
     SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-happy.png"];
     SKAction *action = [SKAction setTexture:texture resize:YES];
@@ -507,28 +511,29 @@ static const float kDropShadowYOffset = 8.f;
 }
 
 - (void)mouthSick {
+    self.mouth.position = CGPointMake(160.f, 233.f);
+    self.mouth.dropShadow.position = CGPointMake(self.mouth.position.x, self.mouth.position.y - 0.8);
+
     SKTexture *sickTexture = [SKTexture textureWithImageNamed:@"mouth-sick.png"];
     SKAction *sickAction = [SKAction setTexture:sickTexture resize:YES];
-    
-    SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0];
-    
-    SKAction *group = [SKAction group:@[ sickAction, moveAction ]];
-    [self.mouth runAction:group];
+
+    [self.mouth runAction:sickAction];
 }
 
 - (void)mouthSicker {
+    self.mouth.position = CGPointMake(160.f, 233.f);
+    self.mouth.dropShadow.position = CGPointMake(self.mouth.position.x, self.mouth.position.y - 0.8);
+
     SKTexture *sickTexture = [SKTexture textureWithImageNamed:@"mouth-sicker.png"];
     SKAction *sickAction = [SKAction setTexture:sickTexture resize:YES];
-    
-    SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0];
-    
-    SKAction *group = [SKAction group:@[ sickAction, moveAction ]];
-    [self.mouth runAction:group];
+
+    [self.mouth runAction:sickAction];
 }
 
 - (void)mouthSleeping {
     //animated
     self.mouth.position = CGPointMake(170.f, 218.f);
+    self.mouth.dropShadow.position = CGPointMake(self.mouth.position.x, self.mouth.position.y - 0.8);
 
     SKTexture *texture1 = [SKTexture textureWithImageNamed:@"mouth-sleep-01.png"];
     SKTexture *texture2 = [SKTexture textureWithImageNamed:@"mouth-sleep-02.png"];
@@ -551,6 +556,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)mouthSmile {
     self.mouth.position = CGPointMake(160.f, 223.f);
+    self.mouth.dropShadow.position = CGPointMake(self.mouth.position.x, self.mouth.position.y - 0.8);
 
     SKTexture *texture = [SKTexture textureWithImageNamed:@"mouth-smile"];
     SKAction *action = [SKAction setTexture:texture resize:YES];
@@ -559,12 +565,13 @@ static const float kDropShadowYOffset = 8.f;
 }
 
 - (void)mouthStraight {
+    self.mouth.position = CGPointMake(160.f, 243.f);
+    self.mouth.dropShadow.position = CGPointMake(self.mouth.position.x, self.mouth.position.y - 0.8);
+
     SKTexture *mouthTexture = [SKTexture textureWithImageNamed:@"mouth-straight.png"];
     SKAction *textureAction = [SKAction setTexture:mouthTexture resize:YES];
-    SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 243.f) duration:0.f];
-    
-    SKAction *group = [SKAction group:@[ textureAction, moveAction ]];
-    [self.mouth runAction:group];
+
+    [self.mouth runAction:textureAction];
 }
 
 - (void)mouthVomit {
@@ -590,14 +597,14 @@ static const float kDropShadowYOffset = 8.f;
     CGVector moveBy = scaleVectorBy(baseVector, 3.f);
     
     SKAction *moveEyeAction = [SKAction moveBy:moveEyesBy duration:.33];
-    [self.leftEye runAction:moveEyeAction];
-    [self.rightEye runAction:moveEyeAction];
+    [self.leftEye runAction:moveEyeAction ignoreDropShadow:YES];
+    [self.rightEye runAction:moveEyeAction ignoreDropShadow:YES];
     
     SKAction *moveNoseAction = [SKAction moveBy:moveBy duration:.33];
-    [self.nose runAction:moveNoseAction];
+    [self.nose runAction:moveNoseAction ignoreDropShadow:YES];
     
     SKAction *moveMouthAction = [SKAction moveBy:moveBy duration:.33];
-    [self.mouth runAction:moveMouthAction];
+    [self.mouth runAction:moveMouthAction ignoreDropShadow:YES];
     
     self.lookingAt = path;
 }

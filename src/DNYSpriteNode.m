@@ -23,11 +23,18 @@
 }
 
 - (void)runAction:(SKAction *)action {
+    [self runAction:action ignoreDropShadow:NO];
+}
+
+- (void)runAction:(SKAction *)action ignoreDropShadow:(BOOL)ignore {
     [super runAction:action];
-    if (action.duration != 0.33) {
-        [self.dropShadow runAction:action];
-        self.dropShadow.position = CGPointMake(self.position.x, self.position.y - 8.f);
+
+    if (ignore) {
+        return;
     }
+
+    [self.dropShadow runAction:action];
+    self.dropShadow.position = CGPointMake(self.dropShadow.position.x, self.position.y - 8.f);
 }
 
 @end
