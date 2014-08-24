@@ -12,5 +12,6 @@
 @interface NSIndexPath (CGVector)
 
 - (CGVector)vectorTo:(NSIndexPath *)to;
+- (CGPoint)toPoint;
 
 @end

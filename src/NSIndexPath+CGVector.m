@@ -14,11 +14,11 @@
 
 - (CGVector)vectorTo:(NSIndexPath *)to {
     return CGVectorMake([to toPoint].x - [self toPoint].x,
-                        [to toPoint].y - [self toPoint].y - 1);
+                        [to toPoint].y - [self toPoint].y);
 }
 
 - (CGPoint)toPoint {
-    return CGPointMake((CGFloat)self.item - 1, (CGFloat)self.row - 1);
+    return CGPointMake(self.item, self.section);
 }
 
 @end
