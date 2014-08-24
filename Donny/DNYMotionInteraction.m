@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) CMMotionManager *motionManager;
 @property (nonatomic, assign) NSUInteger rockCounter;
+@property (nonatomic, assign) NSUInteger sickWaitCounter;
 @property (nonatomic, assign) NSUInteger layingCounter;
 
 @end
@@ -63,9 +64,14 @@
         NSLog(@"Call shook hard x: %.2f y:%.2f z:%.2f", motion.userAcceleration.x, motion.userAcceleration.y, motion.userAcceleration.z);
         self.rockCounter = 0;
         if (self.creature.isSleeping) {
+            self.sickWaitCounter = 6;
             [self.creature wake];
         } else {
-            [self.creature decreaseHappinessWithReaction:YES withSickness:YES];
+            if (self.sickWaitCounter > 0) {
+                return;
+            } else {
+                [self.creature decreaseHappinessWithReaction:YES withSickness:YES];
+            }
         }
         
     }
@@ -82,6 +88,8 @@
     }
 }
 
-
+- (void)evaluate {
+    if (self.sickWaitCounter > 0) self.sickWaitCounter--;
+}
 
 @end

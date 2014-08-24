@@ -204,7 +204,7 @@ STATE_MACHINE(^(LSStateMachine * sm) {
     if (!self.isAwake) return;
 
     NSLog(@":) happier");
-    NSNumber *newHappiness = self.happiness < 3 ? @(self.happiness + 1) : @(3);
+    NSNumber *newHappiness = self.happiness < 4 ? @(self.happiness + 1) : @(4);
     [[NSUserDefaults standardUserDefaults] setObject:newHappiness forKey:kUserDefaultKeyHappiness];
     [[NSUserDefaults standardUserDefaults] synchronize];
 

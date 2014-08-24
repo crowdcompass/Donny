@@ -67,17 +67,18 @@ const CGFloat kTotalParticleBirthRate = 200.f;
     for (UIColor *color in colors) {
         SKEmitterNode *emitter = [self vomitEmitterWithTargetNode:target];
         emitter.particleColor = color;
-        
+//        emitter.numParticlesToEmit = kTotalParticles / (CGFloat)colors.count;
+//        emitter.particleBirthRate = kTotalParticleBirthRate / (CGFloat)colors.count;
         if ([color isEqual:purple1]) {
             //first color is 80% of particles
-            emitter.numParticlesToEmit = .8f * kTotalParticles;
-            emitter.particleBirthRate = .8f * kTotalParticleBirthRate;
-            [emitters addObject:emitter];
+            emitter.numParticlesToEmit = .6f * kTotalParticles;
+            emitter.particleBirthRate = .6f * kTotalParticleBirthRate;
         } else {
             //remaining two are %20
-            emitter.numParticlesToEmit = .1f * kTotalParticles;
-            emitter.particleBirthRate = .1f * kTotalParticleBirthRate;
+            emitter.numParticlesToEmit = .4f * kTotalParticles;
+            emitter.particleBirthRate = .4f * kTotalParticleBirthRate;
         }
+        [emitters addObject:emitter];
     }
     
     return emitters;
@@ -87,11 +88,11 @@ const CGFloat kTotalParticleBirthRate = 200.f;
     SKEmitterNode *vomit = [SKEmitterNode node];
     
     vomit.targetNode = target;
-    vomit.particleSize = CGSizeMake(12.f, 12.f);
+    vomit.particleSize = CGSizeMake(20.f, 20.f);
     vomit.particleLifetime = 15.f;
     vomit.particleAlphaRange = .85f;
     
-    vomit.particlePositionRange = CGVectorMake(150.f, 15.f);
+    vomit.particlePositionRange = CGVectorMake(80.f, 15.f);
     vomit.particleSpeedRange = 60.f;
     vomit.yAcceleration = -465.f;
     vomit.emissionAngle = (3.f * (CGFloat)M_PI) / 2.f;

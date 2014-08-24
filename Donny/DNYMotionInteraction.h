@@ -8,6 +8,6 @@
 
 #import "DNYInteraction.h"
 
-@interface DNYMotionInteraction : DNYInteraction
+@interface DNYMotionInteraction : DNYInteraction <DNYEvaluatedInteraction>
 
 @end

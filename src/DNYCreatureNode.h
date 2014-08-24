@@ -51,7 +51,7 @@
 
 - (void)displayFaceForHappiness:(NSInteger)happiness;
 
-- (void)mouthVomit;
+- (void)mouthVomitWithSickness:(BOOL)sick;
 
 /**
  @param path indexPath representing a point on a 3x3 grid, section is y, item is x

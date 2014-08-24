@@ -212,7 +212,7 @@ static const float kDropShadowYOffset = 8.f;
             [self normalPlus3];
             break;
         case 4:
-            //
+            [self normalPlus4];
             break;
         default:
             break;
@@ -229,7 +229,7 @@ static const float kDropShadowYOffset = 8.f;
     } else {
         [self eyebrowsNegative];
         [self eyesWink];
-        [self mouthVomit];
+        [self mouthVomitWithSickness:YES];
     }
 }
 
@@ -279,7 +279,7 @@ static const float kDropShadowYOffset = 8.f;
     } else {
         [self eyebrowsSad];
         [self eyesWink];
-        [self mouthSick];
+        [self mouthSicker];
     }
     
 }
@@ -306,9 +306,23 @@ static const float kDropShadowYOffset = 8.f;
         [self eyesWink];
         [self mouthHappiest];
     } else {
-        [self eyebrowsSad];
+        [self eyebrowsNone];
         [self eyesWink];
-        [self mouthVomit];
+        [self mouthSick];
+    }
+}
+
+- (void)normalPlus4 {
+    [self removeAllActions];
+    
+    if (!self.sick) {
+        [self eyebrowsPositive];
+        [self eyesWink];
+        [self mouthVomitWithSickness:NO];
+    } else {
+        [self eyebrowsNone];
+        [self eyesWink];
+        [self mouthSick];
     }
 }
 
@@ -515,7 +529,7 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)mouthSick {
     SKTexture *sickTexture = [SKTexture textureWithImageNamed:@"mouth-sick.png"];
-    SKAction *sickAction = [SKAction setTexture:sickTexture];
+    SKAction *sickAction = [SKAction setTexture:sickTexture resize:YES];
     
     SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0];
     
@@ -525,7 +539,17 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)mouthSicker {
     SKTexture *sickTexture = [SKTexture textureWithImageNamed:@"mouth-sicker.png"];
-    SKAction *sickAction = [SKAction setTexture:sickTexture];
+    SKAction *sickAction = [SKAction setTexture:sickTexture resize:YES];
+    
+    SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0];
+    
+    SKAction *group = [SKAction group:@[ sickAction, moveAction ]];
+    [self.mouth runAction:group];
+}
+
+- (void)mouthVomit {
+    SKTexture *vomitTexture = [SKTexture textureWithImageNamed:@"mouth-vomit.png"];
+    SKAction *sickAction = [SKAction setTexture:vomitTexture resize:YES];
     
     SKAction *moveAction = [SKAction moveTo:CGPointMake(160.f, 233.f) duration:0];
     
@@ -574,18 +598,26 @@ static const float kDropShadowYOffset = 8.f;
     [self.mouth runAction:group];
 }
 
-- (void)mouthVomit {
-    [self mouthSicker];
+- (void)mouthVomitWithSickness:(BOOL)sick {
+    [self mouthVomit];
     
     SKAction *addVomitNodeAction = [SKAction runBlock:^{
-        DNYVomitNode *vomitNode = [DNYVomitNode vomitNodeWithTargetNode:self.mouth isHappy:YES];
+        DNYVomitNode *vomitNode = [DNYVomitNode vomitNodeWithTargetNode:self.mouth isHappy:!sick];
         [self.mouth addChild:vomitNode];
     }];
     
-    SKAction *wait = [SKAction waitForDuration:1.2];
+    SKAction *wait = [SKAction waitForDuration:0];
 
     SKAction *seq = [SKAction sequence:@[ wait, addVomitNodeAction]];
-    [self runAction:seq];
+    [self runAction:seq completion:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (sick) {
+                [self mouthSicker];
+            } else {
+                [self mouthSmile];
+            }            
+        });
+    }];
 }
 
 - (void)lookAt:(NSIndexPath *)path {
@@ -634,7 +666,7 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
     switch (happiness) {
         case -3:
             color = self.sick != YES ? [SKColor colorWithRed:255/255.f green:152/255.f blue:152/255.f alpha:1] :
-                            [SKColor colorWithRed:207/255.f green:219/255.f blue:237/255.f alpha:1];
+                            [SKColor colorWithRed:216/255.f green:255/255.f blue:202/255.f alpha:1];
             break;
         case -2:
             color = self.sick != YES ? [SKColor colorWithRed:237/255.f green:168/255.f blue:186/255.f alpha:1] :
@@ -642,14 +674,14 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
             break;
         case -1:
             color = self.sick != YES ? [SKColor colorWithRed:220/255.f green:185/255.f blue:220/255.f alpha:1] :
-                            [SKColor colorWithRed:216/255.f green:255/255.f blue:202/255.f alpha:1];
+                            [SKColor colorWithRed:207/255.f green:219/255.f blue:237/255.f alpha:1];
             break;
         case 0:
             color = [SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1];
             break;
         case 1:
             color = self.sick != YES ? [SKColor colorWithRed:163/255.f green:202/255.f blue:252/255.f alpha:1] :
-                            [SKColor colorWithRed:216/255.f green:255/255.f blue:202/255.f alpha:1];
+                            [SKColor colorWithRed:211/255.f green:237/255.f blue:219/255.f alpha:1];
             break;
         case 2:
             color = self.sick != YES ? [SKColor colorWithRed:123/255.f green:202/255.f blue:250/255.f alpha:1] :
@@ -660,10 +692,11 @@ CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
                             [SKColor colorWithRed:207/255.f green:219/255.f blue:237/255.f alpha:1];
             break;
         case 4:
-            //Crazy rainbow vomit
+            color = self.sick != YES ? [SKColor colorWithRed:84/255.f green:202/255.f blue:248/255.f alpha:1] :
+                            [SKColor colorWithRed:207/255.f green:219/255.f blue:237/255.f alpha:1];
             break;
         default:
-            //??
+            color = [SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1];
             break;
     }
     return color;
