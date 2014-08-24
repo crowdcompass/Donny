@@ -81,16 +81,24 @@ static const float kDropShadowYOffset = 8.f;
 
 #pragma mark Actions
 
-- (void)blink {
+- (void)blink:(NSUInteger)count {
     SKTexture *currentEyeTexture = [self.leftEye.texture copy];
     SKTexture *blinkEyeTexture = [SKTexture textureWithImageNamed:@"eye-wink.png"];
     
     SKAction *blinkAction = [SKAction setTexture:blinkEyeTexture resize:YES];
-    SKAction *blinkTimeAction = [SKAction waitForDuration:.35];
+    SKAction *blinkTimeAction = [SKAction waitForDuration:.15];
     SKAction *undoBlinkAction = [SKAction setTexture:currentEyeTexture resize:YES];
     
-    SKAction *actionGroup = [SKAction sequence:@[ blinkAction, blinkTimeAction, undoBlinkAction ]];
-    
+    SKAction *singleBlink = [SKAction sequence:@[ blinkAction, blinkTimeAction, undoBlinkAction ]];
+
+    NSMutableArray *groups = [NSMutableArray array];
+
+    for (int i = 0; i <= count; i++) {
+        [groups addObject:singleBlink];
+    }
+
+    SKAction *actionGroup = [SKAction sequence:groups];
+
     [self.leftEye runAction:actionGroup];
     [self.rightEye runAction:actionGroup];
 }
@@ -130,7 +138,7 @@ static const float kDropShadowYOffset = 8.f;
     SKAction *normalEyeActionMoveLeft = [SKAction moveTo:CGPointMake(70.f, 383.f) duration:0];
     SKAction *normalEyeActionMoveRight = [SKAction moveTo:CGPointMake(250.f, 383.f) duration:0];
     
-    SKAction *leftEyeGroup = [SKAction group:@[ normalEyeActionTexture, normalEyeActionMoveLeft ]];
+    SKAction *leftEyeGroup = [SKAction group:@[ normalEyeActionTexture, normalEyeActionMoveLeft]];
     SKAction *rightEyeGroup = [SKAction group:@[ normalEyeActionTexture, normalEyeActionMoveRight ]];
     
     SKTexture *normalMouthTexture = [SKTexture textureWithImageNamed:@"mouth-smile.png"];
@@ -139,13 +147,14 @@ static const float kDropShadowYOffset = 8.f;
     SKAction *mouthGroup = [SKAction group:@[ normalMouthActionTexture, normalMouthActionMove ]];
     
     [self removeAllActions];
-    
+
+    [self runAction:[self flashAction]];
     [self.leftEye runAction:leftEyeGroup];
     [self.rightEye runAction:rightEyeGroup];
     [self.mouth runAction:mouthGroup];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self blink];
+        [self blink:2];
     });
 }
 
@@ -172,6 +181,20 @@ static const float kDropShadowYOffset = 8.f;
 
 CGVector scaleVectorBy(CGVector vec, CGFloat scale) {
     return CGVectorMake(vec.dx * scale, vec.dy * scale);
+}
+
+//Action Helpers
+- (SKAction *)flashAction {
+    //Background flash
+    SKColor *goodColor = [SKColor colorWithRed:152/255.f green:255/255.f blue:164/255.f alpha:1];
+    SKColor *normalColor = [SKColor colorWithRed:203/255.f green:202/255.f blue:255/255.f alpha:1];
+    SKAction *flashAction = [SKAction sequence:@[[SKAction repeatAction:[SKAction sequence:@[[SKAction runBlock:^{
+        self.scene.backgroundColor = goodColor;
+    }], [SKAction waitForDuration:0.1], [SKAction runBlock:^{
+        self.scene.backgroundColor = normalColor;
+    }], [SKAction waitForDuration:0.1]]] count:2]]];
+
+    return flashAction;
 }
 
 @end

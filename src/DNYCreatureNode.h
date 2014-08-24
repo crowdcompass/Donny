@@ -25,7 +25,7 @@
 
 - (void)sleep;
 - (void)wakeup;
-- (void)blink;
+- (void)blink:(NSUInteger)count;
 
 /**
  @param path indexPath representing a point on a 3x3 grid, section is y, item is x
