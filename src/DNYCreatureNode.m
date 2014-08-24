@@ -273,6 +273,8 @@ static const float kDropShadowYOffset = 8.f;
 
 - (void)mouthSleeping {
     //animated
+    self.mouth.position = CGPointMake(170.f, 218.f);
+
     SKTexture *texture1 = [SKTexture textureWithImageNamed:@"mouth-sleep-01.png"];
     SKTexture *texture2 = [SKTexture textureWithImageNamed:@"mouth-sleep-02.png"];
 
